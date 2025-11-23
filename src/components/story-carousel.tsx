@@ -187,7 +187,14 @@ export default function StoryCarousel() {
   }, [api, handleSelect]);
   
   const handleIndicatorClick = useCallback((index: number) => {
-    if (!api) return;
+    if (!api) {
+        if (current === index) {
+            setCurrent(null);
+        } else {
+            setCurrent(index);
+        }
+        return;
+    };
     
     if (current === index) {
       setCurrent(null);
@@ -201,7 +208,7 @@ export default function StoryCarousel() {
   return (
     <div className="w-full">
        <div dir="ltr" className="pb-4 overflow-x-auto">
-        <div className="flex gap-2 px-4 pl-4">
+        <div className="flex gap-3 px-4 pl-4">
           {storiesConfig.map((story, index) => (
             <button
               key={story.id}
