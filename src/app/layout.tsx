@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description: "تطبيق يساعدك على بناء عادات أفضل والبقاء متحفزًا.",
 };
 
-const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
+const ThemeProvider = () => {
   const script = `
     (function() {
       try {
         const theme = localStorage.getItem('theme');
-        if (theme) {
-          document.documentElement.classList.add(theme);
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
         }
       } catch (e) {
         console.error('Failed to apply theme from localStorage', e);
@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar" dir="rtl">
+    <html lang="ar" dir="rtl" suppressHydrationWarning>
       <head>
         <ThemeProvider />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
