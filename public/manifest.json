@@ -6,21 +6,11 @@
   "start_url": "/",
   "name": "Empower App",
   "short_name": "Empower",
-  "description": "تطبيق يساعدك على بناء عادات أفضل والبقاء متحفزًا.",
+  "description": "An app to help you build better habits and stay motivated.",
   "icons": [
     {
       "src": "/icons/icon-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/icons/icon-256x256.png",
-      "sizes": "256x256",
-      "type": "image/png"
-    },
-    {
-      "src": "/icons/icon-384x384.png",
-      "sizes": "384x384",
       "type": "image/png"
     },
     {
