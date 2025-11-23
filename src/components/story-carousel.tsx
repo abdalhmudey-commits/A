@@ -202,7 +202,7 @@ export default function StoryCarousel() {
             <button
               key={story.id}
               onClick={() => handleIndicatorClick(index)}
-              className="group flex flex-col items-center gap-1 flex-shrink-0 w-[60px]"
+              className="group flex flex-col items-center gap-1 flex-shrink-0"
             >
               <div
                 className={`p-0.5 rounded-full transition-colors ${
@@ -220,7 +220,7 @@ export default function StoryCarousel() {
                 </div>
               </div>
               <span
-                className={`text-[10px] sm:text-xs transition-colors text-center w-full truncate ${
+                className={`text-[10px] w-[50px] sm:text-xs transition-colors text-center truncate ${
                   current === index ? "text-primary font-semibold" : "text-muted-foreground"
                 }`}
               >
@@ -273,8 +273,6 @@ export default function StoryCarousel() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="absolute top-1/2 -translate-y-1/2" />
-          <CarouselNext className="absolute top-1/2 -translate-y-1/2" />
         </Carousel>
       </div>
     </div>
