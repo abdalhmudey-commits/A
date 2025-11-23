@@ -2,18 +2,18 @@
 
 import {
   BookOpen,
-  Flame,
   LayoutGrid,
-  NotebookPen,
   Settings,
   Sparkles,
+  Sunrise,
+  Sunset,
 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import SettingsPanel from "./settings-panel";
 import HabitSetup from "./habit-setup";
-import { NoteTaker } from "./note-taker";
 import MotivationalMessage from "./motivational-message";
-import Remembrances from "./remembrances";
+import MorningRemembrances from "./morning-remembrances";
+import EveningRemembrances from "./evening-remembrances";
 
 const tabsConfig = [
   {
@@ -29,16 +29,16 @@ const tabsConfig = [
     component: HabitSetup,
   },
   {
-    id: "remembrances",
-    title: "الأذكار",
-    icon: BookOpen,
-    component: Remembrances,
+    id: "morning-remembrances",
+    title: "أذكار الصباح",
+    icon: Sunrise,
+    component: MorningRemembrances,
   },
   {
-    id: "notes",
-    title: "تدوين",
-    icon: NotebookPen,
-    component: NoteTaker,
+    id: "evening-remembrances",
+    title: "أذكار المساء",
+    icon: Sunset,
+    component: EveningRemembrances,
   },
   {
     id: "settings",
