@@ -3,6 +3,7 @@
 import {
   BookOpen,
   Flame,
+  LayoutGrid,
   NotebookPen,
   Settings,
   Sparkles,
@@ -22,9 +23,9 @@ const tabsConfig = [
     component: MotivationalMessage,
   },
   {
-    id: "habit",
-    title: "العادة",
-    icon: Flame,
+    id: "habits",
+    title: "العادات",
+    icon: LayoutGrid,
     component: HabitSetup,
   },
   {
