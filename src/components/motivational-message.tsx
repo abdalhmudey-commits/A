@@ -8,6 +8,7 @@ import {
 } from "@/ai/flows/generate-motivational-message";
 import { 
   summarizeBook,
+  type BookSummaryInput,
   type BookSummaryOutput 
 } from "@/ai/flows/summarize-book";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -29,6 +30,7 @@ export default function MotivationalMessage() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const [summary, setSummary] = useState<BookSummaryOutput | null>(null);
+  const [summarizedBooks, setSummarizedBooks] = useState<string[]>([]);
   const [isSummaryLoading, setIsSummaryLoading] = useState(false);
   const [isSummaryDialogOpen, setIsSummaryDialogOpen] = useState(false);
 
@@ -79,9 +81,14 @@ export default function MotivationalMessage() {
   const handleSummarizeBook = async () => {
     setIsSummaryLoading(true);
     setIsSummaryDialogOpen(true);
+    setSummary(null); // Clear previous summary
     try {
-      const result = await summarizeBook();
+      const result = await summarizeBook({ previousTitles: summarizedBooks });
       setSummary(result);
+      // Add the new book title to the list of summarized books to avoid repetition
+      if(result.title) {
+        setSummarizedBooks(prev => [...prev, result.title]);
+      }
     } catch (error) {
       console.error("Failed to summarize book:", error);
       setSummary({
@@ -139,7 +146,7 @@ export default function MotivationalMessage() {
 
   if (loading) {
     return (
-      <div className="w-full max-w-3xl pt-4">
+      <div className="w-full max-w-3xl pt-2">
         <div className="flex flex-col items-center gap-4">
           <Skeleton className="h-10 w-48" />
           <Skeleton className="h-40 w-full" />
