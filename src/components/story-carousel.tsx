@@ -17,13 +17,12 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
   type CarouselApi,
 } from "./ui/carousel";
 import { Textarea } from "./ui/textarea";
 import SettingsPanel from "./settings-panel";
 import MotivationalMessage from "./motivational-message";
+import FloatingMessages from "./floating-messages";
 
 const ComingSoonContent = ({ title }: { title: string }) => {
   return (
@@ -174,7 +173,7 @@ export default function StoryCarousel() {
     api.on("select", handleSelect);
 
     // Set initial selection
-    handleSelect();
+    // handleSelect();
 
     return () => {
       api.off("select", handleSelect);
@@ -186,7 +185,7 @@ export default function StoryCarousel() {
       setCurrent(null);
     } else {
       setCurrent(index);
-      api?.scrollTo(index);
+      api?.scrollTo(index, true);
     }
   };
   
@@ -203,10 +202,10 @@ export default function StoryCarousel() {
             >
               <div
                 className={`p-0.5 rounded-full transition-colors ${
-                  current === index ? "bg-primary" : "bg-secondary"
+                  current === index ? "bg-primary" : "bg-transparent"
                 }`}
               >
-                <div className="bg-background rounded-full p-0.5">
+                <div className="bg-background rounded-full p-0.5 border-2 border-secondary group-hover:border-primary transition-colors">
                   <story.icon
                     className={`h-9 w-9 transition-colors ${
                       current === index
@@ -227,6 +226,7 @@ export default function StoryCarousel() {
           ))}
         </div>
       </div>
+      {current === null && <FloatingMessages />}
       {current !== null && (
         <Carousel setApi={setApi} opts={{ startIndex: current, align: 'start' }} className="w-full" dir="rtl">
           <CarouselContent>
