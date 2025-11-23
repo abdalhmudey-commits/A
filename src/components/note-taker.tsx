@@ -1,15 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Textarea } from "./ui/textarea";
 
 export function NoteTaker() {
   const [note, setNote] = useState("");
   const [isSaved, setIsSaved] = useState(false);
-  const image = PlaceHolderImages.find((img) => img.id === "note-taking");
 
   useEffect(() => {
     try {
@@ -49,17 +46,6 @@ export function NoteTaker() {
         </CardTitle>
       </CardHeader>
       <CardContent className="flex flex-col gap-4">
-        {image && (
-          <div className="relative h-48 w-full overflow-hidden rounded-lg">
-            <Image
-              src={image.imageUrl}
-              alt={image.description}
-              fill
-              className="object-cover"
-              data-ai-hint={image.imageHint}
-            />
-          </div>
-        )}
         <p>اكتب أفكارك، أهدافك، أو أي شيء يلهمك هنا.</p>
         <Textarea
           value={note}

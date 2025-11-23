@@ -13,24 +13,6 @@
       "imageHint": "open book"
     },
     {
-      "id": "morning-remembrance",
-      "description": "A beautiful sunrise over a calm landscape.",
-      "imageUrl": "https://images.unsplash.com/photo-1433477077279-9354d2d72f6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdW5yaXNlJTIwbGFuZHNjYXBlfGVufDB8fHx8MTc2Mzg1OTM2N3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "sunrise landscape"
-    },
-    {
-      "id": "evening-remembrance",
-      "description": "A colorful sunset with clouds in the sky.",
-      "imageUrl": "https://images.unsplash.com/photo-1505051508008-923feaf90180?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzdW5zZXQlMjBza3l8ZW58MHx8fHwxNzYzNzk5MzIxfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "sunset sky"
-    },
-    {
-      "id": "note-taking",
-      "description": "A person writing in a notebook with a pen.",
-      "imageUrl": "https://images.unsplash.com/photo-1629045840975-4225f4d47ae0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8d3JpdGluZyUyMG5vdGVib29rfGVufDB8fHx8MTc2Mzg1MzA0Nnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "writing notebook"
-    },
-    {
       "id": "prayer-remembrance",
       "description": "A person's hands held up in prayer inside a mosque.",
       "imageUrl": "https://images.unsplash.com/photo-1585244102213-981b37403264?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxQcmF5ZXIlMjBIYW5kcyUyMG1vc3F1ZXxlbnwwfHx8fDE3MjE4NzE1NjJ8MA&ixlib=rb-4.1.0&q=80&w=1080",

@@ -24,13 +24,21 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
 
+type SummarizedBookRecord = {
+  title: string;
+  summarizedAt: number; // Timestamp
+};
+
+const SUMMARIZED_BOOKS_KEY = "summarizedBooksList";
+const TWO_MONTHS_IN_MS = 60 * 24 * 60 * 60 * 1000;
+
 export default function MotivationalMessage() {
   const [data, setData] = useState<MotivationalMessagesOutput | null>(null);
   const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const [summary, setSummary] = useState<BookSummaryOutput | null>(null);
-  const [summarizedBooks, setSummarizedBooks] = useState<string[]>([]);
+  const [summarizedBooks, setSummarizedBooks] = useState<SummarizedBookRecord[]>([]);
   const [isSummaryLoading, setIsSummaryLoading] = useState(false);
   const [isSummaryDialogOpen, setIsSummaryDialogOpen] = useState(false);
 
@@ -48,7 +56,6 @@ export default function MotivationalMessage() {
         setData(result);
       } catch (error) {
         console.error("Failed to generate motivational message:", error);
-        // Stronger fallback data with 5 messages
         setData({
           messages: [
             {
@@ -76,18 +83,39 @@ export default function MotivationalMessage() {
     };
 
     fetchMessage();
+    
+    // Load summarized books from localStorage
+    try {
+      const savedBooks = localStorage.getItem(SUMMARIZED_BOOKS_KEY);
+      if (savedBooks) {
+        setSummarizedBooks(JSON.parse(savedBooks));
+      }
+    } catch (error) {
+      console.error("Failed to load summarized books from localStorage", error);
+    }
   }, []);
 
   const handleSummarizeBook = async () => {
     setIsSummaryLoading(true);
     setIsSummaryDialogOpen(true);
     setSummary(null); // Clear previous summary
+
     try {
-      const result = await summarizeBook({ previousTitles: summarizedBooks });
+      // Filter out books summarized within the last two months
+      const now = Date.now();
+      const recentBookTitles = summarizedBooks
+        .filter(book => (now - book.summarizedAt) < TWO_MONTHS_IN_MS)
+        .map(book => book.title);
+
+      const result = await summarizeBook({ previousTitles: recentBookTitles });
       setSummary(result);
-      // Add the new book title to the list of summarized books to avoid repetition
+      
+      // Add the new book to our record
       if(result.title) {
-        setSummarizedBooks(prev => [...prev, result.title]);
+        const newRecord: SummarizedBookRecord = { title: result.title, summarizedAt: Date.now() };
+        const updatedBooks = [...summarizedBooks.filter(b => b.title !== result.title), newRecord];
+        setSummarizedBooks(updatedBooks);
+        localStorage.setItem(SUMMARIZED_BOOKS_KEY, JSON.stringify(updatedBooks));
       }
     } catch (error) {
       console.error("Failed to summarize book:", error);
@@ -135,9 +163,9 @@ export default function MotivationalMessage() {
     const isRightSwipe = distance < -minSwipeDistance;
 
     if (isLeftSwipe) {
-      handleNext(); // Corresponds to user swiping left (next item)
+      handleNext(); 
     } else if (isRightSwipe) {
-      handlePrev(); // Corresponds to user swiping right (previous item)
+      handlePrev(); 
     }
 
     touchStartRef.current = null;
@@ -166,8 +194,6 @@ export default function MotivationalMessage() {
         {messages.map((item, index) => {
           const isActive = index === currentIndex;
           const isPast = index < currentIndex;
-          const isFuture = index > currentIndex;
-
           let transform = "";
           let opacity = 0;
           let zIndex = 0;
@@ -176,15 +202,15 @@ export default function MotivationalMessage() {
             transform = "translateY(0) scale(1)";
             opacity = 1;
             zIndex = messages.length;
-          } else if (isFuture) {
+          } else if (isPast) {
+            transform = `translateY(0px) scale(${1 + (currentIndex - index) * 0.05})`;
+            opacity = 0;
+            zIndex = messages.length - index;
+          } else { // isFuture
             const offset = index - currentIndex;
             transform = `translateY(${offset * 10}px) scale(${1 - offset * 0.05})`;
             opacity = 1;
             zIndex = messages.length - offset;
-          } else { // isPast
-            transform = 'translateY(-20px) scale(0.95)';
-            opacity = 0;
-            zIndex = 0;
           }
 
           return (
