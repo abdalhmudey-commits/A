@@ -157,6 +157,38 @@ export default function StoryCarousel() {
 
   return (
     <div className="w-full max-w-3xl">
+      <div className="pb-4 flex justify-center gap-2">
+        {storiesConfig.map((story, index) => (
+          <button
+            key={story.id}
+            onClick={() => handleIndicatorClick(index)}
+            className="group flex flex-col items-center gap-1.5"
+          >
+            <div
+              className={`p-1 rounded-full transition-colors ${
+                current === index ? "bg-accent" : "bg-primary/20"
+              }`}
+            >
+              <div className="bg-background rounded-full p-1">
+                <story.icon
+                  className={`h-5 w-5 transition-colors ${
+                    current === index
+                      ? "text-accent-foreground"
+                      : "text-foreground/60"
+                  }`}
+                />
+              </div>
+            </div>
+            <span
+              className={`text-xs sm:text-sm transition-colors ${
+                current === index ? "text-accent-foreground font-semibold" : "text-muted-foreground"
+              }`}
+            >
+              {story.title}
+            </span>
+          </button>
+        ))}
+      </div>
       <Carousel setApi={setApi} className="w-full" dir="rtl">
         <CarouselContent>
           {storiesConfig.map((story) => (
@@ -195,38 +227,6 @@ export default function StoryCarousel() {
         <CarouselPrevious className="right-4 -top-10 left-auto md:right-auto md:left-4" />
         <CarouselNext className="left-4 -top-10 right-auto md:left-auto md:right-4" />
       </Carousel>
-      <div className="py-2 flex justify-center gap-2 mt-4">
-        {storiesConfig.map((story, index) => (
-          <button
-            key={story.id}
-            onClick={() => handleIndicatorClick(index)}
-            className="group flex flex-col items-center gap-1.5"
-          >
-            <div
-              className={`p-1 rounded-full transition-colors ${
-                current === index ? "bg-accent" : "bg-primary/20"
-              }`}
-            >
-              <div className="bg-background rounded-full p-1">
-                <story.icon
-                  className={`h-5 w-5 transition-colors ${
-                    current === index
-                      ? "text-accent-foreground"
-                      : "text-foreground/60"
-                  }`}
-                />
-              </div>
-            </div>
-            <span
-              className={`text-xs sm:text-sm transition-colors ${
-                current === index ? "text-accent-foreground font-semibold" : "text-muted-foreground"
-              }`}
-            >
-              {story.title}
-            </span>
-          </button>
-        ))}
-      </div>
     </div>
   );
 }
