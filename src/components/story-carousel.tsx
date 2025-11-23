@@ -195,7 +195,7 @@ export default function StoryCarousel() {
   return (
     <div className="w-full">
       <div className="pb-4 overflow-x-auto">
-        <div className="flex justify-start gap-3 px-4">
+        <div className="flex justify-start gap-2 px-4">
           {storiesConfig.map((story, index) => (
             <button
               key={story.id}
@@ -209,7 +209,7 @@ export default function StoryCarousel() {
               >
                 <div className="bg-background rounded-full p-0.5 border-2 border-secondary group-hover:border-primary transition-colors">
                   <story.icon
-                    className={`h-12 w-12 transition-colors ${
+                    className={`h-14 w-14 transition-colors ${
                       current === index
                         ? "text-primary"
                         : "text-secondary-foreground"
