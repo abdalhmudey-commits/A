@@ -23,6 +23,8 @@ import { Textarea } from "./ui/textarea";
 import SettingsPanel from "./settings-panel";
 import MotivationalMessage from "./motivational-message";
 import FloatingMessages from "./floating-messages";
+import HabitSetup from "./habit-setup";
+
 
 const ComingSoonContent = ({ title }: { title: string }) => {
   return (
@@ -37,7 +39,7 @@ const storiesConfig = [
     id: "habit",
     title: "العادة",
     icon: Flame,
-    image: PlaceHolderImages.find((img) => img.id === "habit-story"),
+    component: HabitSetup,
   },
   {
     id: "summary",
@@ -208,7 +210,7 @@ export default function StoryCarousel() {
   return (
     <div className="w-full">
        <div dir="ltr" className="pb-4 overflow-x-auto">
-        <div className="flex gap-3 px-4 pl-4">
+        <div className="flex justify-start gap-4 px-4 pl-4">
           {storiesConfig.map((story, index) => (
             <button
               key={story.id}
@@ -222,7 +224,7 @@ export default function StoryCarousel() {
               >
                 <div className="bg-background rounded-full p-0.5 border-2 border-secondary group-hover:border-primary transition-colors">
                   <story.icon
-                    className={`h-16 w-16 transition-colors ${
+                    className={`h-14 w-14 transition-colors ${
                       current === index
                         ? "text-primary"
                         : "text-secondary-foreground"
@@ -260,6 +262,8 @@ export default function StoryCarousel() {
                     <SettingsPanel />
                     ) : story.id === 'motivation' ? (
                     <MotivationalStory />
+                    ) : story.component ? (
+                     <story.component />
                     ) : (
                     <Card className="w-full overflow-hidden border-transparent shadow-none bg-transparent">
                         <CardContent className="flex flex-col gap-6 p-0">
@@ -267,7 +271,7 @@ export default function StoryCarousel() {
                             <div className="relative h-64 w-full overflow-hidden rounded-lg shadow-lg">
                             <Image
                                 src={story.image.imageUrl}
-                                alt={story.image.description}
+                                alt={story.image.description || ''}
                                 fill
                                 className="object-cover"
                                 data-ai-hint={story.image.imageHint}
