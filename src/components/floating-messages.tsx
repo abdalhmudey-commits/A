@@ -81,7 +81,7 @@ export default function FloatingMessages() {
 
   if (loading || positions.length === 0) {
     return (
-      <div className="relative h-full w-full">
+      <div className="relative h-full w-full min-h-[calc(100vh-220px)]">
          {skeletonPositions.map((pos, i) => (
              <Skeleton key={i} className="absolute h-24 w-48" style={pos} />
          ))}
@@ -90,7 +90,7 @@ export default function FloatingMessages() {
   }
 
   return (
-    <div className="relative h-full w-full animate-in fade-in-50 duration-1000" onClick={handleContainerClick}>
+    <div className="relative h-full w-full min-h-[calc(100vh-220px)] animate-in fade-in-50 duration-1000" onClick={handleContainerClick}>
        {data?.messages.map((item, index) => (
          <Card 
             key={index} 

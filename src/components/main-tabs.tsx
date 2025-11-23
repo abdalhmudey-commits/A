@@ -84,33 +84,35 @@ export default function MainTabs() {
       </TabsList>
 
       {tabsConfig.map((tab) => (
-        <TabsContent key={tab.id} value={tab.id} className="bg-card/80 backdrop-blur-sm rounded-lg mt-4 border border-border/20 shadow-lg min-h-[calc(100vh-200px)]">
-          {tab.component ? (
-            <tab.component />
-          ) : (
-             <Card className="w-full overflow-hidden border-transparent shadow-none bg-transparent">
-                <CardContent className="flex flex-col gap-6 p-0">
-                {tab.image && (
-                    <div className="relative h-64 w-full overflow-hidden rounded-t-lg">
-                    <Image
-                        src={tab.image.imageUrl}
-                        alt={tab.image.description || ''}
-                        fill
-                        className="object-cover"
-                        data-ai-hint={tab.image.imageHint}
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                    <div className="absolute inset-0 bg-black/30 flex items-end p-6">
-                        <h2 className="font-headline text-3xl text-white shadow-md">{tab.title}</h2>
-                    </div>
-                    </div>
-                )}
-                <div className="p-6 pt-0">
-                    <ComingSoonContent title={tab.title} />
-                </div>
-                </CardContent>
-            </Card>
-          )}
+        <TabsContent key={tab.id} value={tab.id} className="mt-4">
+          <div className="bg-card/80 backdrop-blur-sm rounded-lg border border-border/20 shadow-lg min-h-[calc(100vh-200px)]">
+            {tab.component ? (
+              <tab.component />
+            ) : (
+              <Card className="w-full h-full overflow-hidden border-transparent shadow-none bg-transparent">
+                  <CardContent className="flex flex-col gap-6 p-0">
+                  {tab.image && (
+                      <div className="relative h-64 w-full overflow-hidden rounded-t-lg">
+                      <Image
+                          src={tab.image.imageUrl}
+                          alt={tab.image.description || ''}
+                          fill
+                          className="object-cover"
+                          data-ai-hint={tab.image.imageHint}
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                      <div className="absolute inset-0 bg-black/30 flex items-end p-6">
+                          <h2 className="font-headline text-3xl text-white shadow-md">{tab.title}</h2>
+                      </div>
+                      </div>
+                  )}
+                  <div className="p-6 pt-0">
+                      <ComingSoonContent title={tab.title} />
+                  </div>
+                  </CardContent>
+              </Card>
+            )}
+          </div>
         </TabsContent>
       ))}
     </Tabs>
