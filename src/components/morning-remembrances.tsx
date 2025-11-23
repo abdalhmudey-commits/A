@@ -1,5 +1,6 @@
+"use client";
+
 import { Card, CardHeader, CardTitle, CardContent } from "./ui/card";
-import { morningRemembrances } from "@/lib/remembrances-data";
 import RemembranceContent from "./remembrance-content";
 import { useLanguage } from "@/context/language-context";
 
@@ -11,7 +12,7 @@ export default function MorningRemembrances() {
             <CardTitle className="font-headline text-3xl text-foreground">{dictionary.remembrances.morning}</CardTitle>
         </CardHeader>
         <CardContent className="p-4 pt-0">
-          <RemembranceContent remembrances={morningRemembrances} />
+          <RemembranceContent remembrances={dictionary.remembrancesData.morningRemembrances} />
         </CardContent>
     </Card>
   )

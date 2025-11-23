@@ -11,7 +11,8 @@ import { useLanguage } from "@/context/language-context";
 
 type Remembrance = {
   id: number;
-  text: string;
+  arabicText: string;
+  translation: string;
   count: number;
   virtue: string;
 };
@@ -22,7 +23,7 @@ type RemembranceContentProps = {
 
 
 export default function RemembranceContent({ remembrances }: RemembranceContentProps) {
-  const { dictionary } = useLanguage();
+  const { dictionary, language } = useLanguage();
   return (
     <Accordion type="single" collapsible className="w-full">
       {remembrances.map((remembrance) => (
@@ -30,12 +31,15 @@ export default function RemembranceContent({ remembrances }: RemembranceContentP
           <AccordionTrigger className="text-right hover:no-underline">
             <div className="flex items-center gap-4">
               <Badge variant="secondary" className="px-2 py-1">{remembrance.count}x</Badge>
-              <span className="flex-1">{(remembrance.text).substring(0, 50)}...</span>
+              <span className="flex-1 text-left rtl:text-right">{(language === 'ar' ? remembrance.arabicText : remembrance.translation).substring(0, 50)}...</span>
             </div>
           </AccordionTrigger>
           <AccordionContent>
             <div className="flex flex-col gap-4 p-4 bg-muted/50 rounded-md">
-              <p className="text-lg leading-relaxed font-body whitespace-pre-wrap">{remembrance.text}</p>
+              <p className="text-lg leading-relaxed font-body whitespace-pre-wrap text-right" dir="rtl">{remembrance.arabicText}</p>
+              {language !== 'ar' && (
+                 <p className="text-base leading-relaxed font-body whitespace-pre-wrap italic opacity-80">{remembrance.translation}</p>
+              )}
               {remembrance.virtue && (
                 <div className="border-t border-border pt-3 mt-3">
                   <p className="text-sm text-muted-foreground font-semibold">{dictionary.remembrances.virtue}:</p>
