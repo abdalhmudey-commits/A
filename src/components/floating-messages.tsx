@@ -8,20 +8,17 @@ import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
 type MessagePosition = {
-  top?: string;
-  bottom?: string;
-  left?: string;
-  right?: string;
+  top: string;
+  left: string;
   transform: string;
 };
 
 const getRandomPosition = (): MessagePosition => {
-  const top = Math.random() > 0.5 ? `${Math.random() * 50}%` : undefined;
-  const bottom = top ? undefined : `${Math.random() * 50}%`;
-  const left = Math.random() > 0.5 ? `${Math.random() * 60}%` : undefined;
-  const right = left ? undefined : `${Math.random() * 60}%`;
-  const rotate = Math.random() * 20 - 10; // -10 to 10 degrees
-  return { top, bottom, left, right, transform: `rotate(${rotate}deg)` };
+    // Distribute more evenly to avoid excessive overlap
+    const top = `${Math.random() * 70}%`; // Range from 0% to 70% of height
+    const left = `${Math.random() * 70}%`; // Range from 0% to 70% of width
+    const rotate = Math.random() * 20 - 10; // -10 to 10 degrees
+    return { top, left, transform: `rotate(${rotate}deg)` };
 };
 
 const fallbackData: MotivationalMessagesOutput = {
@@ -43,16 +40,14 @@ export default function FloatingMessages() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const fetchMessages = useCallback(async () => {
+    setLoading(true);
     try {
       const result = await generateMotivationalMessages();
       setData(result);
-      setPositions(result.messages.map(() => getRandomPosition()));
     } catch (error) {
       console.error("Failed to generate motivational message:", error);
-      // Shuffle fallback messages to make it seem like they are changing
       const shuffledMessages = [...fallbackData.messages].sort(() => Math.random() - 0.5);
       setData({messages: shuffledMessages});
-      setPositions(fallbackData.messages.map(() => getRandomPosition()));
     } finally {
       setLoading(false);
     }
@@ -60,32 +55,29 @@ export default function FloatingMessages() {
 
 
   useEffect(() => {
-    // Generate skeleton positions only on the client-side to avoid hydration mismatch
-    if (skeletonPositions.length === 0) {
-      setSkeletonPositions([...Array(5)].map(() => getRandomPosition()));
-    }
-
-    fetchMessages();
-
-    const interval = setInterval(() => {
+    // Generate positions and fetch data only on the client-side to avoid hydration mismatch
+    setSkeletonPositions([...Array(5)].map(() => getRandomPosition()));
+    if (data === null) {
       fetchMessages();
-    }, 30000); // Refresh every 30 seconds
+    }
+  }, [fetchMessages, data]);
 
-    return () => clearInterval(interval);
-
-  }, [fetchMessages, skeletonPositions.length]);
+  useEffect(() => {
+    if (data && positions.length === 0) {
+      setPositions(data.messages.map(() => getRandomPosition()));
+    }
+  }, [data, positions.length]);
 
   const handleCardClick = (index: number, e: React.MouseEvent) => {
-    e.stopPropagation(); // Prevent click from bubbling to the container
+    e.stopPropagation(); 
     setActiveIndex(index === activeIndex ? null : index);
   };
 
   const handleContainerClick = () => {
-    setActiveIndex(null); // Deselect when clicking on the background
+    setActiveIndex(null); 
   };
 
-
-  if (loading && !data) {
+  if (loading || positions.length === 0) {
     return (
       <div className="relative h-[calc(100vh-200px)] w-full">
          {skeletonPositions.map((pos, i) => (
@@ -105,12 +97,12 @@ export default function FloatingMessages() {
               "absolute w-48 md:w-64 border-border/50 bg-card/80 backdrop-blur-sm shadow-xl transition-all duration-300 ease-in-out cursor-pointer",
               "animate-in fade-in zoom-in-90 slide-in-from-bottom-10",
               activeIndex === index 
-                ? 'scale-125 shadow-2xl z-10' 
-                : 'hover:scale-110 hover:shadow-2xl'
+                ? 'scale-150 shadow-2xl z-20' 
+                : 'hover:scale-110 hover:shadow-2xl z-10'
             )}
             style={{
                 ...positions[index],
-                zIndex: activeIndex === index ? 10 : 1,
+                zIndex: activeIndex === index ? 20 : 1,
             }}
             >
            <CardContent className="p-4 text-center">
@@ -128,3 +120,4 @@ export default function FloatingMessages() {
     </div>
   );
 }
+
