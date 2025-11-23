@@ -1,9 +1,11 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { getDictionary, Locale } from '@/lib/dictionaries';
+import React, { createContext, useContext, useState, useEffect, ReactNode, startTransition } from 'react';
+import { getDictionary } from '@/lib/dictionaries-client';
+import type { Dictionary } from '@/lib/dictionaries-client';
+import { Locale, i18n } from '@/lib/i18n-config';
+import { usePathname, useRouter } from 'next/navigation';
 
-type Dictionary = ReturnType<typeof getDictionary>;
 
 interface LanguageContextType {
   language: Locale;
@@ -13,20 +15,29 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState<Locale>('ar');
-  const [dictionary, setDictionary] = useState(getDictionary('ar'));
+export const LanguageProvider = ({ 
+    children,
+    initialLanguage,
+    initialDictionary
+}: { 
+    children: ReactNode,
+    initialLanguage: Locale,
+    initialDictionary: Dictionary
+}) => {
+  const [language, setLanguage] = useState<Locale>(initialLanguage);
+  const [dictionary, setDictionary] = useState(initialDictionary);
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
     const storedLanguage = localStorage.getItem('language') as Locale;
-    if (storedLanguage && ['en', 'ar', 'tr', 'id', 'fr'].includes(storedLanguage)) {
-      handleSetLanguage(storedLanguage);
-    } else {
-      handleSetLanguage('ar');
+    if (storedLanguage && i18n.locales.includes(storedLanguage)) {
+        if(storedLanguage !== language) {
+            handleSetLanguage(storedLanguage, true);
+        }
     }
-  }, []);
+  }, [language]);
+
 
   useEffect(() => {
     if (isMounted) {
@@ -35,16 +46,26 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     }
   }, [language, isMounted]);
 
-  const handleSetLanguage = (lang: Locale) => {
-    setLanguage(lang);
-    setDictionary(getDictionary(lang));
-    if (isMounted) {
-      localStorage.setItem('language', lang);
+  const handleSetLanguage = (lang: Locale, initialLoad = false) => {
+    if(!initialLoad) { // Don't save to LS on initial load if it's already there
+        localStorage.setItem('language', lang);
     }
+    
+    setLanguage(lang);
+    
+    getDictionary(lang).then(newDict => {
+      startTransition(() => {
+        setDictionary(newDict);
+      });
+    });
   };
   
   if (!isMounted) {
-    return null;
+    return (
+      <div style={{ visibility: 'hidden' }}>
+        {children}
+      </div>
+    );
   }
 
   return (

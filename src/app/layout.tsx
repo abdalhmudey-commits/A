@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
-import { Toaster } from "@/components/ui/toaster";
 import { LanguageProvider } from "@/context/language-context";
+import { getDictionary } from '@/lib/dictionaries-server';
+import { i18n } from '@/lib/i18n-config';
+import { headers } from 'next/headers';
 import "./globals.css";
+import AppContent from "@/components/app-content";
 
 export const metadata: Metadata = {
   title: "ترك العادات السيئة",
@@ -25,13 +28,29 @@ const ThemeProvider = () => {
 }
 
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
+  const acceptLanguage = headers().get('accept-language');
+  let lang: 'en' | 'ar' | 'tr' | 'id' | 'fr' = i18n.defaultLocale;
+  
+  if (acceptLanguage) {
+    const langs = acceptLanguage.split(',').map(l => l.split(';')[0].split('-')[0]);
+    for (const l of langs) {
+      if (i18n.locales.includes(l as any)) {
+        lang = l as any;
+        break;
+      }
+    }
+  }
+
+  const dictionary = await getDictionary(lang);
+
   return (
-    <html lang="ar" dir="rtl" suppressHydrationWarning>
+    <html lang={lang} dir={lang === "ar" ? "rtl" : "ltr"} suppressHydrationWarning>
       <head>
         <ThemeProvider />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -46,9 +65,10 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body antialiased">
-        <LanguageProvider>
-          {children}
-          <Toaster />
+        <LanguageProvider initialLanguage={lang} initialDictionary={dictionary}>
+          <AppContent>
+            {children}
+          </AppContent>
         </LanguageProvider>
       </body>
     </html>

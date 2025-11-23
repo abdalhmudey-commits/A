@@ -1,8 +1,5 @@
-import 'server-only';
-import type { Locale } from './i18n-config';
+import 'client-only';
 
-// We enumerate all dictionaries here for better linting and typescript support
-// We do not want to use dynamic imports in LLM-generated code as it can be error-prone
 const dictionaries = {
   en: () => import('./dictionaries/en').then((module) => module.default),
   ar: () => import('./dictionaries/ar').then((module) => module.default),
@@ -11,5 +8,7 @@ const dictionaries = {
   fr: () => import('./dictionaries/fr').then((module) => module.default),
 };
 
-export const getDictionary = async (locale: Locale) =>
-  dictionaries[locale]?.() ?? dictionaries.en();
+export type Dictionary = Awaited<ReturnType<typeof dictionaries['en']>>;
+export type Locale = keyof typeof dictionaries;
+
+export const getDictionary = async (locale: Locale) => dictionaries[locale]();
