@@ -13,12 +13,15 @@ type MessagePosition = {
 };
 
 const getRandomPosition = (): MessagePosition => {
-    // Distribute more evenly to avoid excessive overlap
-    const top = `${Math.random() * 80}%`; // Range from 0% to 80% of height
-    const left = `${Math.random() * 80}%`; // Range from 0% to 80% of width
+    // Constrain position to avoid edges and ensure visibility when scaled
+    // Top: 20% to 60% to move it down. Left: 10% to 70% to keep it centered.
+    const top = `${20 + Math.random() * 40}%`; 
+    const left = `${10 + Math.random() * 60}%`; 
     const rotate = Math.random() * 20 - 10; // -10 to 10 degrees
-    return { top, left, transform: `rotate(${rotate}deg)` };
+    // We add a translation to ensure the center of the card is what's positioned
+    return { top, left, transform: `translate(-50%, -50%) rotate(${rotate}deg)` };
 };
+
 
 const fallbackData: MotivationalMessagesOutput = {
     messages: [
@@ -93,7 +96,7 @@ export default function FloatingMessages() {
             key={index} 
             onClick={(e) => handleCardClick(index, e)}
             className={cn(
-              "absolute w-48 md:w-64 border-border/50 bg-card/80 backdrop-blur-sm shadow-xl transition-all duration-300 ease-in-out cursor-pointer",
+              "absolute w-48 md:w-64 origin-center border-border/50 bg-card/80 backdrop-blur-sm shadow-xl transition-all duration-300 ease-in-out cursor-pointer",
               "animate-in fade-in zoom-in-90 slide-in-from-bottom-10",
               activeIndex === index 
                 ? 'scale-150 shadow-2xl z-20' 
