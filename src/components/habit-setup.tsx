@@ -179,7 +179,7 @@ export default function HabitSetup() {
       <ListTodo className="h-5 w-5" />
       {dictionary.habits.myHabits}
     </TabsTrigger>
-  ]
+  ];
 
   return (
     <Card className="w-full h-full overflow-hidden border-transparent shadow-none bg-transparent">

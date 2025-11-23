@@ -34,7 +34,7 @@ const SUMMARIZED_BOOKS_KEY = "summarizedBooksList";
 const TWO_MONTHS_IN_MS = 60 * 24 * 60 * 60 * 1000;
 
 export default function MotivationalMessage() {
-  const { dictionary } = useLanguage();
+  const { dictionary, language } = useLanguage();
   const [data, setData] = useState<MotivationalMessagesOutput | null>(null);
   const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -161,13 +161,17 @@ export default function MotivationalMessage() {
   const onTouchEnd = () => {
     if (!touchStartRef.current || !touchEndRef.current) return;
     const distance = touchStartRef.current - touchEndRef.current;
+    
+    const isLtr = language !== 'ar';
     const isLeftSwipe = distance > minSwipeDistance;
     const isRightSwipe = distance < -minSwipeDistance;
 
-    if (isLeftSwipe) {
-      handleNext(); 
-    } else if (isRightSwipe) {
-      handlePrev(); 
+    if (isLtr) {
+      if (isLeftSwipe) handleNext();
+      else if (isRightSwipe) handlePrev();
+    } else { // RTL
+      if (isLeftSwipe) handlePrev();
+      else if (isRightSwipe) handleNext();
     }
 
     touchStartRef.current = null;

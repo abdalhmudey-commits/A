@@ -45,7 +45,7 @@ export default function MainTabs() {
   ];
 
   if (language === 'ar') {
-    tabsConfig = tabsConfig.reverse();
+    tabsConfig.reverse();
   }
 
 
