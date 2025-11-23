@@ -189,13 +189,19 @@ export default function StoryCarousel() {
   const handleIndicatorClick = useCallback((index: number) => {
     if (!api) return;
     api.scrollTo(index);
-  }, [api]);
+    if (current === index) {
+        setCurrent(null);
+        api.scrollTo(0); // Optional: reset to start if same is clicked
+    } else {
+        api.scrollTo(index);
+    }
+  }, [api, current]);
 
 
   return (
     <div className="w-full">
        <div className="pb-4 overflow-x-auto" dir="ltr">
-        <div className="flex gap-2 px-4 pl-[50vw]">
+        <div className="flex justify-start gap-4 px-4 pl-4">
           {storiesConfig.map((story, index) => (
             <button
               key={story.id}

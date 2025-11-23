@@ -1,6 +1,7 @@
 "use client";
 
 import { Globe, Moon, Sun, Bell } from "lucide-react";
+import { useEffect, useState } from "react";
 import {
   Card,
   CardContent,
@@ -18,6 +19,24 @@ import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 
 export default function SettingsPanel() {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const isDarkMode = document.documentElement.classList.contains("dark");
+    setIsDark(isDarkMode);
+  }, []);
+
+  const handleThemeChange = (checked: boolean) => {
+    setIsDark(checked);
+    if (checked) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "");
+    }
+  };
+
   return (
     <Card className="w-full overflow-hidden border-border bg-card">
       <CardHeader>
@@ -51,9 +70,8 @@ export default function SettingsPanel() {
           </Label>
           <Switch
             id="theme-switch"
-            onCheckedChange={() =>
-              document.documentElement.classList.toggle("dark")
-            }
+            checked={isDark}
+            onCheckedChange={handleThemeChange}
           />
         </div>
 

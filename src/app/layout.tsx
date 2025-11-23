@@ -7,6 +7,23 @@ export const metadata: Metadata = {
   description: "تطبيق يساعدك على بناء عادات أفضل والبقاء متحفزًا.",
 };
 
+const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
+  const script = `
+    (function() {
+      try {
+        const theme = localStorage.getItem('theme');
+        if (theme) {
+          document.documentElement.classList.add(theme);
+        }
+      } catch (e) {
+        console.error('Failed to apply theme from localStorage', e);
+      }
+    })()
+  `;
+  return <script dangerouslySetInnerHTML={{ __html: script }} />;
+}
+
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -15,6 +32,7 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl">
       <head>
+        <ThemeProvider />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
