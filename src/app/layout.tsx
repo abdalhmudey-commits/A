@@ -9,6 +9,7 @@ import { Toaster } from "@/components/ui/toaster";
 export const metadata: Metadata = {
   title: "ترك العادات السيئة",
   description: "تطبيق يساعدك على بناء عادات أفضل والبقاء متحفزًا.",
+  manifest: "/manifest.json",
 };
 
 const ThemeProvider = () => {

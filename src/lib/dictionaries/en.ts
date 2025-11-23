@@ -14,7 +14,10 @@ const dictionary = {
       selectTheme: "Select a Theme",
       light: "Light",
       dark: "Dark",
-      notifications: "Enable Notifications",
+      notifications: "Notifications",
+      notificationsEnabled: "Notifications enabled successfully!",
+      notificationsDisabled: "Notifications have been disabled.",
+      notificationsDenied: "Notification permission was denied. Please enable it in your browser settings.",
     },
     remembrances: {
       morning: "Morning Remembrances",
@@ -54,6 +57,7 @@ const dictionary = {
       missingFieldsToastDescription: "Please fill in the habit description and reminder message content.",
       habitAddedToastTitle: "Habit added successfully!",
       habitAddedToastDescription: "You can see your new habit in the 'My Habits' tab.",
+      enableNotificationsFirst: "Please enable notifications from the settings first.",
       intervalUnit: {
         seconds: { singular: "second", plural: "seconds" },
         minutes: { singular: "minute", plural: "minutes" },

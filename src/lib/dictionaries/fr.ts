@@ -14,7 +14,10 @@ const dictionary = {
       selectTheme: "Choisir un thème",
       light: "Clair",
       dark: "Sombre",
-      notifications: "Activer les notifications",
+      notifications: "Notifications",
+      notificationsEnabled: "Notifications activées avec succès !",
+      notificationsDisabled: "Les notifications ont été désactivées.",
+      notificationsDenied: "L'autorisation de notification a été refusée. Veuillez l'activer dans les paramètres de votre navigateur.",
     },
     remembrances: {
       morning: "Souvenirs du Matin",
@@ -54,6 +57,7 @@ const dictionary = {
       missingFieldsToastDescription: "Veuillez remplir la description de l'habitude et le contenu du message de rappel.",
       habitAddedToastTitle: "Habitude ajoutée avec succès !",
       habitAddedToastDescription: "Vous pouvez voir votre nouvelle habitude dans l'onglet 'Mes Habitudes'.",
+      enableNotificationsFirst: "Veuillez d'abord activer les notifications dans les paramètres.",
       intervalUnit: {
         seconds: { singular: "seconde", plural: "secondes" },
         minutes: { singular: "minute", plural: "minutes" },
@@ -95,7 +99,7 @@ const dictionary = {
         },
         {
             id: 3,
-            arabicText: 'أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذَا الْيَوْمِ وَخَيْرَ مَا بَعْدَهُ، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذَا الْيَوْمِ وَشَرِّ مَا بَعْدَهُ، رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ، رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ.',
+            arabicText: 'أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذَا الْيَوْمِ وَخَيْرَ مَا بَعْدَهُ، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذَا الْيَوْمِ وَشَرِّ مَا bَعْدَهُ، رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ، رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ.',
             translation: 'Nous sommes parvenus au matin et la royauté appartient à Allah. Louange à Allah. Il n\'y a de divinité qu\'Allah, Unique, sans associé. A Lui la royauté, à Lui la louange et Il est puissant sur toute chose. Seigneur, je Te demande le bien de ce jour et le bien qui le suit, et je cherche refuge auprès de Toi contre le mal de ce jour et le mal qui le suit. Seigneur, je cherche refuge auprès de Toi contre la paresse et les maux de la vieillesse. Seigneur, je cherche refuge auprès de Toi contre le châtiment du Feu et le châtiment de la tombe.',
             count: 1,
             virtue: ''
@@ -109,7 +113,7 @@ const dictionary = {
         },
         {
             id: 5,
-            arabicText: 'اللَّهُمَّ أَنْتَ رَبِّي لاَ إِلَهَ إِلاَّ أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ بِذَنْبِي فَاغْفِرْ لِي فَإِنَّهُ لاَ يَغْفِرُ الذُّنُوبَ إِلاَّ أَنْتَ.',
+            arabicText: 'اللَّهُمَّ أَنْتَ رَبِّي لاَ إِلَهَ إِلاَّ أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ بِذَنْبِي فَاغْفِرْ لِي فَإِنَّهُ لاَ يَغْfِرُ الذُّنُوبَ إِلاَّ أَنْتَ.',
             translation: 'Ô Allah, Tu es mon Seigneur. Il n\'y a de divinité que Toi. Tu m\'as créé et je suis Ton serviteur. Je suis Ton pacte et Ta promesse autant que je le peux. Je cherche refuge auprès de Toi contre le mal que j\'ai fait. Je reconnais Ta faveur sur moi et je reconnais mon péché, alors pardonne-moi, car nul ne pardonne les péchés sauf Toi.',
             count: 1,
             virtue: 'Quiconque le dit avec certitude le matin et meurt ce jour-là entrera au Paradis, et quiconque le dit avec certitude le soir et meurt cette nuit-là entrera au Paradis.'
@@ -144,7 +148,7 @@ const dictionary = {
         },
         {
             id: 10,
-            arabicText: 'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالآخِرَةِ، اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ: فِي دِينِي وَدُنْيَايَ وَأَهْلِي، وَمَالِي، اللَّهُمَّ اسْتُرْ عَوْرَاتِي، وَآمِنْ رَوْعَاتِي، اللَّهُمَّ احْفَظْنِي مِنْ بَيْنِ يَدَيَّ، وَمِنْ خَلْفِي، وَعَنْ يَمِينِي، وَعَنْ شِمَالِي، وَمِنْ فَوْقِي، وَأَعُوذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِي.',
+            arabicText: 'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالآخِرَةِ، اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ: فِي دِينِي وَدُنْيَايَ وَأَهْلِي، وَمَالِي، اللَّهُمَّ اسْتُرْ عَوْرَاتِي، وَآمِنْ rَوْعَاتِي، اللَّهُمَّ احْفَظْنِي مِنْ بَيْنِ يَدَيَّ، وَمِنْ خَلْفِي، وَعَنْ يَمِينِي، وَعَنْ شِمَالِي، وَمِنْ فَوْقِي، وَأَعُوذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِي.',
             translation: 'Ô Allah, je Te demande le pardon et le bien-être dans cette vie et dans l\'au-delà. Ô Allah, je Te demande le pardon et le bien-être dans ma religion, mes affaires mondaines, ma famille et mes biens. Ô Allah, cache mes défauts et apaise mes craintes. Ô Allah, protège-moi de devant moi, de derrière moi, de ma droite, de ma gauche et d\'au-dessus de moi, et je cherche refuge en Ta grandeur contre le fait d\'être assassiné par-dessous moi.',
             count: 1,
             virtue: ''
@@ -237,7 +241,7 @@ const dictionary = {
       eveningRemembrances: [
         {
             id: 1,
-            arabicText: 'أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ\nاللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ. [آية الكرسى - البقرة 255]',
+            arabicText: 'أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ\nاللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْfَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ. [آية الكرسى - البقرة 255]',
             translation: 'Je cherche refuge auprès d\'Allah contre Satan le maudit.\nAllah ! Point de divinité à part Lui, le Vivant, Celui qui subsiste par lui-même. Ni somnolence ni sommeil ne Le saisissent. A Lui appartient tout ce qui est dans les cieux et sur la terre. Qui peut intercéder auprès de Lui sans Sa permission ? Il connaît leur passé et leur futur. Et, de Sa science, ils n\'embrassent que ce qu\'Il veut. Son Trône déborde les cieux et la terre, dont la garde ne Lui coûte aucune peine. Et Il est le Très Haut, le Très Grand. [Ayat-ul-Kursi, Al-Baqarah 255]',
             count: 1,
             virtue: 'Quiconque le dit le soir est protégé des djinns jusqu\'au matin, et quiconque le dit le matin est protégé d\'eux jusqu\'au soir.'
@@ -342,7 +346,7 @@ const dictionary = {
         },
         {
             id: 16,
-            arabicText: 'أَمْسَيْنا عَلَى فِطْرَةِ الإسْلاَمِ، وَعَلَى كَلِمَةِ الإِخْلاَصِ، وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ صلى الله عليه وسلم، وَعَلَى مِلَّةِ أَبِينَا إبْرَاهِيمَ، حَنِيفاً مُسْلِماً وَمَا كَانَ مِنَ الْمُشْرِكِينَ.',
+            arabicText: 'أَمْسَيْna عَلَى فِطْرَةِ الإسْلاَمِ، وَعَلَى كَلِمَةِ الإِخْلاَصِ، وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ صلى الله عليه وسلم، وَعَلَى مِلَّةِ أَبِينَا إبْرَاهِيمَ، حَنِيفاً مُسْلِماً وَمَا كَانَ مِنَ الْمُشْرِكِينَ.',
             translation: 'Nous nous sommes couchés sur la nature innée de l\'Islam, sur la parole de sincérité, sur la religion de notre Prophète Muhammad (que la paix soit sur lui) et sur la croyance de notre père Ibrahim, droit et musulman, et il n\'était pas des polythéistes.',
             count: 1,
             virtue: ''
@@ -377,7 +381,7 @@ const dictionary = {
         },
         {
             id: 21,
-            arabicText: 'اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى نَبَيِّنَا مُحَمَّدٍ.',
+            arabicText: 'اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى نَبَيِّنَا مُحَمَّdٍ.',
             translation: 'Ô Allah, envoie Tes bénédictions et Ta paix sur notre Prophète Muhammad.',
             count: 10,
             virtue: 'Quiconque envoie des bénédictions sur moi dix fois le soir et dix fois le matin aura mon intercession le Jour de la Résurrection.'

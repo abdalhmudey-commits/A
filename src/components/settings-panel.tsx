@@ -16,18 +16,39 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
+import { Switch } from "@/components/ui/switch";
 import { useLanguage } from "@/context/language-context";
+import { useToast } from "@/hooks/use-toast";
+
+
+const NOTIFICATION_PERMISSION_KEY = "notificationPermission";
 
 export default function SettingsPanel() {
   const [theme, setTheme] = useState("light");
   const { language, setLanguage, dictionary } = useLanguage();
   const [isMounted, setIsMounted] = useState(false);
+  const [notificationPermission, setNotificationPermission] = useState<NotificationPermission | "unsupported">("default");
+  const { toast } = useToast();
 
   useEffect(() => {
     setIsMounted(true);
     const storedTheme = localStorage.getItem("theme") || "light";
     setTheme(storedTheme === "dark" ? "dark" : "light");
+
+    if (!("Notification" in window)) {
+        setNotificationPermission("unsupported");
+        return;
+    }
+    setNotificationPermission(Notification.permission);
+     try {
+      const savedPerm = localStorage.getItem(NOTIFICATION_PERMISSION_KEY);
+      if(savedPerm){
+        setNotificationPermission(savedPerm as NotificationPermission);
+      }
+    } catch (error) {
+        console.error("Could not read from localStorage", error);
+    }
+
   }, []);
 
   const handleThemeChange = (newTheme: "light" | "dark") => {
@@ -38,6 +59,43 @@ export default function SettingsPanel() {
     } else {
       document.documentElement.classList.remove("dark");
       localStorage.setItem("theme", "light");
+    }
+  };
+
+  const handleNotificationPermission = async () => {
+    if (notificationPermission === 'unsupported' || notificationPermission === 'denied') return;
+
+    if (notificationPermission === 'granted') {
+      // This is a simplified approach. Revoking permission isn't directly possible via JS.
+      // We'll just update our state to reflect the user's intent to disable.
+      setNotificationPermission("default");
+      localStorage.setItem(NOTIFICATION_PERMISSION_KEY, "default");
+       toast({
+        title: dictionary.settings.notifications,
+        description: dictionary.settings.notificationsDisabled,
+      });
+      return;
+    }
+
+    const permission = await Notification.requestPermission();
+    setNotificationPermission(permission);
+    localStorage.setItem(NOTIFICATION_PERMISSION_KEY, permission);
+
+    if (permission === 'granted') {
+        toast({
+            title: dictionary.settings.notifications,
+            description: dictionary.settings.notificationsEnabled,
+        });
+        new Notification(dictionary.settings.notifications, {
+            body: dictionary.settings.notificationsEnabled,
+            icon: '/icons/icon-192x192.png'
+        });
+    } else {
+         toast({
+            variant: "destructive",
+            title: dictionary.settings.notifications,
+            description: dictionary.settings.notificationsDenied,
+        });
     }
   };
 
@@ -95,11 +153,16 @@ export default function SettingsPanel() {
         </div>
 
         <div className="flex items-center justify-between">
-          <Label htmlFor="notifications-checkbox" className="flex items-center gap-2 cursor-pointer">
+          <Label htmlFor="notifications-switch" className="flex items-center gap-2 cursor-pointer">
             <Bell className="h-5 w-5" />
             <span>{dictionary.settings.notifications}</span>
           </Label>
-          <Checkbox id="notifications-checkbox" />
+          <Switch 
+            id="notifications-switch"
+            checked={notificationPermission === 'granted'}
+            onClick={handleNotificationPermission}
+            disabled={notificationPermission === 'denied' || notificationPermission === 'unsupported'}
+          />
         </div>
       </CardContent>
     </Card>

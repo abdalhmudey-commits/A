@@ -14,7 +14,10 @@ const dictionary = {
       selectTheme: "اختر مظهراً",
       light: "فاتح",
       dark: "داكن",
-      notifications: "تفعيل الإشعارات",
+      notifications: "الإشعارات",
+      notificationsEnabled: "تم تفعيل الإشعارات بنجاح!",
+      notificationsDisabled: "تم إيقاف الإشعارات.",
+      notificationsDenied: "تم رفض إذن الإشعارات. يرجى تفعيلها من إعدادات المتصفح.",
     },
     remembrances: {
       morning: "أذكار الصباح",
@@ -54,6 +57,7 @@ const dictionary = {
       missingFieldsToastDescription: "يرجى ملء وصف العادة ومحتوى رسالة التذكير.",
       habitAddedToastTitle: "تمت إضافة العادة بنجاح!",
       habitAddedToastDescription: "يمكنك رؤية عادتك الجديدة في تبويب 'عاداتي'.",
+      enableNotificationsFirst: "يرجى تفعيل الإشعارات من الإعدادات أولاً.",
       intervalUnit: {
         seconds: { singular: "ثانية", dual: "ثانيتان", plural: "ثواني" },
         minutes: { singular: "دقيقة", dual: "دقيقتان", plural: "دقائق" },
@@ -275,7 +279,7 @@ const dictionary = {
             arabicText: 'اللَّهُمَّ إِنِّي أَمْسَيْتُ أُشْهِدُكَ، وَأُشْهِدُ حَمَلَةَ عَرْشِكَ، وَمَلاَئِكَتَكَ، وَجَمِيعَ خَلْقِكَ، أَنَّكَ أَنْتَ اللَّهُ لاَ إِلَهَ إِلاَّ أَنْتَ وَحْدَكَ لاَ شَرِيكَ لَكَ، وَأَنَّ مُحَمَّداً عَبْدُكَ وَرَسُولُكَ.',
             translation: '',
             count: 4,
-            virtue: 'من قالها حين يمسي أو يصبح أربع مرات أعتقه الله من النار.'
+            virtue: 'من قالها حين يمsi أو يصبح أربع مرات أعتقه الله من النار.'
         },
         {
             id: 7,

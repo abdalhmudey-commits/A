@@ -14,7 +14,10 @@ const dictionary = {
       selectTheme: "Bir Tema Seçin",
       light: "Açık",
       dark: "Koyu",
-      notifications: "Bildirimleri Etkinleştir",
+      notifications: "Bildirimler",
+      notificationsEnabled: "Bildirimler başarıyla etkinleştirildi!",
+      notificationsDisabled: "Bildirimler devre dışı bırakıldı.",
+      notificationsDenied: "Bildirim izni reddedildi. Lütfen tarayıcı ayarlarınızdan etkinleştirin.",
     },
     remembrances: {
       morning: "Sabah Zikirleri",
@@ -54,6 +57,7 @@ const dictionary = {
       missingFieldsToastDescription: "Lütfen alışkanlık açıklamasını ve hatırlatma mesajı içeriğini doldurun.",
       habitAddedToastTitle: "Alışkanlık başarıyla eklendi!",
       habitAddedToastDescription: "Yeni alışkanlığınızı 'Alışkanlıklarım' sekmesinde görebilirsiniz.",
+      enableNotificationsFirst: "Lütfen önce ayarlardan bildirimleri etkinleştirin.",
       intervalUnit: {
         seconds: { singular: "saniye", plural: "saniye" },
         minutes: { singular: "dakika", plural: "dakika" },
@@ -81,7 +85,7 @@ const dictionary = {
       morningRemembrances: [
         {
             id: 1,
-            arabicText: 'أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ\nاللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ. [آية الكرسى - البقرة 255]',
+            arabicText: 'أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ\nاللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْfَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ. [آية الكرسى - البقرة 255]',
             translation: 'Kovulmuş şeytandan Allah\'a sığınırım.\nAllah, O\'ndan başka ilah yoktur. O, diridir, her şeyin varlığı O\'na bağlı ve dayalıdır. O\'nu ne bir uyuklama tutabilir, ne de bir uyku. Göklerde ve yerde ne varsa hepsi O\'nundur. İzni olmadan O\'nun katında kim şefaat edebilir? O, kullarının önlerindekileri ve arkalarındakileri bilir. Onlar O\'nun ilminden, O\'nun dilediği kadarından başka bir şey kavrayamazlar. O\'nun kürsüsü, gökleri ve yeri kaplamıştır. Onları koruyup gözetmek O\'na ağır gelmez. O, çok yücedir, çok büyüktür. [Ayet-el Kürsi, Bakara 255]',
             count: 1,
             virtue: 'Kim bunu sabah okursa akşama kadar cinlerden korunur, kim de akşam okursa sabaha kadar onlardan korunur.'
@@ -109,7 +113,7 @@ const dictionary = {
         },
         {
             id: 5,
-            arabicText: 'اللَّهُمَّ أَنْتَ رَبِّي لاَ إِلَهَ إِلاَّ أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ بِذَنْبِي فَاغْfِرْ لِي فَإِنَّهُ لاَ يَغْfِرُ الذُّنُوبَ إِلاَّ أَنْتَ.',
+            arabicText: 'اللَّهُمَّ أَنْتَ رَبِّي لاَ إِلَهَ إِلاَّ أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ بِذَنْبِي فَاغْفِرْ لِي فَإِنَّهُ لاَ يَغْfِرُ الذُّنُوبَ إِلاَّ أَنْتَ.',
             translation: 'Allah\'ım, Sen benim Rabbimsin. Senden başka ilah yoktur. Beni Sen yarattın ve ben Senin kulunum. Gücüm yettiğince Sana verdiğim söz ve vaad üzereyim. Yaptıklarımın şerrinden Sana sığınırım. Bana olan nimetini itiraf ederim, günahımı da itiraf ederim. Beni bağışla, çünkü günahları Senden başkası bağışlayamaz.',
             count: 1,
             virtue: 'Kim bunu sabahleyin inanarak söyler ve o gün ölürse cennete girer. Kim de akşamleyin inanarak söyler ve o gece ölürse cennete girer.'
@@ -130,7 +134,7 @@ const dictionary = {
         },
         {
             id: 8,
-            arabicText: 'اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي، اللَّهُمَّ عَافِنِي فِي بَصَرِي، لاَ إِلَهَ إِلاَّ أَنْتَ. اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْكُفْرِ، وَالْفَقْرِ، وَأَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ، لاَ إِلَهَ إِلاَّ أَنْتَ.',
+            arabicText: 'اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي، اللَّهُمَّ عَافِنِي فِي بَصَرِي، لاَ إِلَهَ إِلاَّ أَنْتَ. اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْكُfْرِ، وَالْفَقْرِ، وَأَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ، لاَ إِلَهَ إِلاَّ أَنْتَ.',
             translation: 'Allah\'ım, bedenime afiyet ver. Allah\'ım, kulağıma afiyet ver. Allah\'ım, gözüme afiyet ver. Senden başka ilah yoktur. Allah\'ım, küfürden ve fakirlikten Sana sığınırım. Kabir azabından Sana sığınırım. Senden başka ilah yoktur.',
             count: 3,
             virtue: ''
@@ -144,7 +148,7 @@ const dictionary = {
         },
         {
             id: 10,
-            arabicText: 'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالآخِرَةِ، اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ: فِي دِينِي وَدُنْيَايَ وَأَهْلِي، وَمَالِي، اللَّهُمَّ اسْتُرْ عَوْرَاتِي، وَآمِنْ رَوْعَاتِي، اللَّهُمَّ احْفَظْنِي مِنْ بَيْنِ يَدَيَّ، وَمِنْ خَلْفِي، وَعَنْ يَمِينِي، وَعَنْ شِمَالِي، وَمِنْ فَوْقِي، وَأَعُوذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِي.',
+            arabicText: 'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالآخِرَةِ، اللَّهُمَّ إِنِّي أَsْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ: فِي دِينِي وَدُنْيَايَ وَأَهْلِي، وَمَالِي، اللَّهُمَّ اسْتُرْ عَوْرَاتِي، وَآمِنْ رَوْعَاتِي، اللَّهُمَّ احْفَظْنِي مِنْ بَيْنِ يَدَيَّ، وَمِنْ خَلْfِي، وَعَنْ يَمِينِي، وَعَنْ شِمَالِي، وَمِنْ fَوْقِي، وَأَعُوذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِي.',
             translation: 'Allah\'ım, Senden dünyada ve ahirette af ve afiyet dilerim. Allah\'ım, Senden dinim, dünyam, ailem ve malım için af ve afiyet dilerim. Allah\'ım, ayıplarımı ört ve korkularımı gider. Allah\'ım, beni önümden, arkamdan, sağımdan, solumdan ve üstümden koru. Altımdan helak edilmekten Senin azametine sığınırım.',
             count: 1,
             virtue: ''
@@ -172,7 +176,7 @@ const dictionary = {
         },
         {
             id: 14,
-            arabicText: 'يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ أَصْلِحْ لِي شَأْنِي كُلَّهُ وَلاَ تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ.',
+            arabicText: 'يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ أَصْلِحْ لِي شَأْنِي كُلَّهُ وَلاَ تَكِلْنِي إِلَى نَفْسِي طَرْfَةَ عَيْنٍ.',
             translation: 'Ey Hayy ve Kayyum olan! Rahmetinle yardım dilerim. Bütün işlerimi düzelt ve beni göz açıp kapayıncaya kadar bile nefsime bırakma.',
             count: 3,
             virtue: ''
@@ -186,7 +190,7 @@ const dictionary = {
         },
         {
             id: 16,
-            arabicText: 'أَصْبَحْنا عَلَى فِطْرَةِ الإسْلاَمِ، وَعَلَى كَلِمَةِ الإِخْلاَصِ، وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ صلى الله عليه وسلم، وَعَلَى مِلَّةِ أَبِينَا إبْرَاهِيمَ، حَنِيفاً مُسْلِماً وَمَا كَانَ مِنَ الْمُشْرِكِينَ.',
+            arabicText: 'أَصْبَحْna عَلَى فِطْرَةِ الإسْلاَمِ، وَعَلَى كَلِمَةِ الإِخْلاَصِ، وَعَلَى دِينِ نَبِيِّنَا مُحَمَّdٍ صلى الله عليه وسلم، وَعَلَى مِلَّةِ أَبِينَا إبْرَاهِيمَ، حَنِيفاً مُسْلِماً وَمَا كَانَ مِنَ الْمُشْرِكِينَ.',
             translation: 'İslam fıtratı, ihlas kelimesi, Peygamberimiz Muhammed\'in (sallallahu aleyhi ve sellem) dini ve babamız İbrahim\'in (hanif ve Müslüman olarak) dini üzere sabaha ulaştık. O, müşriklerden değildi.',
             count: 1,
             virtue: ''
@@ -228,7 +232,7 @@ const dictionary = {
         },
         {
             id: 22,
-            arabicText: 'اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى نَبَيِّنَا مُحَمَّدٍ.',
+            arabicText: 'اللَّهُمَّ صَلِّ وَسَلِّdْ عَلَى نَبَيِّنَا مُحَمَّدٍ.',
             translation: 'Allah\'ım, Peygamberimiz Muhammed\'e salât ve selam eyle.',
             count: 10,
             virtue: 'Kim bana sabah on, akşam on defa salât getirirse, kıyamet gününde şefaatim ona ulaşır.'
@@ -237,7 +241,7 @@ const dictionary = {
       eveningRemembrances: [
         {
             id: 1,
-            arabicText: 'أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ\nاللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْfَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ. [آية الكرسى - البقرة 255]',
+            arabicText: 'أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ\nاللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْfَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْfَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِfْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ. [آية الكرسى - البقرة 255]',
             translation: 'Kovulmuş şeytandan Allah\'a sığınırım.\nAllah, O\'ndan başka ilah yoktur. O, diridir, her şeyin varlığı O\'na bağlı ve dayalıdır. O\'nu ne bir uyuklama tutabilir, ne de bir uyku. Göklerde ve yerde ne varsa hepsi O\'nundur. İzni olmadan O\'nun katında kim şefaat edebilir? O, kullarının önlerindekileri ve arkalarındakileri bilir. Onlar O\'nun ilminden, O\'nun dilediği kadarından başka bir şey kavrayamazlar. O\'nun kürsüsü, gökleri ve yeri kaplamıştır. Onları koruyup gözetmek O\'na ağır gelmez. O, çok yücedir, çok büyüktür. [Ayet-el Kürsi, Bakara 255]',
             count: 1,
             virtue: 'Kim bunu akşam okursa sabaha kadar cinlerden korunur, kim de sabah okursa akşama kadar onlardan korunur.'
@@ -286,7 +290,7 @@ const dictionary = {
         },
         {
             id: 8,
-            arabicText: 'اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي، اللَّهُمَّ عَافِنِي فِي بَصَرِي، لاَ إِلَهَ إِلاَّ أَنْتَ. اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْكُفْرِ، وَالْفَقْرِ، وَأَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ، لاَ إِلَهَ إِلاَّ أَنْتَ.',
+            arabicText: 'اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي، اللَّهُمَّ عَافِنِي فِي بَصَرِي، لاَ إِلَهَ إِلاَّ أَنْتَ. اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْكُfْرِ، وَالْfَقْرِ، وَأَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ، لاَ إِلَهَ إِلاَّ أَنْتَ.',
             translation: 'Allah\'ım, bedenime afiyet ver. Allah\'ım, kulağıma afiyet ver. Allah\'ım, gözüme afiyet ver. Senden başka ilah yoktur. Allah\'ım, küfürden ve fakirlikten Sana sığınırım. Kabir azabından Sana sığınırım. Senden başka ilah yoktur.',
             count: 3,
             virtue: ''
@@ -300,7 +304,7 @@ const dictionary = {
         },
         {
             id: 10,
-            arabicText: 'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالآخِرَةِ، اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ: فِي دِينِي وَدُنْيَايَ وَأَهْلِي، وَمَالِي، اللَّهُمَّ اسْتُرْ عَوْرَاتِي، وَآمِنْ رَوْعَاتِي، اللَّهُمَّ احْفَظْنِي مِنْ بَيْنِ يَدَيَّ، وَمِنْ خَلْفِي، وَعَنْ يَمِينِي، وَعَنْ شِمَالِي، وَمِنْ فَوْقِي، وَأَعُوذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِي.',
+            arabicText: 'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالآخِرَةِ، اللَّهُمَّ إِنِّي أَsْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ: فِي دِينِي وَدُنْيَايَ وَأَهْلِي، وَمَالِي، اللَّهُمَّ اسْتُرْ عَوْرَاتِي، وَآمِنْ رَوْعَاتِي، اللَّهُمَّ احْfَظْنِي مِنْ بَيْنِ يَدَيَّ، وَمِنْ خَلْfِي، وَعَنْ يَمِينِي، وَعَنْ شِمَالِي، وَمِنْ fَوْقِي، وَأَعُوذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِي.',
             translation: 'Allah\'ım, Senden dünyada ve ahirette af ve afiyet dilerim. Allah\'ım, Senden dinim, dünyam, ailem ve malım için af ve afiyet dilerim. Allah\'ım, ayıplarımı ört ve korkularımı gider. Allah\'ım, beni önümden, arkamdan, sağımdan, solumdan ve üstümden koru. Altımdan helak edilmekten Senin azametine sığınırım.',
             count: 1,
             virtue: ''
@@ -328,7 +332,7 @@ const dictionary = {
         },
         {
             id: 14,
-            arabicText: 'يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ أَصْلِحْ لِي شَأْنِي كُلَّهُ وَلاَ تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ.',
+            arabicText: 'يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ أَصْلِحْ لِي شَأْنِي كُلَّهُ وَلاَ تَكِلْنِي إِلَى نَفْسِي طَرْfَةَ عَيْنٍ.',
             translation: 'Ey Hayy ve Kayyum olan! Rahmetinle yardım dilerim. Bütün işlerimi düzelt ve beni göz açıp kapayıncaya kadar bile nefsime bırakma.',
             count: 1,
             virtue: ''
@@ -342,7 +346,7 @@ const dictionary = {
         },
         {
             id: 16,
-            arabicText: 'أَمْسَيْna عَلَى فِطْرَةِ الإسْلاَمِ، وَعَلَى كَلِمَةِ الإِخْلاَصِ، وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ صلى الله عليه وسلم، وَعَلَى مِلَّةِ أَبِينَا إبْرَاهِيمَ، حَنِيفاً مُسْلِماً وَمَا كَانَ مِنَ الْمُشْرِكِينَ.',
+            arabicText: 'أَمْسَيْna عَلَى فِطْرَةِ الإسْلاَمِ، وَعَلَى كَلِمَةِ الإِخْلاَصِ، وَعَلَى دِينِ نَبِيِّنَا مُحَمَّdٍ صلى الله عليه وسلم، وَعَلَى مِلَّةِ أَبِينَا إبْرَاهِيمَ، حَنِيفاً مُسْلِماً وَمَا كَانَ مِنَ الْمُشْرِكِينَ.',
             translation: 'İslam fıtratı, ihlas kelimesi, Peygamberimiz Muhammed\'in (sallallahu aleyhi ve sellem) dini ve babamız İbrahim\'in (hanif ve Müslüman olarak) dini üzere akşama ulaştık. O, müşriklerden değildi.',
             count: 1,
             virtue: ''
@@ -377,7 +381,7 @@ const dictionary = {
         },
         {
             id: 21,
-            arabicText: 'اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى نَبَيِّنَا مُحَمَّدٍ.',
+            arabicText: 'اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى نَبَيِّنَا مُحَمَّdٍ.',
             translation: 'Allah\'ım, Peygamberimiz Muhammed\'e salât ve selam eyle.',
             count: 10,
             virtue: 'Kim bana akşam on, sabah on defa salât getirirse, kıyamet gününde şefaatim ona ulaşır.'
