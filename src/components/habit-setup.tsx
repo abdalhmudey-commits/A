@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { PlusCircle, ListTodo } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Card, CardContent } from "./ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import  HabitForm  from "./habit-form";
 import HabitList from "./habit-list";
@@ -53,28 +53,23 @@ export default function HabitSetup() {
   };
 
   return (
-    <Card className="w-full overflow-hidden border-border bg-card">
-       <CardHeader>
-        <CardTitle className="font-headline text-2xl flex items-center gap-2">
-            <span>تتبع عاداتك</span>
-        </CardTitle>
-      </CardHeader>
-      <CardContent>
+    <Card className="w-full h-full overflow-hidden border-transparent shadow-none bg-transparent">
+      <CardContent className="p-0 sm:p-0">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="list" className="gap-2">
-              <ListTodo className="h-4 w-4" />
+          <TabsList className="grid w-full grid-cols-2 rounded-none h-14">
+            <TabsTrigger value="list" className="gap-2 text-base rounded-none">
+              <ListTodo className="h-5 w-5" />
               عاداتي
             </TabsTrigger>
-            <TabsTrigger value="new" className="gap-2">
-              <PlusCircle className="h-4 w-4" />
+            <TabsTrigger value="new" className="gap-2 text-base rounded-none">
+              <PlusCircle className="h-5 w-5" />
               إعداد جديد
             </TabsTrigger>
           </TabsList>
-          <TabsContent value="list" className="mt-4">
+          <TabsContent value="list" className="mt-4 p-4">
             <HabitList habits={habits} onDelete={deleteHabit} />
           </TabsContent>
-          <TabsContent value="new" className="mt-4">
+          <TabsContent value="new" className="mt-4 p-4">
             <HabitForm onSave={addHabit} />
           </TabsContent>
         </Tabs>
