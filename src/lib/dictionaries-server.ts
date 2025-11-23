@@ -4,7 +4,7 @@ import { default as en } from './dictionaries/en';
 import { default as fr } from './dictionaries/fr';
 import { default as id } from './dictionaries/id';
 import { default as tr } from './dictionaries/tr';
-import { Locale } from './i18n-config';
+import type { Locale } from './i18n-config';
 
 const dictionaries = {
   en,
