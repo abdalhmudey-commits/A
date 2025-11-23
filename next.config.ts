@@ -1,11 +1,8 @@
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
-  output: 'export',
   experimental: {
-    serverActions: {
-      enabled: false,
-    },
+    serverActions: true,
   },
   typescript: {
     ignoreBuildErrors: true,
