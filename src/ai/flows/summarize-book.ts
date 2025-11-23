@@ -53,7 +53,7 @@ ${input.previousTitles.map(t => `- ${t}`).join('\n')}
 يجب أن تختار كتابًا مختلفًا في كل مرة، وتستكشف مجالات مختلفة لتقديم تجربة غنية للمستخدم.`;
 
     const {output} = await ai.generate({
-        model: 'gemini-1.5-flash-latest',
+        model: 'gemini-pro',
         prompt: prompt,
         output: {
             schema: BookSummaryOutputSchema,

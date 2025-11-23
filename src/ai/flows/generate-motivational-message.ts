@@ -31,7 +31,7 @@ const generateMotivationalMessageFlow = ai.defineFlow(
   },
   async () => {
     const {output} = await ai.generate({
-      model: 'gemini-1.5-flash-latest',
+      model: 'gemini-pro',
       prompt: `أنت مساعد ذكاء اصطناعي متخصص في تقديم التحفيز والحكمة باللغة العربية. قم بإنشاء قائمة من 5 رسائل أو اقتباسات فريدة وملهمة وموجزة. يجب أن تشجع هذه الرسائل المستخدمين على تحقيق أهدافهم والحفاظ على نظرة إيجابية. لكل اقتباس له مؤلف معروف، قم بتضمين اسم المؤلف. وإلا، اضبط المؤلف على "غير معروف". تأكد من أن المحتوى متنوع وراقٍ.`,
       output: {
         schema: MotivationalMessagesOutputSchema,
