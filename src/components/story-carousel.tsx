@@ -18,8 +18,6 @@ import {
   CarouselContent,
   CarouselItem,
   type CarouselApi,
-  CarouselPrevious,
-  CarouselNext
 } from "./ui/carousel";
 import { Textarea } from "./ui/textarea";
 import SettingsPanel from "./settings-panel";
@@ -197,7 +195,7 @@ export default function StoryCarousel() {
   return (
     <div className="w-full">
       <div className="pb-4 overflow-x-auto">
-        <div className="flex justify-start gap-4 px-4">
+        <div className="flex justify-start gap-3 px-4">
           {storiesConfig.map((story, index) => (
             <button
               key={story.id}
@@ -211,7 +209,7 @@ export default function StoryCarousel() {
               >
                 <div className="bg-background rounded-full p-0.5 border-2 border-secondary group-hover:border-primary transition-colors">
                   <story.icon
-                    className={`h-11 w-11 transition-colors ${
+                    className={`h-12 w-12 transition-colors ${
                       current === index
                         ? "text-primary"
                         : "text-secondary-foreground"
@@ -220,7 +218,7 @@ export default function StoryCarousel() {
                 </div>
               </div>
               <span
-                className={`text-xs w-[60px] sm:text-sm transition-colors text-center truncate ${
+                className={`text-xs w-[65px] sm:text-sm transition-colors text-center truncate ${
                   current === index ? "text-primary font-semibold" : "text-muted-foreground"
                 }`}
               >
