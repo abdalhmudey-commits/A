@@ -853,38 +853,311 @@ const dictionaries = {
         saved: "Kaydedildi."
     },
     remembrancesData: {
-        morningRemembrances: [
-          {
-              id: 1,
-              arabicText: 'أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ\nاللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ. [آية الكرسى - البقرة 255]',
-              translation: 'Kovulmuş şeytandan Allah\'a sığınırım.\nAllah, O\'ndan başka ilah yoktur. O, diridir, her şeyin varlığı O\'na bağlı ve dayalıdır. O\'nu ne bir uyuklama tutabilir, ne de bir uyku. Göklerde ve yerde ne varsa hepsi O\'nundur. İzni olmadan O\'nun katında kim şefaat edebilir? O, kullarının önlerindekileri ve arkalarındakileri bilir. Onlar O\'nun ilminden, O\'nun dilediği kadarından başka bir şey kavrayamazlar. O\'nun kürsüsü, gökleri ve yeri kaplamıştır. Onları koruyup gözetmek O\'na ağır gelmez. O, çok yücedir, çok büyüktür. [Ayet-el Kürsi, Bakara 255]',
-              count: 1,
-              virtue: 'Kim bunu sabah okursa akşama kadar cinlerden korunur, kim de akşam okursa sabaha kadar onlardan korunur.'
-          },
-          {
-              id: 2,
-              arabicText: 'قُلْ هُوَ اللَّهُ أَحَدٌ.. * قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ.. * قُلْ أَعُوذُ بِرَبِّ النَّاسِ..',
-              translation: 'De ki: O, Allah\'tır, tektir... * De ki: Sabahın Rabbine sığınırım... * De ki: İnsanların Rabbine sığınırım...',
-              count: 3,
-              virtue: 'Kim bunları sabah ve akşam üçer defa okursa, her şeye karşı ona yeterli gelir.'
-          }
-        ],
-        eveningRemembrances: [
-           {
-              id: 1,
-              arabicText: 'أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ\nاللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ. [آية الكرسى - البقرة 255]',
-              translation: 'Kovulmuş şeytandan Allah\'a sığınırım.\nAllah, O\'ndan başka ilah yoktur. O, diridir, her şeyin varlığı O\'na bağlı ve dayalıdır. O\'nu ne bir uyuklama tutabilir, ne de bir uyku. Göklerde ve yerde ne varsa hepsi O\'nundur. İzni olmadan O\'nun katında kim şefaat edebilir? O, kullarının önlerindekileri ve arkalarındakileri bilir. Onlar O\'nun ilminden, O\'nun dilediği kadarından başka bir şey kavrayamazlar. O\'nun kürsüsü, gökleri ve yeri kaplamıştır. Onları koruyup gözetmek O\'na ağır gelmez. O, çok yücedir, çok büyüktür. [Ayet-el Kürsi, Bakara 255]',
-              count: 1,
-              virtue: 'Kim bunu akşam okursa sabaha kadar cinlerden korunur, kim de sabah okursa akşama kadar onlardan korunur.'
-          },
-          {
-              id: 2,
-              arabicText: 'قُلْ هُوَ اللَّهُ أَحَدٌ.. * قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ.. * قُلْ أَعُوذُ بِرَبِّ النَّاسِ..',
-              translation: 'De ki: O, Allah\'tır, tektir... * De ki: Sabahın Rabbine sığınırım... * De ki: İnsanların Rabbine sığınırım...',
-              count: 3,
-              virtue: 'Kim bunları sabah ve akşam üçer defa okursa, her şeye karşı ona yeterli gelir.'
-          }
-        ]
+      morningRemembrances: [
+        {
+            id: 1,
+            arabicText: 'أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ\nاللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ. [آية الكرسى - البقرة 255]',
+            translation: 'Kovulmuş şeytandan Allah\'a sığınırım.\nAllah, O\'ndan başka ilah yoktur. O, diridir, her şeyin varlığı O\'na bağlı ve dayalıdır. O\'nu ne bir uyuklama tutabilir, ne de bir uyku. Göklerde ve yerde ne varsa hepsi O\'nundur. İzni olmadan O\'nun katında kim şefaat edebilir? O, kullarının önlerindekileri ve arkalarındakileri bilir. Onlar O\'nun ilminden, O\'nun dilediği kadarından başka bir şey kavrayamazlar. O\'nun kürsüsü, gökleri ve yeri kaplamıştır. Onları koruyup gözetmek O\'na ağır gelmez. O, çok yücedir, çok büyüktür. [Ayet-el Kürsi, Bakara 255]',
+            count: 1,
+            virtue: 'Kim bunu sabah okursa akşama kadar cinlerden korunur, kim de akşam okursa sabaha kadar onlardan korunur.'
+        },
+        {
+            id: 2,
+            arabicText: 'قُلْ هُوَ اللَّهُ أَحَدٌ.. * قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ.. * قُلْ أَعُوذُ بِرَبِّ النَّاسِ..',
+            translation: 'De ki: O, Allah\'tır, tektir... * De ki: Sabahın Rabbine sığınırım... * De ki: İnsanların Rabbine sığınırım...',
+            count: 3,
+            virtue: 'Kim bunları sabah ve akşam üçer defa okursa, her şeye karşı ona yeterli gelir.'
+        },
+        {
+            id: 3,
+            arabicText: 'أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذَا الْيَوْمِ وَخَيْرَ مَا بَعْدَهُ، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذَا الْيَوْمِ وَشَرِّ مَا بَعْدَهُ، رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ، رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ.',
+            translation: 'Sabaha ulaştık ve mülk de Allah\'a ulaşmıştır. Hamd Allah\'adır. Allah\'tan başka ilah yoktur, O tektir, ortağı yoktur. Mülk O\'nundur, hamd O\'nadır ve O her şeye kadirdir. Rabbim, bu günün ve sonrasının hayrını Senden dilerim. Bu günün ve sonrasının şerrinden Sana sığınırım. Rabbim, tembellikten ve yaşlılığın kötülüğünden Sana sığınırım. Rabbim, cehennem azabından ve kabir azabından Sana sığınırım.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 4,
+            arabicText: 'اللَّهُمَّ بِكَ أَصْبَحْنَا، وَبِكَ أَمْسَيْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ وَإِلَيْكَ النُّشُورُ.',
+            translation: 'Allah\'ım, Seninle sabaha ulaştık, Seninle akşama ulaştık. Seninle yaşar, Seninle ölürüz ve dönüş Sanadır.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 5,
+            arabicText: 'اللَّهُمَّ أَنْتَ رَبِّي لاَ إِلَهَ إِلاَّ أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ بِذَنْبِي فَاغْfِرْ لِي فَإِنَّهُ لاَ يَغْفِرُ الذُّنُوبَ إِلاَّ أَنْتَ.',
+            translation: 'Allah\'ım, Sen benim Rabbimsin. Senden başka ilah yoktur. Beni Sen yarattın ve ben Senin kulunum. Gücüm yettiğince Sana verdiğim söz ve vaad üzereyim. Yaptıklarımın şerrinden Sana sığınırım. Bana olan nimetini itiraf ederim, günahımı da itiraf ederim. Beni bağışla, çünkü günahları Senden başkası bağışlayamaz.',
+            count: 1,
+            virtue: 'Kim bunu sabahleyin inanarak söyler ve o gün ölürse cennete girer. Kim de akşamleyin inanarak söyler ve o gece ölürse cennete girer.'
+        },
+        {
+            id: 6,
+            arabicText: 'اللَّهُمَّ إِنِّي أَصْبَحْتُ أُشْهِدُكَ، وَأُشْهِدُ حَمَلَةَ عَرْشِكَ، وَمَلاَئِكَتَكَ، وَجَمِيعَ خَلْقِكَ، أَنَّكَ أَنْتَ اللَّهُ لاَ إِلَهَ إِلاَّ أَنْتَ وَحْدَكَ لاَ شَرِيكَ لَكَ، وَأَنَّ مُحَمَّداً عَبْدُكَ وَرَسُولُكَ.',
+            translation: 'Allah\'ım, sabaha ulaştım ve Seni, Arşının taşıyıcılarını, meleklerini ve bütün yaratılmışlarını şahit tutarım ki, Sen, kendisinden başka ilah olmayan, tek ve ortağı bulunmayan Allah\'sın ve Muhammed Senin kulun ve elçindir.',
+            count: 4,
+            virtue: 'Kim bunu sabah veya akşam dört defa söylerse, Allah onu cehennem ateşinden azat eder.'
+        },
+        {
+            id: 7,
+            arabicText: 'اللَّهُمَّ مَا أَصْبَحَ بِي مِنْ نِعْمَةٍ أَوْ بِأَحَدٍ مِنْ خَلْقِكَ فَمِنْكَ وَحْدَكَ لاَ شَرِيكَ لَكَ، فَلَكَ الْحَمْدُ وَلَكَ الشُّكْرُ.',
+            translation: 'Allah\'ım, bu sabah bana veya yarattıklarından herhangi birine ulaşan her nimet, Senden yalnızdır, Senin ortağın yoktur. Hamd Sana, şükür Sanadır.',
+            count: 1,
+            virtue: 'Kim bunu sabah söylerse gününün şükrünü eda etmiş olur. Kim de akşam söylerse gecesinin şükrünü eda etmiş olur.'
+        },
+        {
+            id: 8,
+            arabicText: 'اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي، اللَّهُمَّ عَافِنِي فِي بَصَرِي، لاَ إِلَهَ إِلاَّ أَنْتَ. اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْكُفْرِ، وَالْفَقْرِ، وَأَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ، لاَ إِلَهَ إِلاَّ أَنْتَ.',
+            translation: 'Allah\'ım, bedenime afiyet ver. Allah\'ım, kulağıma afiyet ver. Allah\'ım, gözüme afiyet ver. Senden başka ilah yoktur. Allah\'ım, küfürden ve fakirlikten Sana sığınırım. Kabir azabından Sana sığınırım. Senden başka ilah yoktur.',
+            count: 3,
+            virtue: ''
+        },
+        {
+            id: 9,
+            arabicText: 'حَسْبِيَ اللَّهُ لاَ إِلَهَ إِلاَّ هُوَ عَلَيْهِ تَوَكَّلْتُ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ.',
+            translation: 'Allah bana yeter. O\'ndan başka ilah yoktur. O\'na tevekkül ettim ve O, büyük Arş\'ın Rabbidir.',
+            count: 7,
+            virtue: 'Kim bunu sabah ve akşam yedi defa söylerse, Allah ona dünya ve ahiret işlerinde yeterli gelir.'
+        },
+        {
+            id: 10,
+            arabicText: 'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالآخِرَةِ، اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ: فِي دِينِي وَدُنْيَايَ وَأَهْلِي، وَمَالِي، اللَّهُمَّ اسْتُرْ عَوْرَاتِي، وَآمِنْ رَوْعَاتِي، اللَّهُمَّ احْفَظْنِي مِنْ بَيْنِ يَدَيَّ، وَمِنْ خَلْفِي، وَعَنْ يَمِينِي، وَعَنْ شِمَالِي، وَمِنْ فَوْقِي، وَأَعُوذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِي.',
+            translation: 'Allah\'ım, Senden dünyada ve ahirette af ve afiyet dilerim. Allah\'ım, Senden dinim, dünyam, ailem ve malım için af ve afiyet dilerim. Allah\'ım, ayıplarımı ört ve korkularımı gider. Allah\'ım, beni önümden, arkamdan, sağımdan, solumdan ve üstümden koru. Altımdan helak edilmekten Senin azametine sığınırım.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 11,
+            arabicText: 'اللَّهُمَّ عَالِمَ الْغَيْبِ وَالشَّهَادَةِ فَاطِرَ السَّمَاوَاتِ وَالأَرْضِ، رَبَّ كُلِّ شَيْءٍ وَمَلِيكَهُ، أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ أَنْتَ، أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي، وَمِنْ شَرِّ الشَّيْطَانِ وَشِرْكِهِ، وَأَنْ أَقْتَرِفَ عَلَى نَفْسِي سُوءاً، أَوْ أَجُرَّهُ إِلَى مُسْلِمٍ.',
+            translation: 'Ey gaybı ve görüneni bilen, gökleri ve yeri yaratan, her şeyin Rabbi ve Sahibi olan Allah\'ım! Senden başka ilah olmadığına şehadet ederim. Nefsimin şerrinden, şeytanın ve onun ortak koşmasının şerrinden, kendime bir kötülük yapmaktan veya onu bir Müslümana bulaştırmaktan Sana sığınırım.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 12,
+            arabicText: 'بِسْمِ اللَّهِ الَّذِي لاَ يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الأَرْضِ وَلاَ فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ.',
+            translation: 'Adıyla yerde ve gökte hiçbir şeyin zarar veremeyeceği Allah\'ın adıyla. O, her şeyi işitendir, her şeyi bilendir.',
+            count: 3,
+            virtue: 'Kim bunu sabah ve akşam üçer defa söylerse, hiçbir şey ona zarar vermez.'
+        },
+        {
+            id: 13,
+            arabicText: 'رَضِيتُ بِاللَّهِ رَبَّاً، وَبِالإِسْلاَمِ دِيناً، وَبِمُحَمَّدٍ صلى الله عليه وسلم نَبِيّاً.',
+            translation: 'Rab olarak Allah\'tan, din olarak İslam\'dan ve peygamber olarak Muhammed\'den (sallallahu aleyhi ve sellem) razı oldum.',
+            count: 3,
+            virtue: 'Kim bunu sabah ve akşam üçer defa söylerse, kıyamet gününde Allah\'ın onu razı etmesi üzerine bir hak olur.'
+        },
+        {
+            id: 14,
+            arabicText: 'يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ أَصْلِحْ لِي شَأْنِي كُلَّهُ وَلاَ تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ.',
+            translation: 'Ey Hayy ve Kayyum olan! Rahmetinle yardım dilerim. Bütün işlerimi düzelt ve beni göz açıp kapayıncaya kadar bile nefsime bırakma.',
+            count: 3,
+            virtue: ''
+        },
+        {
+            id: 15,
+            arabicText: 'أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ رَبِّ الْعَالَمِينَ، اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَ هَذَا الْيَوْmِ: فَتْحَهُ، وَنَصْرَهُ، وَنُورَهُ، وَبَرَكَتَهُ، وَهُدَاهُ، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِيهِ وَشَرِّ مَا بَعْدَهُ.',
+            translation: 'Sabaha ulaştık ve mülk, âlemlerin Rabbi olan Allah\'ındır. Allah\'ım, Senden bu günün hayrını, fethini, yardımını, nurunu, bereketini ve hidayetini dilerim. İçindeki şerden ve sonrasındaki şerden Sana sığınırım.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 16,
+            arabicText: 'أَصْبَحْنا عَلَى فِطْرَةِ الإسْلاَمِ، وَعَلَى كَلِمَةِ الإِخْلاَصِ، وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ صلى الله عليه وسلم، وَعَلَى مِلَّةِ أَبِينَا إبْرَاهِيمَ، حَنِيفاً مُسْلِماً وَمَا كَانَ مِنَ الْمُشْرِكِينَ.',
+            translation: 'İslam fıtratı, ihlas kelimesi, Peygamberimiz Muhammed\'in (sallallahu aleyhi ve sellem) dini ve babamız İbrahim\'in (hanif ve Müslüman olarak) dini üzere sabaha ulaştık. O, müşriklerden değildi.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 17,
+            arabicText: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ.',
+            translation: 'Allah\'a hamd ederek O\'nu noksan sıfatlardan tenzih ederim.',
+            count: 100,
+            virtue: 'Kim bunu sabah ve akşam yüz defa söylerse, kıyamet gününde ondan daha fazlasını söyleyen veya aynısını söyleyen hariç kimse ondan daha iyi bir şeyle gelemez.'
+        },
+        {
+            id: 18,
+            arabicText: 'لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ.',
+            translation: 'Allah\'tan başka ilah yoktur, O tektir, ortağı yoktur. Mülk O\'nundur, hamd O\'nadır ve O her şeye kadirdir.',
+            count: 10,
+            virtue: 'Kim bunu on defa söylerse, on köle azat etmiş gibi olur, ona yüz hasene yazılır, ondan yüz günah silinir ve o gün akşama kadar şeytandan korunmuş olur. Ondan daha fazla yapan hariç kimse ondan daha iyi bir şeyle gelemez.'
+        },
+        {
+            id: 19,
+            arabicText: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ: عَدَدَ خَلْقِهِ، وَرِضَا نَفْسِهِ، وَزِنَةَ عَرْشِهِ، وَمِدَادَ كَلِمَاتِهِ.',
+            translation: 'Yaratıklarının sayısı, rızası, Arşının ağırlığı ve kelimelerinin mürekkebi kadar Allah\'ı hamd ile tesbih ederim.',
+            count: 3,
+            virtue: ''
+        },
+        {
+            id: 20,
+            arabicText: 'اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْماً نَافِعاً، وَرِزْقاً طَيِّباً، وَعَمَلاً مُتَقَبَّلاً.',
+            translation: 'Allah\'ım, Senden faydalı ilim, helal rızık ve kabul edilmiş amel dilerim.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 21,
+            arabicText: 'أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ.',
+            translation: 'Allah\'tan bağışlanma diler ve O\'na tövbe ederim.',
+            count: 100,
+            virtue: ''
+        },
+        {
+            id: 22,
+            arabicText: 'اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى نَبَيِّنَا مُحَمَّدٍ.',
+            translation: 'Allah\'ım, Peygamberimiz Muhammed\'e salât ve selam eyle.',
+            count: 10,
+            virtue: 'Kim bana sabah on, akşam on defa salât getirirse, kıyamet gününde şefaatim ona ulaşır.'
+        }
+      ],
+      eveningRemembrances: [
+        {
+            id: 1,
+            arabicText: 'أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ\nاللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْfَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ. [آية الكرسى - البقرة 255]',
+            translation: 'Kovulmuş şeytandan Allah\'a sığınırım.\nAllah, O\'ndan başka ilah yoktur. O, diridir, her şeyin varlığı O\'na bağlı ve dayalıdır. O\'nu ne bir uyuklama tutabilir, ne de bir uyku. Göklerde ve yerde ne varsa hepsi O\'nundur. İzni olmadan O\'nun katında kim şefaat edebilir? O, kullarının önlerindekileri ve arkalarındakileri bilir. Onlar O\'nun ilminden, O\'nun dilediği kadarından başka bir şey kavrayamazlar. O\'nun kürsüsü, gökleri ve yeri kaplamıştır. Onları koruyup gözetmek O\'na ağır gelmez. O, çok yücedir, çok büyüktür. [Ayet-el Kürsi, Bakara 255]',
+            count: 1,
+            virtue: 'Kim bunu akşam okursa sabaha kadar cinlerden korunur, kim de sabah okursa akşama kadar onlardan korunur.'
+        },
+        {
+            id: 2,
+            arabicText: 'قُلْ هُوَ اللَّهُ أَحَدٌ.. * قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ.. * قُلْ أَعُوذُ بِرَبِّ النَّاسِ..',
+            translation: 'De ki: O, Allah\'tır, tektir... * De ki: Sabahın Rabbine sığınırım... * De ki: İnsanların Rabbine sığınırım...',
+            count: 3,
+            virtue: 'Kim bunları sabah ve akşam üçer defa okursa, her şeye karşı ona yeterli gelir.'
+        },
+        {
+            id: 3,
+            arabicText: 'أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذِهِ اللَّيْلَةِ وَخَيْرَ مَا بَعْدَهَا، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذِهِ اللَّيْلَةِ وَشَرِّ مَا بَعْدَهَا، رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ، رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ.',
+            translation: 'Akşama ulaştık ve mülk de Allah\'a ulaşmıştır. Hamd Allah\'adır. Allah\'tan başka ilah yoktur, O tektir, ortağı yoktur. Mülk O\'nundur, hamd O\'nadır ve O her şeye kadirdir. Rabbim, bu gecenin ve sonrasının hayrını Senden dilerim. Bu gecenin ve sonrasının şerrinden Sana sığınırım. Rabbim, tembellikten ve yaşlılığın kötülüğünden Sana sığınırım. Rabbim, cehennem azabından ve kabir azabından Sana sığınırım.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 4,
+            arabicText: 'اللَّهُمَّ بِكَ أَمْسَيْنَا، وَبِكَ أَصْبَحْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ وَإِلَيْكَ الْمَصِيرُ.',
+            translation: 'Allah\'ım, Seninle akşama ulaştık, Seninle sabaha ulaştık. Seninle yaşar, Seninle ölürüz ve dönüş Sanadır.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 5,
+            arabicText: 'اللَّهُمَّ أَنْتَ رَبِّي لاَ إِلَهَ إِلاَّ أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ بِذَنْبِي فَاغْfِرْ لِي فَإِنَّهُ لاَ يَغْفِرُ الذُّنُوبَ إِلاَّ أَنْتَ.',
+            translation: 'Allah\'ım, Sen benim Rabbimsin. Senden başka ilah yoktur. Beni Sen yarattın ve ben Senin kulunum. Gücüm yettiğince Sana verdiğim söz ve vaad üzereyim. Yaptıklarımın şerrinden Sana sığınırım. Bana olan nimetini itiraf ederim, günahımı da itiraf ederim. Beni bağışla, çünkü günahları Senden başkası bağışlayamaz.',
+            count: 1,
+            virtue: 'Kim bunu akşamleyin inanarak söyler ve o gece ölürse cennete girer. Kim de sabahleyin inanarak söyler ve o gün ölürse cennete girer.'
+        },
+        {
+            id: 6,
+            arabicText: 'اللَّهُمَّ إِنِّي أَمْسَيْتُ أُشْهِدُكَ، وَأُشْهِدُ حَمَلَةَ عَرْشِكَ، وَمَلاَئِكَتَكَ، وَجَمِيعَ خَلْقِكَ، أَنَّكَ أَنْتَ اللَّهُ لاَ إِلَهَ إِلاَّ أَنْتَ وَحْدَكَ لاَ شَرِيكَ لَكَ، وَأَنَّ مُحَمَّداً عَبْدُكَ وَرَسُولُكَ.',
+            translation: 'Allah\'ım, akşama ulaştım ve Seni, Arşının taşıyıcılarını, meleklerini ve bütün yaratılmışlarını şahit tutarım ki, Sen, kendisinden başka ilah olmayan, tek ve ortağı bulunmayan Allah\'sın ve Muhammed Senin kulun ve elçindir.',
+            count: 4,
+            virtue: 'Kim bunu akşam veya sabah dört defa söylerse, Allah onu cehennem ateşinden azat eder.'
+        },
+        {
+            id: 7,
+            arabicText: 'اللَّهُمَّ مَا أَمْسَى بِي مِنْ نِعْمَةٍ أَوْ بِأَحَدٍ مِنْ خَلْقِكَ فَمِنْكَ وَحْدَكَ لاَ شَرِيكَ لَكَ، فَلَكَ الْحَمْدُ وَلَكَ الشُّكْرُ.',
+            translation: 'Allah\'ım, bu akşam bana veya yarattıklarından herhangi birine ulaşan her nimet, Senden yalnızdır, Senin ortağın yoktur. Hamd Sana, şükür Sanadır.',
+            count: 1,
+            virtue: 'Kim bunu akşam söylerse gecesinin şükrünü eda etmiş olur. Kim de sabah söylerse gününün şükrünü eda etmiş olur.'
+        },
+        {
+            id: 8,
+            arabicText: 'اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي، اللَّهُمَّ عَافِنِي فِي بَصَرِي، لاَ إِلَهَ إِلاَّ أَنْتَ. اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْكُفْرِ، وَالْفَقْرِ، وَأَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ، لاَ إِلَهَ إِلاَّ أَنْتَ.',
+            translation: 'Allah\'ım, bedenime afiyet ver. Allah\'ım, kulağıma afiyet ver. Allah\'ım, gözüme afiyet ver. Senden başka ilah yoktur. Allah\'ım, küfürden ve fakirlikten Sana sığınırım. Kabir azabından Sana sığınırım. Senden başka ilah yoktur.',
+            count: 3,
+            virtue: ''
+        },
+        {
+            id: 9,
+            arabicText: 'حَسْبِيَ اللَّهُ لاَ إِلَهَ إِلاَّ هُوَ عَلَيْهِ تَوَكَّلْتُ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ.',
+            translation: 'Allah bana yeter. O\'ndan başka ilah yoktur. O\'na tevekkül ettim ve O, büyük Arş\'ın Rabbidir.',
+            count: 7,
+            virtue: 'Kim bunu akşam ve sabah yedi defa söylerse, Allah ona dünya ve ahiret işlerinde yeterli gelir.'
+        },
+        {
+            id: 10,
+            arabicText: 'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالآخِرَةِ، اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ: فِي دِينِي وَدُنْيَايَ وَأَهْلِي، وَمَالِي، اللَّهُمَّ اسْتُرْ عَوْرَاتِي، وَآمِنْ رَوْعَاتِي، اللَّهُمَّ احْفَظْنِي مِنْ بَيْنِ يَدَيَّ، وَمِنْ خَلْفِي، وَعَنْ يَمِينِي، وَعَنْ شِمَالِي، وَمِنْ فَوْقِي، وَأَعُوذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِي.',
+            translation: 'Allah\'ım, Senden dünyada ve ahirette af ve afiyet dilerim. Allah\'ım, Senden dinim, dünyam, ailem ve malım için af ve afiyet dilerim. Allah\'ım, ayıplarımı ört ve korkularımı gider. Allah\'ım, beni önümden, arkamdan, sağımdan, solumdan ve üstümden koru. Altımdan helak edilmekten Senin azametine sığınırım.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 11,
+            arabicText: 'اللَّهُمَّ عَالِمَ الْغَيْبِ وَالشَّهَادَةِ فَاطِرَ السَّمَاوَاتِ وَالأَرْضِ، رَبَّ كُلِّ شَيْءٍ وَمَلِيكَهُ، أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ أَنْتَ، أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي، وَمِنْ شَرِّ الشَّيْطَانِ وَشِرْكِهِ، وَأَنْ أَقْتَرِفَ عَلَى نَفْسِي سُوءاً، أَوْ أَجُرَّهُ إِلَى مُسْلِمٍ.',
+            translation: 'Ey gaybı ve görüneni bilen, gökleri ve yeri yaratan, her şeyin Rabbi ve Sahibi olan Allah\'ım! Senden başka ilah olmadığına şehadet ederim. Nefsimin şerrinden, şeytanın ve onun ortak koşmasının şerrinden, kendime bir kötülük yapmaktan veya onu bir Müslümana bulaştırmaktan Sana sığınırım.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 12,
+            arabicText: 'بِسْمِ اللَّهِ الَّذِي لاَ يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الأَرْضِ وَلاَ فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ.',
+            translation: 'Adıyla yerde ve gökte hiçbir şeyin zarar veremeyeceği Allah\'ın adıyla. O, her şeyi işitendir, her şeyi bilendir.',
+            count: 3,
+            virtue: 'Kim bunu akşam ve sabah üçer defa söylerse, hiçbir şey ona zarar vermez.'
+        },
+        {
+            id: 13,
+            arabicText: 'رَضِيتُ بِاللَّهِ رَبَّاً، وَبِالإِسْلاَمِ دِيناً، وَبِمُحَمَّدٍ صلى الله عليه وسلم نَبِيّاً.',
+            translation: 'Rab olarak Allah\'tan, din olarak İslam\'dan ve peygamber olarak Muhammed\'den (sallallahu aleyhi ve sellem) razı oldum.',
+            count: 3,
+            virtue: 'Kim bunu akşam ve sabah üçer defa söylerse, kıyamet gününde Allah\'ın onu razı etmesi üzerine bir hak olur.'
+        },
+        {
+            id: 14,
+            arabicText: 'يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ أَصْلِحْ لِي شَأْنِي كُلَّهُ وَلاَ تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ.',
+            translation: 'Ey Hayy ve Kayyum olan! Rahmetinle yardım dilerim. Bütün işlerimi düzelt ve beni göz açıp kapayıncaya kadar bile nefsime bırakma.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 15,
+            arabicText: 'أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ رَبِّ الْعَالَمِينَ، اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَ هَذِهِ اللَّيْلَةِ: فَتْحَهَا، وَنَصْرَهَا، وَنُورَهَا، وَبَرَكَتَهَا، وَهُدَاهَا، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِيهَا وَشَرِّ مَا بَعْدَهَا.',
+            translation: 'Akşama ulaştık ve mülk, âlemlerin Rabbi olan Allah\'ındır. Allah\'ım, Senden bu gecenin hayrını, fethini, yardımını, nurunu, bereketini ve hidayetini dilerim. İçindeki şerden ve sonrasındaki şerden Sana sığınırım.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 16,
+            arabicText: 'أَمْسَيْنا عَلَى فِطْرَةِ الإسْلاَمِ، وَعَلَى كَلِمَةِ الإِخْلاَصِ، وَعَلَى دِينِ نَبِيِّنَا مُحَمَّdٍ صلى الله عليه وسلم، وَعَلَى مِلَّةِ أَبِينَا إبْرَاهِيمَ، حَنِيفاً مُسْلِماً وَمَا كَانَ مِنَ الْمُشْرِكِينَ.',
+            translation: 'İslam fıtratı, ihlas kelimesi, Peygamberimiz Muhammed\'in (sallallahu aleyhi ve sellem) dini ve babamız İbrahim\'in (hanif ve Müslüman olarak) dini üzere akşama ulaştık. O, müşriklerden değildi.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 17,
+            arabicText: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ.',
+            translation: 'Allah\'a hamd ederek O\'nu noksan sıfatlardan tenzih ederim.',
+            count: 100,
+            virtue: 'Kim bunu akşam ve sabah yüz defa söylerse, kıyamet gününde ondan daha fazlasını söyleyen veya aynısını söyleyen hariç kimse ondan daha iyi bir şeyle gelemez.'
+        },
+        {
+            id: 18,
+            arabicText: 'لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ.',
+            translation: 'Allah\'tan başka ilah yoktur, O tektir, ortağı yoktur. Mülk O\'nundur, hamd O\'nadır ve O her şeye kadirdir.',
+            count: 10,
+            virtue: 'Kim bunu on defa söylerse, on köle azat etmiş gibi olur, ona yüz hasene yazılır, ondan yüz günah silinir ve o gece sabaha kadar şeytandan korunmuş olur. Ondan daha fazla yapan hariç kimse ondan daha iyi bir şeyle gelemez.'
+        },
+        {
+            id: 19,
+            arabicText: 'أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ.',
+            translation: 'Allah\'tan bağışlanma diler ve O\'na tövbe ederim.',
+            count: 100,
+            virtue: ''
+        },
+        {
+            id: 20,
+            arabicText: 'أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ.',
+            translation: 'Yarattığı şeylerin şerrinden Allah\'ın tam kelimelerine sığınırım.',
+            count: 3,
+            virtue: 'Kim bunu akşam üç defa söylerse, o gece ona yılan sokması zarar vermez.'
+        },
+        {
+            id: 21,
+            arabicText: 'اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى نَبَيِّنَا مُحَمَّدٍ.',
+            translation: 'Allah\'ım, Peygamberimiz Muhammed\'e salât ve selam eyle.',
+            count: 10,
+            virtue: 'Kim bana akşam on, sabah on defa salât getirirse, kıyamet gününde şefaatim ona ulaşır.'
+        }
+      ]
     }
   },
   id: {
@@ -967,38 +1240,311 @@ const dictionaries = {
         saved: "Tersimpan."
     },
     remembrancesData: {
-        morningRemembrances: [
-          {
-              id: 1,
-              arabicText: 'أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ\nاللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ. [آية الكرسى - البقرة 255]',
-              translation: 'Aku berlindung kepada Allah dari godaan syaitan yang terkutuk.\nAllah, tidak ada Tuhan (yang berhak disembah) melainkan Dia Yang Hidup kekal lagi terus menerus mengurus (makhluk-Nya); tidak mengantuk dan tidak tidur. Kepunyaan-Nya apa yang di langit dan di bumi. Tiada yang dapat memberi syafa\'at di sisi Allah tanpa izin-Nya. Allah mengetahui apa-apa yang di hadapan mereka dan di belakang mereka, dan mereka tidak mengetahui apa-apa dari ilmu Allah melainkan apa yang dikehendaki-Nya. Kursi Allah meliputi langit dan bumi. Dan Allah tidak merasa berat memelihara keduanya, dan Allah Maha Tinggi lagi Maha Besar. [Ayat Kursi, Al-Baqarah 255]',
-              count: 1,
-              virtue: 'Barangsiapa membacanya di pagi hari maka ia akan dilindungi dari jin hingga sore hari, dan barangsiapa membacanya di sore hari maka ia akan dilindungi dari mereka hingga pagi hari.'
-          },
-          {
-              id: 2,
-              arabicText: 'قُلْ هُوَ اللَّهُ أَحَدٌ.. * قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ.. * قُلْ أَعُوذُ بِرَبِّ النَّاسِ..',
-              translation: 'Katakanlah: Dialah Allah, Yang Maha Esa... * Katakanlah: Aku berlindung kepada Tuhan Yang Menguasai subuh... * Katakanlah: Aku berlindung kepada Tuhan (yang memelihara dan menguasai) manusia...',
-              count: 3,
-              virtue: 'Barangsiapa membacanya tiga kali di pagi dan sore hari, maka itu akan mencukupinya dari segala sesuatu.'
-          }
-        ],
-        eveningRemembrances: [
-          {
-              id: 1,
-              arabicText: 'أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ\nاللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ. [آية الكرسى - البقرة 255]',
-              translation: 'Aku berlindung kepada Allah dari godaan syaitan yang terkutuk.\nAllah, tidak ada Tuhan (yang berhak disembah) melainkan Dia Yang Hidup kekal lagi terus menerus mengurus (makhluk-Nya); tidak mengantuk dan tidak tidur. Kepunyaan-Nya apa yang di langit dan di bumi. Tiada yang dapat memberi syafa\'at di sisi Allah tanpa izin-Nya. Allah mengetahui apa-apa yang di hadapan mereka dan di belakang mereka, dan mereka tidak mengetahui apa-apa dari ilmu Allah melainkan apa yang dikehendaki-Nya. Kursi Allah meliputi langit dan bumi. Dan Allah tidak merasa berat memelihara keduanya, dan Allah Maha Tinggi lagi Maha Besar. [Ayat Kursi, Al-Baqarah 255]',
-              count: 1,
-              virtue: 'Barangsiapa membacanya di sore hari maka ia akan dilindungi dari jin hingga pagi hari, dan barangsiapa membacanya di pagi hari maka ia akan dilindungi dari mereka hingga sore hari.'
-          },
-          {
-              id: 2,
-              arabicText: 'قُلْ هُوَ اللَّهُ أَحَدٌ.. * قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ.. * قُلْ أَعُوذُ بِرَبِّ النَّاسِ..',
-              translation: 'Katakanlah: Dialah Allah, Yang Maha Esa... * Katakanlah: Aku berlindung kepada Tuhan Yang Menguasai subuh... * Katakanlah: Aku berlindung kepada Tuhan (yang memelihara dan menguasai) manusia...',
-              count: 3,
-              virtue: 'Barangsiapa membacanya tiga kali di pagi dan sore hari, maka itu akan mencukupinya dari segala sesuatu.'
-          }
-        ]
+      morningRemembrances: [
+        {
+            id: 1,
+            arabicText: 'أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ\nاللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ. [آية الكرسى - البقرة 255]',
+            translation: 'Aku berlindung kepada Allah dari godaan syaitan yang terkutuk.\nAllah, tidak ada Tuhan (yang berhak disembah) melainkan Dia Yang Hidup kekal lagi terus menerus mengurus (makhluk-Nya); tidak mengantuk dan tidak tidur. Kepunyaan-Nya apa yang di langit dan di bumi. Tiada yang dapat memberi syafa\'at di sisi Allah tanpa izin-Nya. Allah mengetahui apa-apa yang di hadapan mereka dan di belakang mereka, dan mereka tidak mengetahui apa-apa dari ilmu Allah melainkan apa yang dikehendaki-Nya. Kursi Allah meliputi langit dan bumi. Dan Allah tidak merasa berat memelihara keduanya, dan Allah Maha Tinggi lagi Maha Besar. [Ayat Kursi, Al-Baqarah 255]',
+            count: 1,
+            virtue: 'Barangsiapa membacanya di pagi hari maka ia akan dilindungi dari jin hingga sore hari, dan barangsiapa membacanya di sore hari maka ia akan dilindungi dari mereka hingga pagi hari.'
+        },
+        {
+            id: 2,
+            arabicText: 'قُلْ هُوَ اللَّهُ أَحَدٌ.. * قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ.. * قُلْ أَعُوذُ بِرَبِّ النَّاسِ..',
+            translation: 'Katakanlah: Dialah Allah, Yang Maha Esa... * Katakanlah: Aku berlindung kepada Tuhan Yang Menguasai subuh... * Katakanlah: Aku berlindung kepada Tuhan (yang memelihara dan menguasai) manusia...',
+            count: 3,
+            virtue: 'Barangsiapa membacanya tiga kali di pagi dan sore hari, maka itu akan mencukupinya dari segala sesuatu.'
+        },
+        {
+            id: 3,
+            arabicText: 'أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذَا الْيَوْمِ وَخَيْرَ مَا بَعْدَهُ، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذَا الْيَوْمِ وَشَرِّ مَا بَعْدَهُ، رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ، رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ.',
+            translation: 'Kami telah memasuki waktu pagi dan kerajaan hanyalah milik Allah, segala puji bagi Allah. Tidak ada Tuhan (yang berhak disembah) kecuali Allah semata, tiada sekutu bagi-Nya. Bagi-Nya kerajaan dan bagi-Nya pujian. Dia-lah Yang Maha Kuasa atas segala sesuatu. Wahai Tuhanku, aku memohon kepada-Mu kebaikan hari ini dan kebaikan sesudahnya. Aku berlindung kepada-Mu dari kejahatan hari ini dan kejahatan sesudahnya. Wahai Tuhanku, aku berlindung kepada-Mu dari kemalasan dan kejelekan di hari tua. Wahai Tuhanku, aku berlindung kepada-Mu dari siksa di neraka dan siksa di dalam kubur.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 4,
+            arabicText: 'اللَّهُمَّ بِكَ أَصْبَحْنَا، وَبِكَ أَمْسَيْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ وَإِلَيْكَ النُّشُورُ.',
+            translation: 'Ya Allah, dengan rahmat dan pertolongan-Mu kami memasuki waktu pagi, dan dengan rahmat dan pertolongan-Mu kami memasuki waktu sore. Dengan rahmat dan kehendak-Mu kami hidup dan dengan rahmat dan kehendak-Mu kami mati. Dan kepada-Mu kebangkitan (bagi semua makhluk).',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 5,
+            arabicText: 'اللَّهُمَّ أَنْتَ رَبِّي لاَ إِلَهَ إِلاَّ أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ بِذَنْبِي فَاغْfِرْ لِي فَإِنَّهُ لاَ يَغْفِرُ الذُّنُوبَ إِلاَّ أَنْتَ.',
+            translation: 'Ya Allah, Engkau adalah Tuhanku, tidak ada Tuhan yang berhak disembah selain Engkau. Engkau telah menciptakanku dan aku adalah hamba-Mu. Aku akan setia pada perjanjianku dengan-Mu dan janji-Mu semampuku. Aku berlindung kepada-Mu dari kejahatan yang telah aku perbuat. Aku mengakui nikmat-Mu kepadaku dan aku mengakui dosaku, maka ampunilah aku. Sesungguhnya tidak ada yang dapat mengampuni dosa selain Engkau.',
+            count: 1,
+            virtue: 'Barangsiapa mengucapkannya dengan yakin di pagi hari lalu ia meninggal pada hari itu, maka ia akan masuk surga. Dan barangsiapa mengucapkannya dengan yakin di sore hari lalu ia meninggal pada malam itu, maka ia akan masuk surga.'
+        },
+        {
+            id: 6,
+            arabicText: 'اللَّهُمَّ إِنِّي أَصْبَحْتُ أُشْهِدُكَ، وَأُشْهِدُ حَمَلَةَ عَرْشِكَ، وَمَلاَئِكَتَكَ، وَجَمِيعَ خَلْقِكَ، أَنَّكَ أَنْتَ اللَّهُ لاَ إِلَهَ إِلاَّ أَنْتَ وَحْدَكَ لاَ شَرِيكَ لَكَ، وَأَنَّ مُحَمَّداً عَبْدُكَ وَرَسُولُكَ.',
+            translation: 'Ya Allah, sesungguhnya di pagi hari ini aku mempersaksikan Engkau, para pemikul Arsy-Mu, para malaikat-Mu, dan seluruh makhluk-Mu, bahwa Engkau adalah Allah, tidak ada Tuhan yang berhak disembah selain Engkau semata, tidak ada sekutu bagi-Mu, dan bahwa Muhammad adalah hamba dan utusan-Mu.',
+            count: 4,
+            virtue: 'Barangsiapa mengucapkannya empat kali di pagi atau sore hari, Allah akan membebaskannya dari api neraka.'
+        },
+        {
+            id: 7,
+            arabicText: 'اللَّهُمَّ مَا أَصْبَحَ بِي مِنْ نِعْمَةٍ أَوْ بِأَحَدٍ مِنْ خَلْقِكَ فَمِنْكَ وَحْدَكَ لاَ شَرِيكَ لَكَ، فَلَكَ الْحَمْدُ وَلَكَ الشُّكْرُ.',
+            translation: 'Ya Allah, nikmat apapun yang aku terima atau diterima oleh salah seorang dari makhluk-Mu di pagi ini adalah dari-Mu semata, tiada sekutu bagi-Mu. Maka bagi-Mu segala puji dan bagi-Mu segala syukur.',
+            count: 1,
+            virtue: 'Barangsiapa mengucapkannya di pagi hari, ia telah menunaikan syukurnya hari itu. Dan barangsiapa mengucapkannya di sore hari, ia telah menunaikan syukurnya malam itu.'
+        },
+        {
+            id: 8,
+            arabicText: 'اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي، اللَّهُمَّ عَافِنِي فِي بَصَرِي، لاَ إِلَهَ إِلاَّ أَنْتَ. اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْكُفْرِ، وَالْفَقْرِ، وَأَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ، لاَ إِلَهَ إِلاَّ أَنْتَ.',
+            translation: 'Ya Allah, sehatkanlah badanku. Ya Allah, sehatkanlah pendengaranku. Ya Allah, sehatkanlah penglihatanku. Tidak ada Tuhan yang berhak disembah selain Engkau. Ya Allah, aku berlindung kepada-Mu dari kekafiran dan kefakiran. Aku berlindung kepada-Mu dari siksa kubur. Tidak ada Tuhan yang berhak disembah selain Engkau.',
+            count: 3,
+            virtue: ''
+        },
+        {
+            id: 9,
+            arabicText: 'حَسْبِيَ اللَّهُ لاَ إِلَهَ إِلاَّ هُوَ عَلَيْهِ تَوَكَّلْتُ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ.',
+            translation: 'Cukuplah Allah bagiku. Tidak ada Tuhan yang berhak disembah selain Dia. Kepada-Nya aku bertawakal dan Dia adalah Tuhan Arsy yang agung.',
+            count: 7,
+            virtue: 'Barangsiapa mengucapkannya tujuh kali di pagi dan sore hari, Allah akan mencukupkan segala urusannya di dunia dan akhirat.'
+        },
+        {
+            id: 10,
+            arabicText: 'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالآخِرَةِ، اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ: فِي دِينِي وَدُنْيَايَ وَأَهْلِي، وَمَالِي، اللَّهُمَّ اسْتُرْ عَوْرَاتِي، وَآمِنْ رَوْعَاتِي، اللَّهُمَّ احْفَظْنِي مِنْ بَيْنِ يَدَيَّ، وَمِنْ خَلْفِي، وَعَنْ يَمِينِي، وَعَنْ شِمَالِي، وَمِنْ فَوْقِي، وَأَعُوذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِي.',
+            translation: 'Ya Allah, aku memohon kepada-Mu ampunan dan keselamatan di dunia dan akhirat. Ya Allah, aku memohon kepada-Mu ampunan dan keselamatan dalam agamaku, duniaku, keluargaku, dan hartaku. Ya Allah, tutupilah aibku dan amankanlah rasa takutku. Ya Allah, jagalah aku dari depanku, dari belakangku, dari kananku, dari kiriku, dan dari atasku. Aku berlindung dengan keagungan-Mu dari (bahaya) yang datang dari bawahku.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 11,
+            arabicText: 'اللَّهُمَّ عَالِمَ الْغَيْبِ وَالشَّهَادَةِ فَاطِرَ السَّمَاوَاتِ وَالأَرْضِ، رَبَّ كُلِّ شَيْءٍ وَمَلِيكَهُ، أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ أَنْتَ، أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي، وَمِنْ شَرِّ الشَّيْطَانِ وَشِرْكِهِ، وَأَنْ أَقْتَرِفَ عَلَى نَفْسِي سُوءاً، أَوْ أَجُرَّهُ إِلَى مُسْلِمٍ.',
+            translation: 'Ya Allah, Yang Mengetahui yang gaib dan yang nyata, Pencipta langit dan bumi, Tuhan dan Penguasa segala sesuatu. Aku bersaksi bahwa tidak ada Tuhan yang berhak disembah selain Engkau. Aku berlindung kepada-Mu dari kejahatan diriku, dari kejahatan setan dan sekutunya, dan dari berbuat keburukan terhadap diriku atau menyebabkannya menimpa seorang muslim.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 12,
+            arabicText: 'بِسْمِ اللَّهِ الَّذِي لاَ يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الأَرْضِ وَلاَ فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ.',
+            translation: 'Dengan nama Allah, yang dengan nama-Nya tidak ada sesuatu pun di bumi maupun di langit yang dapat memberi mudharat, dan Dia Maha Mendengar lagi Maha Mengetahui.',
+            count: 3,
+            virtue: 'Barangsiapa mengucapkannya tiga kali di pagi dan sore hari, tidak ada sesuatu pun yang akan membahayakannya.'
+        },
+        {
+            id: 13,
+            arabicText: 'رَضِيتُ بِاللَّهِ رَبَّاً، وَبِالإِسْلاَمِ دِيناً، وَبِمُحَمَّدٍ صلى الله عليه وسلم نَبِيّاً.',
+            translation: 'Aku ridha Allah sebagai Tuhanku, Islam sebagai agamaku, dan Muhammad (semoga Allah melimpahkan shalawat dan salam kepadanya) sebagai Nabiku.',
+            count: 3,
+            virtue: 'Barangsiapa mengucapkannya tiga kali di pagi dan sore hari, maka Allah berhak untuk meridhainya pada hari kiamat.'
+        },
+        {
+            id: 14,
+            arabicText: 'يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ أَصْلِحْ لِي شَأْنِي كُلَّهُ وَلاَ تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ.',
+            translation: 'Wahai Yang Maha Hidup, wahai Yang Maha Berdiri Sendiri, dengan rahmat-Mu aku memohon pertolongan. Perbaikilah segala urusanku dan janganlah Engkau serahkan aku kepada diriku sendiri walau sekejap mata.',
+            count: 3,
+            virtue: ''
+        },
+        {
+            id: 15,
+            arabicText: 'أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ رَبِّ الْعَالَمِينَ، اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَ هَذَا الْيَوْمِ: فَتْحَهُ، وَنَصْرَهُ، وَنُورَهُ، وَبَرَكَتَهُ، وَهُدَاهُ، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِيهِ وَشَرِّ مَا بَعْدَهُ.',
+            translation: 'Kami telah memasuki waktu pagi, dan kerajaan adalah milik Allah, Tuhan semesta alam. Ya Allah, aku memohon kepada-Mu kebaikan hari ini: kemenangannya, pertolongannya, cahayanya, keberkahannya, dan petunjuknya. Aku berlindung kepada-Mu dari kejahatan yang ada di dalamnya dan kejahatan sesudahnya.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 16,
+            arabicText: 'أَصْبَحْنا عَلَى فِطْرَةِ الإسْلاَمِ، وَعَلَى كَلِمَةِ الإِخْلاَصِ، وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ صلى الله عليه وسلم، وَعَلَى مِلَّةِ أَبِينَا إبْرَاهِيمَ، حَنِيفاً مُسْلِماً وَمَا كَانَ مِنَ الْمُشْرِكِينَ.',
+            translation: 'Kami memasuki pagi hari di atas fitrah Islam, di atas kalimat ikhlas, di atas agama Nabi kami Muhammad (semoga Allah melimpahkan shalawat dan salam kepadanya), dan di atas millah (agama) bapak kami Ibrahim, yang lurus lagi berserah diri, dan ia bukanlah termasuk orang-orang musyrik.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 17,
+            arabicText: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ.',
+            translation: 'Maha Suci Allah dan segala puji bagi-Nya.',
+            count: 100,
+            virtue: 'Barangsiapa mengucapkannya seratus kali di pagi dan sore hari, tidak ada seorang pun yang datang pada hari kiamat dengan sesuatu yang lebih baik dari apa yang ia bawa, kecuali seseorang yang mengucapkan hal yang sama atau lebih banyak.'
+        },
+        {
+            id: 18,
+            arabicText: 'لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ.',
+            translation: 'Tidak ada Tuhan yang berhak disembah selain Allah semata, tiada sekutu bagi-Nya. Bagi-Nya kerajaan dan bagi-Nya pujian, dan Dia Maha Kuasa atas segala sesuatu.',
+            count: 10,
+            virtue: 'Barangsiapa mengucapkannya sepuluh kali, maka baginya setara dengan memerdekakan sepuluh budak, dan akan dituliskan baginya seratus kebaikan, dan akan dihapuskan darinya seratus keburukan, dan itu akan menjadi pelindung baginya dari setan pada hari itu hingga sore, dan tidak ada seorang pun yang datang dengan sesuatu yang lebih baik dari apa yang ia bawa, kecuali seseorang yang beramal lebih banyak darinya.'
+        },
+        {
+            id: 19,
+            arabicText: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ: عَدَدَ خَلْقِهِ، وَرِضَا نَفْسِهِ، وَزِنَةَ عَرْشِهِ، وَمِدَادَ كَلِمَاتِهِ.',
+            translation: 'Maha Suci Allah dan segala puji bagi-Nya, sebanyak jumlah makhluk-Nya, seridha diri-Nya, seberat timbangan Arsy-Nya, dan sebanyak tinta kalimat-Nya.',
+            count: 3,
+            virtue: ''
+        },
+        {
+            id: 20,
+            arabicText: 'اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْماً نَافِعاً، وَرِزْقاً طَيِّباً، وَعَمَلاً مُتَقَبَّلاً.',
+            translation: 'Ya Allah, aku memohon kepada-Mu ilmu yang bermanfaat, rezeki yang baik, dan amalan yang diterima.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 21,
+            arabicText: 'أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ.',
+            translation: 'Aku memohon ampun kepada Allah dan bertaubat kepada-Nya.',
+            count: 100,
+            virtue: ''
+        },
+        {
+            id: 22,
+            arabicText: 'اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى نَبَيِّنَا مُحَمَّدٍ.',
+            translation: 'Ya Allah, limpahkanlah shalawat dan salam kepada Nabi kami Muhammad.',
+            count: 10,
+            virtue: 'Barangsiapa bershalawat kepadaku sepuluh kali di pagi hari dan sepuluh kali di sore hari, ia akan mendapatkan syafaatku pada hari kiamat.'
+        }
+      ],
+      eveningRemembrances: [
+        {
+            id: 1,
+            arabicText: 'أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ\nاللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْfَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ. [آية الكرسى - البقرة 255]',
+            translation: 'Aku berlindung kepada Allah dari godaan syaitan yang terkutuk.\nAllah, tidak ada Tuhan (yang berhak disembah) melainkan Dia Yang Hidup kekal lagi terus menerus mengurus (makhluk-Nya); tidak mengantuk dan tidak tidur. Kepunyaan-Nya apa yang di langit dan di bumi. Tiada yang dapat memberi syafa\'at di sisi Allah tanpa izin-Nya. Allah mengetahui apa-apa yang di hadapan mereka dan di belakang mereka, dan mereka tidak mengetahui apa-apa dari ilmu Allah melainkan apa yang dikehendaki-Nya. Kursi Allah meliputi langit dan bumi. Dan Allah tidak merasa berat memelihara keduanya, dan Allah Maha Tinggi lagi Maha Besar. [Ayat Kursi, Al-Baqarah 255]',
+            count: 1,
+            virtue: 'Barangsiapa membacanya di sore hari maka ia akan dilindungi dari jin hingga pagi hari, dan barangsiapa membacanya di pagi hari maka ia akan dilindungi dari mereka hingga sore hari.'
+        },
+        {
+            id: 2,
+            arabicText: 'قُلْ هُوَ اللَّهُ أَحَدٌ.. * قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ.. * قُلْ أَعُوذُ بِرَبِّ النَّاسِ..',
+            translation: 'Katakanlah: Dialah Allah, Yang Maha Esa... * Katakanlah: Aku berlindung kepada Tuhan Yang Menguasai subuh... * Katakanlah: Aku berlindung kepada Tuhan (yang memelihara dan menguasai) manusia...',
+            count: 3,
+            virtue: 'Barangsiapa membacanya tiga kali di pagi dan sore hari, maka itu akan mencukupinya dari segala sesuatu.'
+        },
+        {
+            id: 3,
+            arabicText: 'أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذِهِ اللَّيْلَةِ وَخَيْرَ مَا بَعْدَهَا، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذِهِ اللَّيْلَةِ وَشَرِّ مَا بَعْدَهَا، رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ، رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ.',
+            translation: 'Kami telah memasuki waktu sore dan kerajaan hanyalah milik Allah, segala puji bagi Allah. Tidak ada Tuhan (yang berhak disembah) kecuali Allah semata, tiada sekutu bagi-Nya. Bagi-Nya kerajaan dan bagi-Nya pujian. Dia-lah Yang Maha Kuasa atas segala sesuatu. Wahai Tuhanku, aku memohon kepada-Mu kebaikan malam ini dan kebaikan sesudahnya. Aku berlindung kepada-Mu dari kejahatan malam ini dan kejahatan sesudahnya. Wahai Tuhanku, aku berlindung kepada-Mu dari kemalasan dan kejelekan di hari tua. Wahai Tuhanku, aku berlindung kepada-Mu dari siksa di neraka dan siksa di dalam kubur.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 4,
+            arabicText: 'اللَّهُمَّ بِكَ أَمْسَيْنَا، وَبِكَ أَصْبَحْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ وَإِلَيْكَ الْمَصِيرُ.',
+            translation: 'Ya Allah, dengan rahmat dan pertolongan-Mu kami memasuki waktu sore, dan dengan rahmat dan pertolongan-Mu kami memasuki waktu pagi. Dengan rahmat dan kehendak-Mu kami hidup dan dengan rahmat dan kehendak-Mu kami mati. Dan kepada-Mu tempat kembali (bagi semua makhluk).',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 5,
+            arabicText: 'اللَّهُمَّ أَنْتَ رَبِّي لاَ إِلَهَ إِلاَّ أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ بِذَنْبِي فَاغْfِرْ لِي فَإِنَّهُ لاَ يَغْفِرُ الذُّنُوبَ إِلاَّ أَنْتَ.',
+            translation: 'Ya Allah, Engkau adalah Tuhanku, tidak ada Tuhan yang berhak disembah selain Engkau. Engkau telah menciptakanku dan aku adalah hamba-Mu. Aku akan setia pada perjanjianku dengan-Mu dan janji-Mu semampuku. Aku berlindung kepada-Mu dari kejahatan yang telah aku perbuat. Aku mengakui nikmat-Mu kepadaku dan aku mengakui dosaku, maka ampunilah aku. Sesungguhnya tidak ada yang dapat mengampuni dosa selain Engkau.',
+            count: 1,
+            virtue: 'Barangsiapa mengucapkannya dengan yakin di sore hari lalu ia meninggal pada malam itu, maka ia akan masuk surga. Dan barangsiapa mengucapkannya dengan yakin di pagi hari lalu ia meninggal pada hari itu, maka ia akan masuk surga.'
+        },
+        {
+            id: 6,
+            arabicText: 'اللَّهُمَّ إِنِّي أَمْسَيْتُ أُشْهِدُكَ، وَأُشْهِدُ حَمَلَةَ عَرْشِكَ، وَمَلاَئِكَتَكَ، وَجَمِيعَ خَلْقِكَ، أَنَّكَ أَنْتَ اللَّهُ لاَ إِلَهَ إِلاَّ أَنْتَ وَحْدَكَ لاَ شَرِيكَ لَكَ، وَأَنَّ مُحَمَّداً عَبْدُكَ وَرَسُولُكَ.',
+            translation: 'Ya Allah, sesungguhnya di sore hari ini aku mempersaksikan Engkau, para pemikul Arsy-Mu, para malaikat-Mu, dan seluruh makhluk-Mu, bahwa Engkau adalah Allah, tidak ada Tuhan yang berhak disembah selain Engkau semata, tidak ada sekutu bagi-Mu, dan bahwa Muhammad adalah hamba dan utusan-Mu.',
+            count: 4,
+            virtue: 'Barangsiapa mengucapkannya empat kali di sore atau pagi hari, Allah akan membebaskannya dari api neraka.'
+        },
+        {
+            id: 7,
+            arabicText: 'اللَّهُمَّ مَا أَمْسَى بِي مِنْ نِعْمَةٍ أَوْ بِأَحَدٍ مِنْ خَلْقِكَ فَمِنْكَ وَحْدَكَ لاَ شَرِيكَ لَكَ، فَلَكَ الْحَمْدُ وَلَكَ الشُّكْرُ.',
+            translation: 'Ya Allah, nikmat apapun yang aku terima atau diterima oleh salah seorang dari makhluk-Mu di sore ini adalah dari-Mu semata, tiada sekutu bagi-Mu. Maka bagi-Mu segala puji dan bagi-Mu segala syukur.',
+            count: 1,
+            virtue: 'Barangsiapa mengucapkannya di sore hari, ia telah menunaikan syukurnya malam itu. Dan barangsiapa mengucapkannya di pagi hari, ia telah menunaikan syukurnya hari itu.'
+        },
+        {
+            id: 8,
+            arabicText: 'اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي، اللَّهُمَّ عَافِنِي فِي بَصَرِي، لاَ إِلَهَ إِلاَّ أَنْتَ. اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْكُفْرِ، وَالْفَقْرِ، وَأَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ، لاَ إِلَهَ إِلاَّ أَنْتَ.',
+            translation: 'Ya Allah, sehatkanlah badanku. Ya Allah, sehatkanlah pendengaranku. Ya Allah, sehatkanlah penglihatanku. Tidak ada Tuhan yang berhak disembah selain Engkau. Ya Allah, aku berlindung kepada-Mu dari kekafiran dan kefakiran. Aku berlindung kepada-Mu dari siksa kubur. Tidak ada Tuhan yang berhak disembah selain Engkau.',
+            count: 3,
+            virtue: ''
+        },
+        {
+            id: 9,
+            arabicText: 'حَسْبِيَ اللَّهُ لاَ إِلَهَ إِلاَّ هُوَ عَلَيْهِ تَوَكَّلْتُ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ.',
+            translation: 'Cukuplah Allah bagiku. Tidak ada Tuhan yang berhak disembah selain Dia. Kepada-Nya aku bertawakal dan Dia adalah Tuhan Arsy yang agung.',
+            count: 7,
+            virtue: 'Barangsiapa mengucapkannya tujuh kali di sore dan pagi hari, Allah akan mencukupkan segala urusannya di dunia dan akhirat.'
+        },
+        {
+            id: 10,
+            arabicText: 'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالآخِرَةِ، اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ: فِي دِينِي وَدُنْيَايَ وَأَهْلِي، وَمَالِي، اللَّهُمَّ اسْتُرْ عَوْرَاتِي، وَآمِنْ رَوْعَاتِي، اللَّهُمَّ احْفَظْنِي مِنْ بَيْنِ يَدَيَّ، وَمِنْ خَلْفِي، وَعَنْ يَمِينِي، وَعَنْ شِمَالِي، وَمِنْ فَوْقِي، وَأَعُوذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِي.',
+            translation: 'Ya Allah, aku memohon kepada-Mu ampunan dan keselamatan di dunia dan akhirat. Ya Allah, aku memohon kepada-Mu ampunan dan keselamatan dalam agamaku, duniaku, keluargaku, dan hartaku. Ya Allah, tutupilah aibku dan amankanlah rasa takutku. Ya Allah, jagalah aku dari depanku, dari belakangku, dari kananku, dari kiriku, dan dari atasku. Aku berlindung dengan keagungan-Mu dari (bahaya) yang datang dari bawahku.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 11,
+            arabicText: 'اللَّهُمَّ عَالِمَ الْغَيْبِ وَالشَّهَادَةِ فَاطِرَ السَّمَاوَاتِ وَالأَرْضِ، رَبَّ كُلِّ شَيْءٍ وَمَلِيكَهُ، أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ أَنْتَ، أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي، وَمِنْ شَرِّ الشَّيْطَانِ وَشِرْكِهِ، وَأَنْ أَقْتَرِفَ عَلَى نَفْسِي sُوءاً، أَوْ أَجُرَّهُ إِلَى مُسْلِمٍ.',
+            translation: 'Ya Allah, Yang Mengetahui yang gaib dan yang nyata, Pencipta langit dan bumi, Tuhan dan Penguasa segala sesuatu. Aku bersaksi bahwa tidak ada Tuhan yang berhak disembah selain Engkau. Aku berlindung kepada-Mu dari kejahatan diriku, dari kejahatan setan dan sekutunya, dan dari berbuat keburukan terhadap diriku atau menyebabkannya menimpa seorang muslim.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 12,
+            arabicText: 'بِسْمِ اللَّهِ الَّذِي لاَ يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الأَرْضِ وَلاَ فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ.',
+            translation: 'Dengan nama Allah, yang dengan nama-Nya tidak ada sesuatu pun di bumi maupun di langit yang dapat memberi mudharat, dan Dia Maha Mendengar lagi Maha Mengetahui.',
+            count: 3,
+            virtue: 'Barangsiapa mengucapkannya tiga kali di sore dan pagi hari, tidak ada sesuatu pun yang akan membahayakannya.'
+        },
+        {
+            id: 13,
+            arabicText: 'رَضِيتُ بِاللَّهِ رَبَّاً، وَبِالإِسْلاَمِ دِيناً، وَبِمُحَمَّدٍ صلى الله عليه وسلم نَبِيّاً.',
+            translation: 'Aku ridha Allah sebagai Tuhanku, Islam sebagai agamaku, dan Muhammad (semoga Allah melimpahkan shalawat dan salam kepadanya) sebagai Nabiku.',
+            count: 3,
+            virtue: 'Barangsiapa mengucapkannya tiga kali di sore dan pagi hari, maka Allah berhak untuk meridhainya pada hari kiamat.'
+        },
+        {
+            id: 14,
+            arabicText: 'يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ أَصْلِحْ لِي شَأْنِي كُلَّهُ وَلاَ تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ.',
+            translation: 'Wahai Yang Maha Hidup, wahai Yang Maha Berdiri Sendiri, dengan rahmat-Mu aku memohon pertolongan. Perbaikilah segala urusanku dan janganlah Engkau serahkan aku kepada diriku sendiri walau sekejap mata.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 15,
+            arabicText: 'أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ رَبِّ الْعَالَمِينَ، اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَ هَذِهِ اللَّيْلَةِ: فَتْحَهَا، وَنَصْرَهَا، وَنُورَهَا، وَبَرَكَتَهَا، وَهُدَاهَا، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِيهَا وَشَرِّ مَا بَعْدَهَا.',
+            translation: 'Kami telah memasuki waktu sore, dan kerajaan adalah milik Allah, Tuhan semesta alam. Ya Allah, aku memohon kepada-Mu kebaikan malam ini: kemenangannya, pertolongannya, cahayanya, keberkahannya, dan petunjuknya. Aku berlindung kepada-Mu dari kejahatan yang ada di dalamnya dan kejahatan sesudahnya.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 16,
+            arabicText: 'أَمْسَيْنا عَلَى فِطْرَةِ الإسْلاَمِ، وَعَلَى كَلِمَةِ الإِخْلاَصِ، وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ صلى الله عليه وسلم، وَعَلَى مِلَّةِ أَبِينَا إبْرَاهِيمَ، حَنِيفاً مُسْلِماً وَمَا كَانَ مِنَ الْمُشْرِكِينَ.',
+            translation: 'Kami memasuki sore hari di atas fitrah Islam, di atas kalimat ikhlas, di atas agama Nabi kami Muhammad (semoga Allah melimpahkan shalawat dan salam kepadanya), dan di atas millah (agama) bapak kami Ibrahim, yang lurus lagi berserah diri, dan ia bukanlah termasuk orang-orang musyrik.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 17,
+            arabicText: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ.',
+            translation: 'Maha Suci Allah dan segala puji bagi-Nya.',
+            count: 100,
+            virtue: 'Barangsiapa mengucapkannya seratus kali di sore dan pagi hari, tidak ada seorang pun yang datang pada hari kiamat dengan sesuatu yang lebih baik dari apa yang ia bawa, kecuali seseorang yang mengucapkan hal yang sama atau lebih banyak.'
+        },
+        {
+            id: 18,
+            arabicText: 'لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ.',
+            translation: 'Tidak ada Tuhan yang berhak disembah selain Allah semata, tiada sekutu bagi-Nya. Bagi-Nya kerajaan dan bagi-Nya pujian, dan Dia Maha Kuasa atas segala sesuatu.',
+            count: 10,
+            virtue: 'Barangsiapa mengucapkannya sepuluh kali, maka baginya setara dengan memerdekakan sepuluh budak, dan akan dituliskan baginya seratus kebaikan, dan akan dihapuskan darinya seratus keburukan, dan itu akan menjadi pelindung baginya dari setan pada malam itu hingga pagi, dan tidak ada seorang pun yang datang dengan sesuatu yang lebih baik dari apa yang ia bawa, kecuali seseorang yang beramal lebih banyak darinya.'
+        },
+        {
+            id: 19,
+            arabicText: 'أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ.',
+            translation: 'Aku memohon ampun kepada Allah dan bertaubat kepada-Nya.',
+            count: 100,
+            virtue: ''
+        },
+        {
+            id: 20,
+            arabicText: 'أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ.',
+            translation: 'Aku berlindung dengan kalimat-kalimat Allah yang sempurna dari kejahatan makhluk yang Dia ciptakan.',
+            count: 3,
+            virtue: 'Barangsiapa mengucapkannya tiga kali di sore hari, ia tidak akan dirugikan oleh sengatan ular pada malam itu.'
+        },
+        {
+            id: 21,
+            arabicText: 'اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى نَبَيِّنَا مُحَمَّدٍ.',
+            translation: 'Ya Allah, limpahkanlah shalawat dan salam kepada Nabi kami Muhammad.',
+            count: 10,
+            virtue: 'Barangsiapa bershalawat kepadaku sepuluh kali di sore hari dan sepuluh kali di pagi hari, ia akan mendapatkan syafaatku pada hari kiamat.'
+        }
+      ]
     }
   },
   fr: {
@@ -1081,77 +1627,314 @@ const dictionaries = {
         saved: "Enregistré."
     },
      remembrancesData: {
-        morningRemembrances: [
-          {
-              id: 1,
-              arabicText: 'أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ\nاللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ. [آية الكرسى - البقرة 255]',
-              translation: 'Je cherche refuge auprès d\'Allah contre Satan le maudit.\nAllah ! Point de divinité à part Lui, le Vivant, Celui qui subsiste par lui-même. Ni somnolence ni sommeil ne Le saisissent. A Lui appartient tout ce qui est dans les cieux et sur la terre. Qui peut intercéder auprès de Lui sans Sa permission ? Il connaît leur passé et leur futur. Et, de Sa science, ils n\'embrassent que ce qu\'Il veut. Son Trône déborde les cieux et la terre, dont la garde ne Lui coûte aucune peine. Et Il est le Très Haut, le Très Grand. [Ayat-ul-Kursi, Al-Baqarah 255]',
-              count: 1,
-              virtue: 'Quiconque le dit le matin est protégé des djinns jusqu\'au soir, et quiconque le dit le soir est protégé d\'eux jusqu\'au matin.'
-          },
-          {
-              id: 2,
-              arabicText: 'قُلْ هُوَ اللَّهُ أَحَدٌ.. * قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ.. * قُلْ أَعُوذُ بِرَبِّ النَّاسِ..',
-              translation: 'Dis : "Il est Allah, Unique... * Dis : "Je cherche protection auprès du Seigneur de l\'aube naissante... * Dis : "Je cherche protection auprès du Seigneur des hommes...',
-              count: 3,
-              virtue: 'Quiconque les dit trois fois le matin et le soir, elles lui suffiront contre toute chose.'
-          }
-        ],
-        eveningRemembrances: [
-          {
-              id: 1,
-              arabicText: 'أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ\nاللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ. [آية الكرسى - البقرة 255]',
-              translation: 'Je cherche refuge auprès d\'Allah contre Satan le maudit.\nAllah ! Point de divinité à part Lui, le Vivant, Celui qui subsiste par lui-même. Ni somnolence ni sommeil ne Le saisissent. A Lui appartient tout ce qui est dans les cieux et sur la terre. Qui peut intercéder auprès de Lui sans Sa permission ? Il connaît leur passé et leur futur. Et, de Sa science, ils n\'embrassent que ce qu\'Il veut. Son Trône déborde les cieux et la terre, dont la garde ne Lui coûte aucune peine. Et Il est le Très Haut, le Très Grand. [Ayat-ul-Kursi, Al-Baqarah 255]',
-              count: 1,
-              virtue: 'Quiconque le dit le soir est protégé des djinns jusqu\'au matin, et quiconque le dit le matin est protégé d\'eux jusqu\'au soir.'
-          },
-          {
-              id: 2,
-              arabicText: 'قُلْ هُوَ اللَّهُ أَحَدٌ.. * قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ.. * قُلْ أَعُوذُ بِرَبِّ النَّاسِ..',
-              translation: 'Dis : "Il est Allah, Unique... * Dis : "Je cherche protection auprès du Seigneur de l\'aube naissante... * Dis : "Je cherche protection auprès du Seigneur des hommes...',
-              count: 3,
-              virtue: 'Quiconque les dit trois fois le matin et le soir, elles lui suffiront contre toute chose.'
-          }
-        ]
+      morningRemembrances: [
+        {
+            id: 1,
+            arabicText: 'أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ\nاللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ. [آية الكرسى - البقرة 255]',
+            translation: 'Je cherche refuge auprès d\'Allah contre Satan le maudit.\nAllah ! Point de divinité à part Lui, le Vivant, Celui qui subsiste par lui-même. Ni somnolence ni sommeil ne Le saisissent. A Lui appartient tout ce qui est dans les cieux et sur la terre. Qui peut intercéder auprès de Lui sans Sa permission ? Il connaît leur passé et leur futur. Et, de Sa science, ils n\'embrassent que ce qu\'Il veut. Son Trône déborde les cieux et la terre, dont la garde ne Lui coûte aucune peine. Et Il est le Très Haut, le Très Grand. [Ayat-ul-Kursi, Al-Baqarah 255]',
+            count: 1,
+            virtue: 'Quiconque le dit le matin est protégé des djinns jusqu\'au soir, et quiconque le dit le soir est protégé d\'eux jusqu\'au matin.'
+        },
+        {
+            id: 2,
+            arabicText: 'قُلْ هُوَ اللَّهُ أَحَدٌ.. * قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ.. * قُلْ أَعُوذُ بِرَبِّ النَّاسِ..',
+            translation: 'Dis : "Il est Allah, Unique... * Dis : "Je cherche protection auprès du Seigneur de l\'aube naissante... * Dis : "Je cherche protection auprès du Seigneur des hommes...',
+            count: 3,
+            virtue: 'Quiconque les dit trois fois le matin et le soir, elles lui suffiront contre toute chose.'
+        },
+        {
+            id: 3,
+            arabicText: 'أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذَا الْيَوْمِ وَخَيْرَ مَا بَعْدَهُ، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذَا الْيَوْمِ وَشَرِّ مَا بَعْدَهُ، رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ، رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ.',
+            translation: 'Nous sommes parvenus au matin et la royauté appartient à Allah. Louange à Allah. Il n\'y a de divinité qu\'Allah, Unique, sans associé. A Lui la royauté, à Lui la louange et Il est puissant sur toute chose. Seigneur, je Te demande le bien de ce jour et le bien qui le suit, et je cherche refuge auprès de Toi contre le mal de ce jour et le mal qui le suit. Seigneur, je cherche refuge auprès de Toi contre la paresse et les maux de la vieillesse. Seigneur, je cherche refuge auprès de Toi contre le châtiment du Feu et le châtiment de la tombe.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 4,
+            arabicText: 'اللَّهُمَّ بِكَ أَصْبَحْنَا، وَبِكَ أَمْسَيْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ وَإِلَيْكَ النُّشُورُ.',
+            translation: 'Ô Allah, par Toi nous nous sommes levés, par Toi nous nous sommes couchés, par Toi nous vivons, par Toi nous mourons et vers Toi est la résurrection.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 5,
+            arabicText: 'اللَّهُمَّ أَنْتَ رَبِّي لاَ إِلَهَ إِلاَّ أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ بِذَنْبِي فَاغْfِرْ لِي فَإِنَّهُ لاَ يَغْfِرُ الذُّنُوبَ إِلاَّ أَنْتَ.',
+            translation: 'Ô Allah, Tu es mon Seigneur. Il n\'y a de divinité que Toi. Tu m\'as créé et je suis Ton serviteur. Je suis Ton pacte et Ta promesse autant que je le peux. Je cherche refuge auprès de Toi contre le mal que j\'ai fait. Je reconnais Ta faveur sur moi et je reconnais mon péché, alors pardonne-moi, car nul ne pardonne les péchés sauf Toi.',
+            count: 1,
+            virtue: 'Quiconque le dit avec certitude le matin et meurt ce jour-là entrera au Paradis, et quiconque le dit avec certitude le soir et meurt cette nuit-là entrera au Paradis.'
+        },
+        {
+            id: 6,
+            arabicText: 'اللَّهُمَّ إِنِّي أَصْبَحْتُ أُشْهِدُكَ، وَأُشْهِدُ حَمَلَةَ عَرْشِكَ، وَمَلاَئِكَتَكَ، وَجَمِيعَ خَلْقِكَ، أَنَّكَ أَنْتَ اللَّهُ لاَ إِلَهَ إِلاَّ أَنْتَ وَحْدَكَ لاَ شَرِيكَ لَكَ، وَأَنَّ مُحَمَّداً عَبْدُكَ وَرَسُولُكَ.',
+            translation: 'Ô Allah, je suis parvenu au matin et je Te prends à témoin, ainsi que les porteurs de Ton Trône, Tes anges et toute Ta création, que Tu es Allah, il n\'y a de divinité que Toi, Unique, sans associé, et que Muhammad est Ton serviteur et Ton Messager.',
+            count: 4,
+            virtue: 'Quiconque le dit quatre fois le matin ou le soir, Allah l\'affranchira du Feu.'
+        },
+        {
+            id: 7,
+            arabicText: 'اللَّهُمَّ مَا أَصْبَحَ بِي مِنْ نِعْمَةٍ أَوْ بِأَحَدٍ مِنْ خَلْقِكَ فَمِنْكَ وَحْدَكَ لاَ شَرِيكَ لَكَ، فَلَكَ الْحَمْدُ وَلَكَ الشُّكْرُ.',
+            translation: 'Ô Allah, quel que soit le bienfait qui m\'atteint ou atteint l\'une de Tes créatures ce matin, il vient de Toi seul, sans associé. A Toi donc la louange et à Toi le remerciement.',
+            count: 1,
+            virtue: 'Quiconque le dit le matin a accompli le remerciement de sa journée, et quiconque le dit le soir a accompli le remerciement de sa nuit.'
+        },
+        {
+            id: 8,
+            arabicText: 'اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي، اللَّهُمَّ عَافِنِي فِي بَصَرِي، لاَ إِلَهَ إِلاَّ أَنْتَ. اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْكُفْرِ، وَالْفَقْرِ، وَأَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ، لاَ إِلَهَ إِلاَّ أَنْتَ.',
+            translation: 'Ô Allah, accorde-moi la santé dans mon corps. Ô Allah, accorde-moi la santé dans mon ouïe. Ô Allah, accorde-moi la santé dans ma vue. Il n\'y a de divinité que Toi. Ô Allah, je cherche refuge auprès de Toi contre l\'incrédulité et la pauvreté, et je cherche refuge auprès de Toi contre le châtiment de la tombe. Il n\'y a de divinité que Toi.',
+            count: 3,
+            virtue: ''
+        },
+        {
+            id: 9,
+            arabicText: 'حَسْبِيَ اللَّهُ لاَ إِلَهَ إِلاَّ هُوَ عَلَيْهِ تَوَكَّلْتُ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ.',
+            translation: 'Allah me suffit. Il n\'y a de divinité que Lui. En Lui je place ma confiance, et Il est le Seigneur du Trône immense.',
+            count: 7,
+            virtue: 'Quiconque le dit sept fois le matin et le soir, Allah lui suffira pour ses soucis de ce monde et de l\'au-delà.'
+        },
+        {
+            id: 10,
+            arabicText: 'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالآخِرَةِ، اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ: فِي دِينِي وَدُنْيَايَ وَأَهْلِي، وَمَالِي، اللَّهُمَّ اسْتُرْ عَوْرَاتِي، وَآمِنْ رَوْعَاتِي، اللَّهُمَّ احْفَظْنِي مِنْ بَيْنِ يَدَيَّ، وَمِنْ خَلْفِي، وَعَنْ يَمِينِي، وَعَنْ شِمَالِي، وَمِنْ فَوْقِي، وَأَعُوذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِي.',
+            translation: 'Ô Allah, je Te demande le pardon et le bien-être dans cette vie et dans l\'au-delà. Ô Allah, je Te demande le pardon et le bien-être dans ma religion, mes affaires mondaines, ma famille et mes biens. Ô Allah, cache mes défauts et apaise mes craintes. Ô Allah, protège-moi de devant moi, de derrière moi, de ma droite, de ma gauche et d\'au-dessus de moi, et je cherche refuge en Ta grandeur contre le fait d\'être assassiné par-dessous moi.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 11,
+            arabicText: 'اللَّهُمَّ عَالِمَ الْغَيْبِ وَالشَّهَادَةِ فَاطِرَ السَّمَاوَاتِ وَالأَرْضِ، رَبَّ كُلِّ شَيْءٍ وَمَلِيكَهُ، أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ أَنْتَ، أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي، وَمِنْ شَرِّ الشَّيْطَانِ وَشِرْكِهِ، وَأَنْ أَقْتَرِفَ عَلَى نَفْسِي سُوءاً، أَوْ أَجُرَّهُ إِلَى مُسْلِمٍ.',
+            translation: 'Ô Allah, Connaisseur de l\'invisible et du visible, Créateur des cieux et de la terre, Seigneur et Souverain de toute chose, j\'atteste qu\'il n\'y a de divinité que Toi. Je cherche refuge auprès de Toi contre le mal de mon âme, contre le mal de Satan et son polythéisme, et contre le fait de commettre un mal contre moi-même ou de le causer à un musulman.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 12,
+            arabicText: 'بِسْمِ اللَّهِ الَّذِي لاَ يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الأَرْضِ وَلاَ فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ.',
+            translation: 'Au nom d\'Allah, dont le nom protège de tout mal sur terre et dans les cieux, et Il est l\'Audient, l\'Omniscient.',
+            count: 3,
+            virtue: 'Quiconque le dit trois fois le matin et trois fois le soir, rien ne lui nuira.'
+        },
+        {
+            id: 13,
+            arabicText: 'رَضِيتُ بِاللَّهِ رَبَّاً، وَبِالإِسْلاَمِ دِيناً، وَبِمُحَمَّدٍ صلى الله عليه وسلم نَبِيّاً.',
+            translation: 'Je suis satisfait d\'Allah comme Seigneur, de l\'Islam comme religion et de Muhammad (que la paix soit sur lui) comme Prophète.',
+            count: 3,
+            virtue: 'Quiconque le dit trois fois le matin et trois fois le soir, il est un droit pour Allah de le satisfaire le Jour de la Résurrection.'
+        },
+        {
+            id: 14,
+            arabicText: 'يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ أَصْلِحْ لِي شَأْنِي كُلَّهُ وَلاَ تَكِلْنِي إِلَى نَفْسِي طَرْfَةَ عَيْنٍ.',
+            translation: 'Ô Vivant, ô Subsistant, par Ta miséricorde, je cherche secours. Rectifie pour moi toutes mes affaires et ne me laisse pas à moi-même, ne serait-ce qu\'un clin d\'œil.',
+            count: 3,
+            virtue: ''
+        },
+        {
+            id: 15,
+            arabicText: 'أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ رَبِّ الْعَالَمِينَ، اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَ هَذَا الْيَوْمِ: فَتْحَهُ، وَنَصْرَهُ، وَنُورَهُ، وَبَرَكَتَهُ، وَهُدَاهُ، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِيهِ وَشَرِّ مَا بَعْدَهُ.',
+            translation: 'Nous sommes parvenus au matin, et la royauté appartient à Allah, Seigneur des mondes. Ô Allah, je Te demande le bien de ce jour : sa victoire, son aide, sa lumière, ses bénédictions et sa guidée. Je cherche refuge auprès de Toi contre le mal qu\'il contient et le mal qui le suit.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 16,
+            arabicText: 'أَصْبَحْنا عَلَى فِطْرَةِ الإسْلاَمِ، وَعَلَى كَلِمَةِ الإِخْلاَصِ، وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ صلى الله عليه وسلم، وَعَلَى مِلَّةِ أَبِينَا إبْرَاهِيمَ، حَنِيفاً مُسْلِماً وَمَا كَانَ مِنَ الْمُشْرِكِينَ.',
+            translation: 'Nous nous sommes levés sur la nature innée de l\'Islam, sur la parole de sincérité, sur la religion de notre Prophète Muhammad (que la paix soit sur lui) et sur la croyance de notre père Ibrahim, droit et musulman, et il n\'était pas des polythéistes.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 17,
+            arabicText: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ.',
+            translation: 'Gloire et louange à Allah.',
+            count: 100,
+            virtue: 'Quiconque le dit cent fois le matin et le soir, personne ne viendra au Jour de la Résurrection avec quelque chose de mieux que ce qu\'il a apporté, sauf quelqu\'un qui a dit la même chose ou plus.'
+        },
+        {
+            id: 18,
+            arabicText: 'لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ.',
+            translation: 'Il n\'y a de divinité qu\'Allah, Unique, sans associé. A Lui la royauté, à Lui la louange, et Il est puissant sur toute chose.',
+            count: 10,
+            virtue: 'Quiconque le dit dix fois, ce sera pour lui l\'équivalent de la libération de dix esclaves, cent bonnes actions lui seront écrites, cent mauvaises actions lui seront effacées, et ce sera une protection pour lui contre Satan ce jour-là jusqu\'au soir, et personne n\'apportera quelque chose de mieux que ce qu\'il a apporté, sauf quelqu\'un qui a fait plus que cela.'
+        },
+        {
+            id: 19,
+            arabicText: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ: عَدَدَ خَلْقِهِ، وَرِضَا نَفْسِهِ، وَزِنَةَ عَرْشِهِ، وَمِدَادَ كَلِمَاتِهِ.',
+            translation: 'Gloire et louange à Allah, au nombre de Sa création, à la mesure de Sa satisfaction, au poids de Son Trône et à l\'étendue de Ses Paroles.',
+            count: 3,
+            virtue: ''
+        },
+        {
+            id: 20,
+            arabicText: 'اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْماً نَافِعاً، وَرِزْقاً طَيِّباً، وَعَمَلاً مُتَقَبَّلاً.',
+            translation: 'Ô Allah, je Te demande une science utile, une bonne subsistance et des œuvres acceptées.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 21,
+            arabicText: 'أَسْتَغْfِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ.',
+            translation: 'Je demande pardon à Allah et je me repens à Lui.',
+            count: 100,
+            virtue: ''
+        },
+        {
+            id: 22,
+            arabicText: 'اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى نَبَيِّنَا مُحَمَّدٍ.',
+            translation: 'Ô Allah, envoie Tes bénédictions et Ta paix sur notre Prophète Muhammad.',
+            count: 10,
+            virtue: 'Quiconque envoie des bénédictions sur moi dix fois le matin et dix fois le soir aura mon intercession le Jour de la Résurrection.'
+        }
+      ],
+      eveningRemembrances: [
+        {
+            id: 1,
+            arabicText: 'أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ\nاللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْfَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْfَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ. [آية الكرسى - البقرة 255]',
+            translation: 'Je cherche refuge auprès d\'Allah contre Satan le maudit.\nAllah ! Point de divinité à part Lui, le Vivant, Celui qui subsiste par lui-même. Ni somnolence ni sommeil ne Le saisissent. A Lui appartient tout ce qui est dans les cieux et sur la terre. Qui peut intercéder auprès de Lui sans Sa permission ? Il connaît leur passé et leur futur. Et, de Sa science, ils n\'embrassent que ce qu\'Il veut. Son Trône déborde les cieux et la terre, dont la garde ne Lui coûte aucune peine. Et Il est le Très Haut, le Très Grand. [Ayat-ul-Kursi, Al-Baqarah 255]',
+            count: 1,
+            virtue: 'Quiconque le dit le soir est protégé des djinns jusqu\'au matin, et quiconque le dit le matin est protégé d\'eux jusqu\'au soir.'
+        },
+        {
+            id: 2,
+            arabicText: 'قُلْ هُوَ اللَّهُ أَحَدٌ.. * قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ.. * قُلْ أَعُوذُ بِرَبِّ النَّاسِ..',
+            translation: 'Dis : "Il est Allah, Unique... * Dis : "Je cherche protection auprès du Seigneur de l\'aube naissante... * Dis : "Je cherche protection auprès du Seigneur des hommes...',
+            count: 3,
+            virtue: 'Quiconque les dit trois fois le matin et le soir, elles lui suffiront contre toute chose.'
+        },
+        {
+            id: 3,
+            arabicText: 'أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذِهِ اللَّيْلَةِ وَخَيْرَ مَا بَعْدَهَا، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذِهِ اللَّيْلَةِ وَشَرِّ مَا بَعْدَهَا، رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ، رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ.',
+            translation: 'Nous sommes parvenus au soir et la royauté appartient à Allah. Louange à Allah. Il n\'y a de divinité qu\'Allah, Unique, sans associé. A Lui la royauté, à Lui la louange et Il est puissant sur toute chose. Seigneur, je Te demande le bien de cette nuit et le bien qui la suit, et je cherche refuge auprès de Toi contre le mal de cette nuit et le mal qui la suit. Seigneur, je cherche refuge auprès de Toi contre la paresse et les maux de la vieillesse. Seigneur, je cherche refuge auprès de Toi contre le châtiment du Feu et le châtiment de la tombe.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 4,
+            arabicText: 'اللَّهُمَّ بِكَ أَمْسَيْنَا، وَبِكَ أَصْبَحْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ وَإِلَيْكَ الْمَصِيرُ.',
+            translation: 'Ô Allah, par Toi nous nous sommes couchés, par Toi nous nous sommes levés, par Toi nous vivons, par Toi nous mourons et vers Toi est le retour final.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 5,
+            arabicText: 'اللَّهُمَّ أَنْتَ رَبِّي لاَ إِلَهَ إِلاَّ أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ بِذَنْبِي فَاغْfِرْ لِي فَإِنَّهُ لاَ يَغْfِرُ الذُّنُوبَ إِلاَّ أَنْتَ.',
+            translation: 'Ô Allah, Tu es mon Seigneur. Il n\'y a de divinité que Toi. Tu m\'as créé et je suis Ton serviteur. Je suis Ton pacte et Ta promesse autant que je le peux. Je cherche refuge auprès de Toi contre le mal que j\'ai fait. Je reconnais Ta faveur sur moi et je reconnais mon péché, alors pardonne-moi, car nul ne pardonne les péchés sauf Toi.',
+            count: 1,
+            virtue: 'Quiconque le dit avec certitude le soir et meurt cette nuit-là entrera au Paradis, et quiconque le dit avec certitude le matin et meurt ce jour-là entrera au Paradis.'
+        },
+        {
+            id: 6,
+            arabicText: 'اللَّهُمَّ إِنِّي أَمْسَيْتُ أُشْهِدُكَ، وَأُشْهِدُ حَمَلَةَ عَرْشِكَ، وَمَلاَئِكَتَكَ، وَجَمِيعَ خَلْقِكَ، أَنَّكَ أَنْتَ اللَّهُ لاَ إِلَهَ إِلاَّ أَنْتَ وَحْدَكَ لاَ شَرِيكَ لَكَ، وَأَنَّ مُحَمَّداً عَبْدُكَ وَرَسُولُكَ.',
+            translation: 'Ô Allah, je suis parvenu au soir et je Te prends à témoin, ainsi que les porteurs de Ton Trône, Tes anges et toute Ta création, que Tu es Allah, il n\'y a de divinité que Toi, Unique, sans associé, et que Muhammad est Ton serviteur et Ton Messager.',
+            count: 4,
+            virtue: 'Quiconque le dit quatre fois le soir ou le matin, Allah l\'affranchira du Feu.'
+        },
+        {
+            id: 7,
+            arabicText: 'اللَّهُمَّ مَا أَمْسَى بِي مِنْ نِعْمَةٍ أَوْ بِأَحَدٍ مِنْ خَلْقِكَ فَمِنْكَ وَحْدَكَ لاَ شَرِيكَ لَكَ، فَلَكَ الْحَمْدُ وَلَكَ الشُّكْرُ.',
+            translation: 'Ô Allah, quel que soit le bienfait qui m\'atteint ou atteint l\'une de Tes créatures ce soir, il vient de Toi seul, sans associé. A Toi donc la louange et à Toi le remerciement.',
+            count: 1,
+            virtue: 'Quiconque le dit le soir a accompli le remerciement de sa nuit, et quiconque le dit le matin a accompli le remerciement de sa journée.'
+        },
+        {
+            id: 8,
+            arabicText: 'اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي، اللَّهُمَّ عَافِنِي فِي بَصَرِي، لاَ إِلَهَ إِلاَّ أَنْتَ. اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْكُفْرِ، وَالْفَقْرِ، وَأَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ، لاَ إِلَهَ إِلاَّ أَنْتَ.',
+            translation: 'Ô Allah, accorde-moi la santé dans mon corps. Ô Allah, accorde-moi la santé dans mon ouïe. Ô Allah, accorde-moi la santé dans ma vue. Il n\'y a de divinité que Toi. Ô Allah, je cherche refuge auprès de Toi contre l\'incrédulité et la pauvreté, et je cherche refuge auprès de Toi contre le châtiment de la tombe. Il n\'y a de divinité que Toi.',
+            count: 3,
+            virtue: ''
+        },
+        {
+            id: 9,
+            arabicText: 'حَسْبِيَ اللَّهُ لاَ إِلَهَ إِلاَّ هُوَ عَلَيْهِ تَوَكَّلْتُ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ.',
+            translation: 'Allah me suffit. Il n\'y a de divinité que Lui. En Lui je place ma confiance, et Il est le Seigneur du Trône immense.',
+            count: 7,
+            virtue: 'Quiconque le dit sept fois le soir et le matin, Allah lui suffira pour ses soucis de ce monde et de l\'au-delà.'
+        },
+        {
+            id: 10,
+            arabicText: 'اللَّهُمَّ إِنِّي أَsْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالآخِرَةِ، اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ: فِي دِينِي وَدُنْيَايَ وَأَهْلِي، وَمَالِي، اللَّهُمَّ اسْتُرْ عَوْرَاتِي، وَآمِنْ rَوْعَاتِي، اللَّهُمَّ احْفَظْنِي مِنْ بَيْنِ يَدَيَّ، وَمِنْ خَلْfِي، وَعَنْ يَمِينِي، وَعَنْ شِمَالِي، وَمِنْ فَوْقِي، وَأَعُوذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِي.',
+            translation: 'Ô Allah, je Te demande le pardon et le bien-être dans cette vie et dans l\'au-delà. Ô Allah, je Te demande le pardon et le bien-être dans ma religion, mes affaires mondaines, ma famille et mes biens. Ô Allah, cache mes défauts et apaise mes craintes. Ô Allah, protège-moi de devant moi, de derrière moi, de ma droite, de ma gauche et d\'au-dessus de moi, et je cherche refuge en Ta grandeur contre le fait d\'être assassiné par-dessous moi.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 11,
+            arabicText: 'اللَّهُمَّ عَالِمَ الْغَيْبِ وَالشَّهَادَةِ فَاطِرَ السَّمَاوَاتِ وَالأَرْضِ، رَبَّ كُلِّ شَيْءٍ وَمَلِيكَهُ، أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ أَنْتَ، أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي، وَمِنْ شَرِّ الشَّيْطَانِ وَشِرْكِهِ، وَأَنْ أَقْتَرِفَ عَلَى نَفْسِي سُوءاً، أَوْ أَجُرَّهُ إِلَى مُسْلِمٍ.',
+            translation: 'Ô Allah, Connaisseur de l\'invisible et du visible, Créateur des cieux et de la terre, Seigneur et Souverain de toute chose, j\'atteste qu\'il n\'y a de divinité que Toi. Je cherche refuge auprès de Toi contre le mal de mon âme, contre le mal de Satan et son polythéisme, et contre le fait de commettre un mal contre moi-même ou de le causer à un musulman.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 12,
+            arabicText: 'بِسْمِ اللَّهِ الَّذِي لاَ يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الأَرْضِ وَلاَ فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ.',
+            translation: 'Au nom d\'Allah, dont le nom protège de tout mal sur terre et dans les cieux, et Il est l\'Audient, l\'Omniscient.',
+            count: 3,
+            virtue: 'Quiconque le dit trois fois le soir et trois fois le matin, rien ne lui nuira.'
+        },
+        {
+            id: 13,
+            arabicText: 'رَضِيتُ بِاللَّهِ رَبَّاً، وَبِالإِسْلاَمِ دِيناً، وَبِمُحَمَّدٍ صلى الله عليه وسلم نَبِيّاً.',
+            translation: 'Je suis satisfait d\'Allah comme Seigneur, de l\'Islam comme religion et de Muhammad (que la paix soit sur lui) comme Prophète.',
+            count: 3,
+            virtue: 'Quiconque le dit trois fois le soir et trois fois le matin, il est un droit pour Allah de le satisfaire le Jour de la Résurrection.'
+        },
+        {
+            id: 14,
+            arabicText: 'يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ أَصْلِحْ لِي شَأْنِي كُلَّهُ وَلاَ تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ.',
+            translation: 'Ô Vivant, ô Subsistant, par Ta miséricorde, je cherche secours. Rectifie pour moi toutes mes affaires et ne me laisse pas à moi-même, ne serait-ce qu\'un clin d\'œil.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 15,
+            arabicText: 'أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ رَبِّ الْعَالَمِينَ، اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَ هَذِهِ اللَّيْلَةِ: فَتْحَهَا، وَنَصْرَهَا، وَنُورَهَا، وَبَرَكَتَهَا، وَهُدَاهَا، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِيهَا وَشَرِّ مَا بَعْدَهَا.',
+            translation: 'Nous sommes parvenus au soir, et la royauté appartient à Allah, Seigneur des mondes. Ô Allah, je Te demande le bien de cette nuit : sa victoire, son aide, sa lumière, ses bénédictions et sa guidée. Je cherche refuge auprès de Toi contre le mal qu\'elle contient et le mal qui la suit.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 16,
+            arabicText: 'أَمْسَيْنا عَلَى فِطْرَةِ الإسْلاَمِ، وَعَلَى كَلِمَةِ الإِخْلاَصِ، وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ صلى الله عليه وسلم، وَعَلَى مِلَّةِ أَبِينَا إبْرَاهِيمَ، حَنِيفاً مُسْلِماً وَمَا كَانَ مِنَ الْمُشْرِكِينَ.',
+            translation: 'Nous nous sommes couchés sur la nature innée de l\'Islam, sur la parole de sincérité, sur la religion de notre Prophète Muhammad (que la paix soit sur lui) et sur la croyance de notre père Ibrahim, droit et musulman, et il n\'était pas des polythéistes.',
+            count: 1,
+            virtue: ''
+        },
+        {
+            id: 17,
+            arabicText: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ.',
+            translation: 'Gloire et louange à Allah.',
+            count: 100,
+            virtue: 'Quiconque le dit cent fois le soir et le matin, personne ne viendra au Jour de la Résurrection avec quelque chose de mieux que ce qu\'il a apporté, sauf quelqu\'un qui a dit la même chose ou plus.'
+        },
+        {
+            id: 18,
+            arabicText: 'لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ.',
+            translation: 'Il n\'y a de divinité qu\'Allah, Unique, sans associé. A Lui la royauté, à Lui la louange, et Il est puissant sur toute chose.',
+            count: 10,
+            virtue: 'Quiconque le dit dix fois, ce sera pour lui l\'équivalent de la libération de dix esclaves, cent bonnes actions lui seront écrites, cent mauvaises actions lui seront effacées, et ce sera une protection pour lui contre Satan cette nuit-là jusqu\'au matin, et personne n\'apportera quelque chose de mieux que ce qu\'il a apporté, sauf quelqu\'un qui a fait plus que cela.'
+        },
+        {
+            id: 19,
+            arabicText: 'أَسْتَغْfِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ.',
+            translation: 'Je demande pardon à Allah et je me repens à Lui.',
+            count: 100,
+            virtue: ''
+        },
+        {
+            id: 20,
+            arabicText: 'أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ.',
+            translation: 'Je cherche refuge dans les paroles parfaites d\'Allah contre le mal de ce qu\'Il a créé.',
+            count: 3,
+            virtue: 'Quiconque le dit trois fois le soir ne sera pas blessé par la piqûre d\'un serpent cette nuit-là.'
+        },
+        {
+            id: 21,
+            arabicText: 'اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى نَبَيِّنَا مُحَمَّدٍ.',
+            translation: 'Ô Allah, envoie Tes bénédictions et Ta paix sur notre Prophète Muhammad.',
+            count: 10,
+            virtue: 'Quiconque envoie des bénédictions sur moi dix fois le soir et dix fois le matin aura mon intercession le Jour de la Résurrection.'
+        }
+      ]
     }
   },
 };
-
-// Add a placeholder for remembrances in languages where they are not yet translated
-const addPlaceholders = (languages: (keyof typeof dictionaries)[]) => {
-  const arabicMorn = dictionaries.ar.remembrancesData.morningRemembrances;
-  const arabicEven = dictionaries.ar.remembrancesData.eveningRemembrances;
-
-  for (const lang of languages) {
-    if (dictionaries[lang].remembrancesData.morningRemembrances.length < arabicMorn.length) {
-      const existingIds = new Set(dictionaries[lang].remembrancesData.morningRemembrances.map(r => r.id));
-      for (const remembrance of arabicMorn) {
-        if (!existingIds.has(remembrance.id)) {
-           dictionaries[lang].remembrancesData.morningRemembrances.push({
-             ...remembrance,
-             translation: 'Translation not yet available.',
-             virtue: 'Virtue translation not yet available.'
-           });
-        }
-      }
-    }
-    if (dictionaries[lang].remembrancesData.eveningRemembrances.length < arabicEven.length) {
-      const existingIds = new Set(dictionaries[lang].remembrancesData.eveningRemembrances.map(r => r.id));
-       for (const remembrance of arabicEven) {
-        if (!existingIds.has(remembrance.id)) {
-           dictionaries[lang].remembrancesData.eveningRemembrances.push({
-             ...remembrance,
-             translation: 'Translation not yet available.',
-             virtue: 'Virtue translation not yet available.'
-           });
-        }
-      }
-    }
-  }
-};
-
-addPlaceholders(['tr', 'id', 'fr']);
-
 
 export type Locale = keyof typeof dictionaries;
 
