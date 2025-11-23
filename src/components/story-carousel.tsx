@@ -152,7 +152,7 @@ function MotivationalStory() {
     return (
         <Card className="w-full overflow-hidden border-transparent shadow-none bg-transparent flex flex-col items-center justify-center h-full">
             <CardHeader className="items-center">
-                <CardTitle className="font-headline text-3xl text-primary-foreground/90">
+                <CardTitle className="font-headline text-3xl text-foreground">
                 رسالة اليوم
                 </CardTitle>
             </CardHeader>
@@ -192,37 +192,39 @@ export default function StoryCarousel() {
 
   return (
     <div className="w-full max-w-4xl">
-      <div className="pb-4 flex justify-center gap-4 overflow-x-auto">
-        {storiesConfig.map((story, index) => (
-          <button
-            key={story.id}
-            onClick={() => handleIndicatorClick(index)}
-            className="group flex flex-col items-center gap-2 flex-shrink-0"
-          >
-            <div
-              className={`p-2 rounded-full transition-colors ${
-                current === index ? "bg-accent" : "bg-primary/20"
-              }`}
+      <div className="pb-4 overflow-x-auto">
+        <div className="flex justify-start gap-4 px-4">
+          {storiesConfig.map((story, index) => (
+            <button
+              key={story.id}
+              onClick={() => handleIndicatorClick(index)}
+              className="group flex flex-col items-center gap-2 flex-shrink-0 w-24"
             >
-              <div className="bg-background rounded-full p-3">
-                <story.icon
-                  className={`h-12 w-12 transition-colors ${
-                    current === index
-                      ? "text-accent-foreground"
-                      : "text-foreground/60"
-                  }`}
-                />
+              <div
+                className={`p-2 rounded-full transition-colors ${
+                  current === index ? "bg-primary" : "bg-secondary"
+                }`}
+              >
+                <div className="bg-background rounded-full p-3">
+                  <story.icon
+                    className={`h-12 w-12 transition-colors ${
+                      current === index
+                        ? "text-primary-foreground"
+                        : "text-secondary-foreground"
+                    }`}
+                  />
+                </div>
               </div>
-            </div>
-            <span
-              className={`text-base sm:text-lg transition-colors ${
-                current === index ? "text-accent-foreground font-semibold" : "text-muted-foreground"
-              }`}
-            >
-              {story.title}
-            </span>
-          </button>
-        ))}
+              <span
+                className={`text-base sm:text-lg transition-colors text-center ${
+                  current === index ? "text-primary font-semibold" : "text-muted-foreground"
+                }`}
+              >
+                {story.title}
+              </span>
+            </button>
+          ))}
+        </div>
       </div>
       <Carousel setApi={setApi} className="w-full" dir="rtl">
         <CarouselContent>

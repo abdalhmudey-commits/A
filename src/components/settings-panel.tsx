@@ -19,7 +19,7 @@ import { Switch } from "@/components/ui/switch";
 
 export default function SettingsPanel() {
   return (
-    <Card className="w-full overflow-hidden border-accent/20 bg-accent/10">
+    <Card className="w-full overflow-hidden border-border bg-card">
       <CardHeader>
         <CardTitle className="font-headline text-2xl">الإعدادات</CardTitle>
       </CardHeader>
@@ -51,7 +51,7 @@ export default function SettingsPanel() {
           </Label>
           <Switch
             id="theme-switch"
-            onClick={() =>
+            onCheckedChange={() =>
               document.documentElement.classList.toggle("dark")
             }
           />

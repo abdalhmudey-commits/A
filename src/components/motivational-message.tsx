@@ -59,9 +59,9 @@ export default function MotivationalMessage() {
           {data?.messages.map((item, index) => (
             <CarouselItem key={index}>
               <div className="p-1">
-                <Card className="border-accent/20 bg-accent/10 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                <Card className="border-border bg-card shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
                   <CardContent className="flex flex-col items-center justify-center p-6 gap-4 text-center">
-                    <Sparkles className="h-8 w-8 text-accent-foreground/80" />
+                    <Sparkles className="h-8 w-8 text-primary" />
                     <p className="font-headline text-2xl italic text-foreground/80 md:text-3xl">
                       "{item.message}"
                     </p>
