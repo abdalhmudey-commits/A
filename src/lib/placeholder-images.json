@@ -1,3 +1,34 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "habit-story",
+      "description": "A green sprout pushing through the soil, symbolizing the start of a new habit.",
+      "imageUrl": "https://images.unsplash.com/photo-1591617870684-6e861e6a48ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwbGFudCUyMGdyb3dpbmd8ZW58MHx8fHwxNzYzODg1MTM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "plant growing"
+    },
+    {
+      "id": "book-summary",
+      "description": "An open book on a wooden table, suggesting learning and knowledge.",
+      "imageUrl": "https://images.unsplash.com/photo-1502979932800-33d311b7ce56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxvcGVuJTIwYm9va3xlbnwwfHx8fDE3NjM4NzQxMzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "open book"
+    },
+    {
+      "id": "morning-remembrance",
+      "description": "A beautiful sunrise over a calm landscape.",
+      "imageUrl": "https://images.unsplash.com/photo-1433477077279-9354d2d72f6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdW5yaXNlJTIwbGFuZHNjYXBlfGVufDB8fHx8MTc2Mzg1OTM2N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "sunrise landscape"
+    },
+    {
+      "id": "evening-remembrance",
+      "description": "A colorful sunset with clouds in the sky.",
+      "imageUrl": "https://images.unsplash.com/photo-1505051508008-923feaf90180?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzdW5zZXQlMjBza3l8ZW58MHx8fHwxNzYzNzk5MzIxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "sunset sky"
+    },
+    {
+      "id": "note-taking",
+      "description": "A person writing in a notebook with a pen.",
+      "imageUrl": "https://images.unsplash.com/photo-1629045840975-4225f4d47ae0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8d3JpdGluZyUyMG5vdGVib29rfGVufDB8fHx8MTc2Mzg1MzA0Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "writing notebook"
+    }
+  ]
 }
