@@ -6,6 +6,7 @@ import { Card, CardContent } from "./ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import  HabitForm  from "./habit-form";
 import HabitList from "./habit-list";
+import { useLanguage } from "@/context/language-context";
 
 export type Habit = {
   id: string;
@@ -22,6 +23,7 @@ export default function HabitSetup() {
   const [habits, setHabits] = useState<Habit[]>([]);
   const [activeTab, setActiveTab] = useState("new");
   const [isMounted, setIsMounted] = useState(false);
+  const { dictionary } = useLanguage();
 
   useEffect(() => {
     setIsMounted(true);
@@ -84,11 +86,11 @@ export default function HabitSetup() {
           <TabsList className="grid w-full grid-cols-2 rounded-none h-14">
              <TabsTrigger value="new" className="gap-2 text-base rounded-none">
               <PlusCircle className="h-5 w-5" />
-              إعداد جديد
+              {dictionary.habits.newSetup}
             </TabsTrigger>
             <TabsTrigger value="list" className="gap-2 text-base rounded-none">
               <ListTodo className="h-5 w-5" />
-              عاداتي
+              {dictionary.habits.myHabits}
             </TabsTrigger>
           </TabsList>
           <TabsContent value="list" className="mt-4 p-4">

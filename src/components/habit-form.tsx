@@ -22,6 +22,7 @@ import { Textarea } from "./ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { useTimer } from "@/hooks/use-timer";
 import type { Habit } from "./habit-setup";
+import { useLanguage } from "@/context/language-context";
 
 type HabitFormProps = {
     onSave: (habit: Omit<Habit, 'id'>) => void;
@@ -30,6 +31,7 @@ type HabitFormProps = {
 type RecordingStatus = "idle" | "recording" | "stopped";
 
 export default function HabitForm({ onSave }: HabitFormProps) {
+  const { dictionary } = useLanguage();
   const [habitDescription, setHabitDescription] = useState("");
   const [interval, setInterval] = useState("5");
   const [unit, setUnit] = useState("minutes");
@@ -72,14 +74,13 @@ export default function HabitForm({ onSave }: HabitFormProps) {
       mediaRecorderRef.current.start();
       setRecordingStatus("recording");
       startTimer();
-      toast({ title: "بدء التسجيل...", description: "تحدث الآن." });
+      toast({ title: dictionary.habits.recordingToastTitle, description: dictionary.habits.recordingToastDescription });
     } catch (err) {
       console.error("Error starting recording:", err);
       toast({
         variant: "destructive",
-        title: "خطأ في الوصول إلى الميكروفون",
-        description:
-          "يرجى التأكد من أنك سمحت بالوصول إلى الميكروفون في إعدادات المتصفح.",
+        title: dictionary.habits.micErrorToastTitle,
+        description: dictionary.habits.micErrorToastDescription,
       });
     }
   };
@@ -99,8 +100,8 @@ export default function HabitForm({ onSave }: HabitFormProps) {
       } else {
         toast({
           variant: "destructive",
-          title: "ملف غير صالح",
-          description: "الرجاء اختيار ملف صوتي.",
+          title: dictionary.habits.invalidFileToastTitle,
+          description: dictionary.habits.invalidFileToastDescription,
         });
       }
     }
@@ -117,9 +118,8 @@ export default function HabitForm({ onSave }: HabitFormProps) {
     if (!habitDescription || !notificationText) {
       toast({
         variant: "destructive",
-        title: "حقول ناقصة",
-        description:
-          "يرجى ملء وصف العادة ومحتوى رسالة التذكير.",
+        title: dictionary.habits.missingFieldsToastTitle,
+        description: dictionary.habits.missingFieldsToastDescription,
       });
       return;
     }
@@ -135,8 +135,8 @@ export default function HabitForm({ onSave }: HabitFormProps) {
     onSave(newHabit);
     
     toast({
-        title: "تمت إضافة العادة بنجاح!",
-        description: "يمكنك رؤية عادتك الجديدة في تبويب 'عاداتي'.",
+        title: dictionary.habits.habitAddedToastTitle,
+        description: dictionary.habits.habitAddedToastDescription,
     });
 
     // Reset form
@@ -159,26 +159,26 @@ export default function HabitForm({ onSave }: HabitFormProps) {
     <div className="grid gap-6 p-1">
         <div className="grid gap-2">
           <Label htmlFor="habit-description">
-            ما هي العادة التي تريد تتبعها؟
+            {dictionary.habits.habitDescriptionLabel}
           </Label>
           <Input
             id="habit-description"
-            placeholder="مثال: قضم الأظافر، تصفح وسائل التواصل الاجتماعي..."
+            placeholder={dictionary.habits.habitDescriptionPlaceholder}
             value={habitDescription}
             onChange={(e) => setHabitDescription(e.target.value)}
           />
         </div>
 
         <div className="grid gap-2">
-          <Label>ما هو معدل تكرار التذكير؟</Label>
+          <Label>{dictionary.habits.reminderFrequencyLabel}</Label>
           <div className="flex items-center gap-2">
-            <span>كل</span>
+            <span>{dictionary.habits.every}</span>
             <Input
               type="number"
               value={interval}
               onChange={(e) => setInterval(e.target.value)}
               className="w-20"
-              aria-label="قيمة الفاصل الزمني"
+              aria-label={dictionary.habits.intervalPlaceholder}
               min="1"
             />
             <Select
@@ -186,23 +186,23 @@ export default function HabitForm({ onSave }: HabitFormProps) {
               onValueChange={setUnit}
             >
               <SelectTrigger className="w-[140px]">
-                <SelectValue placeholder="اختر وحدة" />
+                <SelectValue placeholder={dictionary.habits.unit} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="seconds">ثانية</SelectItem>
-                <SelectItem value="minutes">دقيقة</SelectItem>
-                <SelectItem value="hours">ساعة</SelectItem>
-                <SelectItem value="days">يوم</SelectItem>
+                <SelectItem value="seconds">{dictionary.habits.seconds}</SelectItem>
+                <SelectItem value="minutes">{dictionary.habits.minutes}</SelectItem>
+                <SelectItem value="hours">{dictionary.habits.hours}</SelectItem>
+                <SelectItem value="days">{dictionary.habits.days}</SelectItem>
               </SelectContent>
             </Select>
           </div>
         </div>
 
         <div className="grid gap-2">
-          <Label htmlFor="notification-text">محتوى رسالة التذكير</Label>
+          <Label htmlFor="notification-text">{dictionary.habits.reminderMessageLabel}</Label>
           <Textarea
             id="notification-text"
-            placeholder="اكتب رسالة لنفسك (مثال: توقف! أنت أقوى من هذه العادة.)"
+            placeholder={dictionary.habits.reminderMessagePlaceholder}
             value={notificationText}
             onChange={(e) => setNotificationText(e.target.value)}
           />
@@ -211,7 +211,7 @@ export default function HabitForm({ onSave }: HabitFormProps) {
         <div className="grid gap-2">
           <Label className="flex items-center gap-2">
             <AudioLines className="h-5 w-5" />
-            <span>تذكير صوتي (اختياري)</span>
+            <span>{dictionary.habits.audioReminderLabel}</span>
           </Label>
           {audioUrl ? (
             <div className="flex items-center justify-between p-2 mt-2 border rounded-md bg-muted/50">
@@ -223,7 +223,7 @@ export default function HabitForm({ onSave }: HabitFormProps) {
                 onClick={handleDeleteAudio}
               >
                 <Trash2 size={18} />
-                <span className="sr-only">حذف المقطع الصوتي</span>
+                <span className="sr-only">{dictionary.habits.deleteAudio}</span>
               </Button>
             </div>
           ) : recordingStatus === "recording" ? (
@@ -241,13 +241,13 @@ export default function HabitForm({ onSave }: HabitFormProps) {
                 onClick={handleStartRecording}
               >
                 <Mic className="ltr:mr-2 rtl:ml-2 h-4 w-4" />
-                تسجيل مقطع صوتي
+                {dictionary.habits.recordAudio}
               </Button>
               <Label htmlFor="audio-upload" className="flex-1">
                 <Button asChild variant="outline" className="w-full cursor-pointer">
                   <div>
                     <FileAudio className="ltr:mr-2 rtl:ml-2 h-4 w-4" />
-                    اختيار ملف صوتي
+                    {dictionary.habits.uploadAudio}
                   </div>
                 </Button>
                 <Input
@@ -263,7 +263,7 @@ export default function HabitForm({ onSave }: HabitFormProps) {
         </div>
 
         <Button size="lg" className="w-full" onClick={handleSaveHabit}>
-            إضافة عادة جديدة
+            {dictionary.habits.saveHabit}
         </Button>
     </div>
   );

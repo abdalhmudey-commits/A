@@ -4,6 +4,7 @@ import { Trash2, BellRing } from "lucide-react";
 import { Button } from "./ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import type { Habit } from "./habit-setup";
+import { useLanguage } from "@/context/language-context";
 
 type HabitListProps = {
   habits: Habit[];
@@ -11,13 +12,19 @@ type HabitListProps = {
 };
 
 export default function HabitList({ habits, onDelete }: HabitListProps) {
+  const { dictionary } = useLanguage();
+
+  const getUnitString = (unit: Habit["unit"]) => {
+    return dictionary.habits.intervalUnit[unit] || unit;
+  }
+
   if (habits.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center text-center p-8 border-2 border-dashed rounded-lg h-64">
         <BellRing className="h-12 w-12 text-muted-foreground" />
-        <p className="mt-4 text-lg font-medium">لا توجد عادات حالية</p>
+        <p className="mt-4 text-lg font-medium">{dictionary.habits.noHabitsTitle}</p>
         <p className="text-muted-foreground">
-          اذهب إلى "إعداد جديد" لبدء تتبع عادتك الأولى.
+          {dictionary.habits.noHabitsDescription}
         </p>
       </div>
     );
@@ -30,7 +37,7 @@ export default function HabitList({ habits, onDelete }: HabitListProps) {
           <div className="flex flex-col">
             <CardTitle className="text-lg font-semibold">{habit.description}</CardTitle>
             <CardDescription className="text-sm">
-                كل {habit.interval} {habit.unit === 'seconds' ? 'ثواني' : habit.unit === 'minutes' ? 'دقائق' : habit.unit === 'hours' ? 'ساعات' : 'أيام'}
+                {dictionary.habits.every} {habit.interval} {getUnitString(habit.unit)}
             </CardDescription>
           </div>
           <Button
@@ -40,7 +47,7 @@ export default function HabitList({ habits, onDelete }: HabitListProps) {
             onClick={() => onDelete(habit.id)}
           >
             <Trash2 className="h-5 w-5" />
-            <span className="sr-only">Delete Habit</span>
+            <span className="sr-only">{dictionary.habits.deleteHabit}</span>
           </Button>
         </Card>
       ))}

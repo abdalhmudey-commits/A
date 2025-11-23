@@ -23,6 +23,7 @@ import {
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/context/language-context";
 
 type SummarizedBookRecord = {
   title: string;
@@ -33,6 +34,7 @@ const SUMMARIZED_BOOKS_KEY = "summarizedBooksList";
 const TWO_MONTHS_IN_MS = 60 * 24 * 60 * 60 * 1000;
 
 export default function MotivationalMessage() {
+  const { dictionary } = useLanguage();
   const [data, setData] = useState<MotivationalMessagesOutput | null>(null);
   const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -252,7 +254,7 @@ export default function MotivationalMessage() {
           className="rounded-full h-12 w-12"
         >
           <ArrowRight className="h-6 w-6" />
-          <span className="sr-only">Previous</span>
+          <span className="sr-only">{dictionary.home.previous}</span>
         </Button>
         <span className="font-mono text-muted-foreground">
           {currentIndex + 1} / {messages.length}
@@ -265,7 +267,7 @@ export default function MotivationalMessage() {
           className="rounded-full h-12 w-12"
         >
           <ArrowLeft className="h-6 w-6" />
-          <span className="sr-only">Next</span>
+          <span className="sr-only">{dictionary.home.next}</span>
         </Button>
       </div>
       
@@ -276,7 +278,7 @@ export default function MotivationalMessage() {
           ) : (
             <BookOpen className="h-4 w-4" />
           )}
-          <span>لخّص لي كتابًا</span>
+          <span>{dictionary.home.summarizeBook}</span>
         </Button>
       </div>
 
@@ -284,11 +286,11 @@ export default function MotivationalMessage() {
         <DialogContent className="sm:max-w-2xl">
           <DialogHeader>
             <DialogTitle className="font-headline text-2xl text-center">
-              {isSummaryLoading ? "جاري التلخيص..." : summary?.title}
+              {isSummaryLoading ? dictionary.home.loadingSummary : summary?.title}
             </DialogTitle>
             {!isSummaryLoading && summary && (
                 <DialogDescription className="text-center">
-                    بواسطة: {summary.author}
+                    {dictionary.home.summaryBy}{summary.author}
                 </DialogDescription>
             )}
           </DialogHeader>
