@@ -10,20 +10,25 @@ export default function RemembrancesTabs() {
   const { dictionary, language } = useLanguage();
 
   const tabs = [
-    <TabsTrigger key="morning" value="morning" className="gap-2 text-base rounded-none">
-      <Sunrise className="h-5 w-5" />
-      {dictionary.remembrances.morning}
-    </TabsTrigger>,
     <TabsTrigger key="evening" value="evening" className="gap-2 text-base rounded-none">
       <Sunset className="h-5 w-5" />
       {dictionary.remembrances.evening}
+    </TabsTrigger>,
+    <TabsTrigger key="morning" value="morning" className="gap-2 text-base rounded-none">
+      <Sunrise className="h-5 w-5" />
+      {dictionary.remembrances.morning}
     </TabsTrigger>
   ];
+  
+  if (language === 'ar') {
+    tabs.reverse();
+  }
+
 
   return (
     <Tabs defaultValue="morning" className="w-full">
       <TabsList className="grid w-full grid-cols-2 rounded-none h-14">
-        {language === 'ar' ? tabs.reverse() : tabs}
+        {tabs}
       </TabsList>
       <TabsContent value="morning">
         <MorningRemembrances />

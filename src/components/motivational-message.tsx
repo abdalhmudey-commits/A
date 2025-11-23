@@ -58,6 +58,7 @@ export default function MotivationalMessage() {
         setData(result);
       } catch (error) {
         console.error("Failed to generate motivational message:", error);
+        // Fallback data in Arabic, as per original setup
         setData({
           messages: [
             {
@@ -235,11 +236,11 @@ export default function MotivationalMessage() {
             >
               <CardContent className="flex flex-col items-center justify-center p-6 gap-4 text-center">
                 <Sparkles className="h-8 w-8 text-primary" />
-                <p className="font-headline text-2xl italic text-foreground/80 md:text-3xl">
+                <p className="font-headline text-2xl italic text-foreground/80 md:text-3xl" dir="auto">
                   "{item.message}"
                 </p>
                 {item.author && (
-                  <p className="font-body text-base text-muted-foreground">
+                  <p className="font-body text-base text-muted-foreground" dir="auto">
                     - {item.author}
                   </p>
                 )}
@@ -289,11 +290,11 @@ export default function MotivationalMessage() {
       <Dialog open={isSummaryDialogOpen} onOpenChange={setIsSummaryDialogOpen}>
         <DialogContent className="sm:max-w-2xl">
           <DialogHeader>
-            <DialogTitle className="font-headline text-2xl text-center">
+            <DialogTitle className="font-headline text-2xl text-center" dir="auto">
               {isSummaryLoading ? dictionary.home.loadingSummary : summary?.title}
             </DialogTitle>
             {!isSummaryLoading && summary && (
-                <DialogDescription className="text-center">
+                <DialogDescription className="text-center" dir="auto">
                     {dictionary.home.summaryBy}{summary.author}
                 </DialogDescription>
             )}
@@ -309,7 +310,7 @@ export default function MotivationalMessage() {
                     <Skeleton className="h-4 w-full" />
                 </div>
             ) : (
-                <div className="prose prose-sm dark:prose-invert max-w-none text-right leading-relaxed whitespace-pre-wrap">
+                <div className="prose prose-sm dark:prose-invert max-w-none text-right leading-relaxed whitespace-pre-wrap" dir="auto">
                     {summary?.summary}
                 </div>
             )}

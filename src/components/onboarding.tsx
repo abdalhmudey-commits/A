@@ -12,10 +12,7 @@ import {
 import { Button } from "./ui/button";
 import HabitForm from "./habit-form";
 import { useLanguage } from "@/context/language-context";
-import { Progress } from "./ui/progress";
 import type { Habit } from "./habit-setup";
-import { Card, CardContent } from "./ui/card";
-import { cn } from "@/lib/utils";
 
 
 const ONBOARDING_COMPLETED_KEY = "onboardingCompleted";
@@ -33,22 +30,35 @@ export default function Onboarding() {
       }
     } catch (error) {
       console.error("Failed to read from localStorage", error);
+      // If reading fails, assume onboarding is not completed to be safe
+      setIsOpen(true);
     }
   }, []);
 
   const handleSaveAndFinish = (habit: Omit<Habit, 'id'>) => {
     try {
+      // We are in the onboarding flow, so we handle saving directly
       const habits = JSON.parse(localStorage.getItem("habitsList") || "[]");
       const habitWithId = { ...habit, id: crypto.randomUUID() };
       localStorage.setItem("habitsList", JSON.stringify([...habits, habitWithId]));
-      localStorage.setItem(ONBOARDING_COMPLETED_KEY, "true");
-      setIsOpen(false);
-      // Optionally, you can refresh the page or update the state in the parent component
-      window.location.reload(); 
+      
+      // Move to the final step
+      setStep(prev => prev + 1);
+
     } catch (error) {
       console.error("Failed to save habit during onboarding", error);
     }
   };
+
+  const handleFinishOnboarding = () => {
+    try {
+        localStorage.setItem(ONBOARDING_COMPLETED_KEY, "true");
+        setIsOpen(false);
+        window.location.reload(); 
+    } catch(error){
+        console.error("Failed to complete onboarding", error);
+    }
+  }
 
   const steps = [
     {
@@ -70,22 +80,23 @@ export default function Onboarding() {
       subtitle: dictionary.onboarding.finalStepSubtitle,
       content: (
         <div className="text-center p-8">
-            <p className="text-4xl">🎉</p>
+            <p className="text-4xl animate-bounce">🎉</p>
         </div>
       ),
     },
   ];
   
-  // This is a special case for the multi-step form within the HabitForm
+  // This is a special case for the multi-step form within the HabitForm component
   if (step === 1) {
     return (
-        <Dialog open={isOpen} onOpenChange={setIsOpen}>
+        <Dialog open={isOpen} onOpenChange={(open) => { if(!open) handleFinishOnboarding() }}>
             <DialogContent className="sm:max-w-md">
                  <DialogHeader>
                     <DialogTitle>{steps[step].title}</DialogTitle>
                     <DialogDescription>{steps[step].subtitle}</DialogDescription>
                 </DialogHeader>
                 {steps[step].content}
+                {/* Footer is handled inside HabitForm for this step */}
             </DialogContent>
         </Dialog>
     )
@@ -93,11 +104,11 @@ export default function Onboarding() {
 
 
   return (
-    <Dialog open={isOpen}>
+    <Dialog open={isOpen} onOpenChange={(open) => { if(!open) handleFinishOnboarding() }}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle>{steps[step].title}</DialogTitle>
-          <DialogDescription>{steps[step].subtitle}</DialogDescription>
+          {steps[step].subtitle && <DialogDescription>{steps[step].subtitle}</DialogDescription>}
         </DialogHeader>
 
         {steps[step].content}
@@ -115,10 +126,7 @@ export default function Onboarding() {
                 {dictionary.onboarding.next}
              </Button>
           ) : (
-            <Button onClick={() => {
-                localStorage.setItem(ONBOARDING_COMPLETED_KEY, "true");
-                setIsOpen(false);
-            }}>
+            <Button onClick={handleFinishOnboarding}>
                 {dictionary.onboarding.finish}
             </Button>
           )}

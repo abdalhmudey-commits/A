@@ -171,22 +171,26 @@ export default function HabitSetup() {
   }
 
   const tabs = [
-    <TabsTrigger key="new" value="new" className="gap-2 text-base rounded-none">
-      <PlusCircle className="h-5 w-5" />
-      {dictionary.habits.newSetup}
-    </TabsTrigger>,
     <TabsTrigger key="list" value="list" className="gap-2 text-base rounded-none">
       <ListTodo className="h-5 w-5" />
       {dictionary.habits.myHabits}
+    </TabsTrigger>,
+    <TabsTrigger key="new" value="new" className="gap-2 text-base rounded-none">
+      <PlusCircle className="h-5 w-5" />
+      {dictionary.habits.newSetup}
     </TabsTrigger>
   ];
+  
+  if (language === 'ar') {
+    tabs.reverse();
+  }
 
   return (
     <Card className="w-full h-full overflow-hidden border-transparent shadow-none bg-transparent">
       <CardContent className="p-0 sm:p-0">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="grid w-full grid-cols-2 rounded-none h-14">
-             {language === 'ar' ? tabs.reverse() : tabs}
+             {tabs}
           </TabsList>
           <TabsContent value="list" className="mt-4 p-4">
             <HabitList habits={habits} onDelete={deleteHabit} />

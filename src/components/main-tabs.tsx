@@ -5,6 +5,7 @@ import {
   LayoutGrid,
   Settings,
   Sparkles,
+  NotebookPen,
 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import SettingsPanel from "./settings-panel";
@@ -13,11 +14,12 @@ import MotivationalMessage from "./motivational-message";
 import RemembrancesTabs from "./remembrances-tabs";
 import { useLanguage } from "@/context/language-context";
 import Onboarding from "./onboarding";
+import { NoteTaker } from "./note-taker";
 
 export default function MainTabs() {
   const { dictionary, language } = useLanguage();
   
-  let tabsConfig = [
+  const tabsConfig = [
     {
       id: "home",
       title: dictionary.mainTabs.home,
@@ -37,6 +39,12 @@ export default function MainTabs() {
       component: RemembrancesTabs,
     },
     {
+       id: "notes",
+      title: dictionary.mainTabs.notes,
+      icon: NotebookPen,
+      component: NoteTaker,
+    },
+    {
       id: "settings",
       title: dictionary.mainTabs.settings,
       icon: Settings,
@@ -44,12 +52,13 @@ export default function MainTabs() {
     },
   ];
 
-  let contentConfig = [...tabsConfig];
+  // Create a mutable copy for manipulation
+  let displayTabs = [...tabsConfig];
+  let contentOrder = [...tabsConfig];
 
   if (language === 'ar') {
-    tabsConfig.reverse();
-    // Keep content order same as visual order of tabs
-    contentConfig.reverse();
+    // Reverse the order for RTL display
+    displayTabs.reverse();
   }
 
 
@@ -57,8 +66,8 @@ export default function MainTabs() {
     <div className="w-full max-w-3xl relative">
       <Onboarding />
       <Tabs defaultValue="home" className="w-full">
-        <TabsList className="grid w-full grid-cols-4 h-auto">
-          {tabsConfig.map((tab) => (
+        <TabsList className="grid w-full grid-cols-5 h-auto">
+          {displayTabs.map((tab) => (
             <TabsTrigger key={tab.id} value={tab.id} className="flex flex-col gap-1.5 h-16">
               <tab.icon className="h-6 w-6" />
               <span className="text-xs truncate">{tab.title}</span>
@@ -66,13 +75,13 @@ export default function MainTabs() {
           ))}
         </TabsList>
 
-        {contentConfig.map((tab) => (
+        {contentOrder.map((tab) => (
           <TabsContent key={tab.id} value={tab.id} className="mt-0">
             <div className="bg-card/80 backdrop-blur-sm rounded-lg border-t-0 rounded-t-none border border-border/20 shadow-lg min-h-[calc(100vh-200px)]">
               {tab.component ? (
                 <tab.component />
               ) : (
-              <p>قادم قريبا</p>
+              <p>Coming Soon</p>
               )}
             </div>
           </TabsContent>
