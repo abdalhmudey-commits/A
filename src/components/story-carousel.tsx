@@ -7,6 +7,7 @@ import {
   NotebookPen,
   Sunrise,
   Sunset,
+  Settings,
 } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -20,6 +21,7 @@ import {
   type CarouselApi,
 } from "./ui/carousel";
 import { Textarea } from "./ui/textarea";
+import SettingsPanel from "./settings-panel";
 
 const storiesConfig = [
   {
@@ -54,6 +56,11 @@ const storiesConfig = [
     id: "notes",
     title: "تدوين",
     icon: NotebookPen,
+  },
+  {
+    id: "settings",
+    title: "الإعدادات",
+    icon: Settings,
   },
 ];
 
@@ -157,12 +164,12 @@ export default function StoryCarousel() {
 
   return (
     <div className="w-full max-w-3xl">
-      <div className="pb-4 flex justify-center gap-2">
+      <div className="pb-4 flex justify-center gap-2 overflow-x-auto">
         {storiesConfig.map((story, index) => (
           <button
             key={story.id}
             onClick={() => handleIndicatorClick(index)}
-            className="group flex flex-col items-center gap-1.5"
+            className="group flex flex-col items-center gap-1.5 flex-shrink-0"
           >
             <div
               className={`p-1 rounded-full transition-colors ${
@@ -195,6 +202,8 @@ export default function StoryCarousel() {
             <CarouselItem key={story.id}>
               {story.id === "notes" ? (
                 <NoteTaker />
+              ) : story.id === "settings" ? (
+                <SettingsPanel />
               ) : (
                 <Card className="w-full overflow-hidden border-transparent shadow-none bg-transparent">
                   <CardHeader>
