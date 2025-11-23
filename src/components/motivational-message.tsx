@@ -26,11 +26,11 @@ export default function MotivationalMessage() {
         console.error("Failed to generate motivational message:", error);
         setData({
           messages: [
-            { message: "Embrace the journey, for every step is progress.", author: "Unknown" },
-            { message: "The secret of getting ahead is getting started.", author: "Mark Twain" },
-            { message: "It always seems impossible until it's done.", author: "Nelson Mandela"},
-            { message: "Believe you can and you're halfway there.", author: "Theodore Roosevelt"},
-            { message: "The only way to do great work is to love what you do.", author: "Steve Jobs"},
+            { message: "احتضن الرحلة، فكل خطوة هي تقدم.", author: "غير معروف" },
+            { message: "سر المضي قدمًا هو البدء.", author: "مارك توين" },
+            { message: "الأمر دائمًا يبدو مستحيلًا حتى يتم إنجازه.", author: "نيلسون مانديلا"},
+            { message: "آمن بأنك تستطيع، وستكون قد قطعت نصف الطريق.", author: "ثيودور روزفلت"},
+            { message: "الطريقة الوحيدة لعمل أشياء عظيمة هي أن تحب ما تفعله.", author: "ستيف جوبز"},
           ],
         });
       } finally {
