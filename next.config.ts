@@ -3,7 +3,10 @@ import type {NextConfig} from 'next';
 const nextConfig: NextConfig = {
   output: 'export',
   experimental: {
-    serverActions: false,
+    serverActions: {
+      bodySizeLimit: '1mb',
+      allowedOrigins: [],
+    },
   },
   typescript: {
     ignoreBuildErrors: true,
@@ -27,7 +30,7 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
       {
-        protocol: 'httpshttps',
+        protocol: 'https',
         hostname: 'picsum.photos',
         port: '',
         pathname: '/**',
