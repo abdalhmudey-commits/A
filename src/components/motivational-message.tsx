@@ -1,20 +1,37 @@
 "use client";
 
 import { useEffect, useState, useRef, useCallback } from "react";
-import { Sparkles, Bot, ArrowLeft, ArrowRight } from "lucide-react";
+import { Sparkles, Bot, ArrowLeft, ArrowRight, Loader2, BookOpen } from "lucide-react";
 import {
   generateMotivationalMessages,
   type MotivationalMessagesOutput,
 } from "@/ai/flows/generate-motivational-message";
+import { 
+  summarizeBook,
+  type BookSummaryOutput 
+} from "@/ai/flows/summarize-book";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
 
 export default function MotivationalMessage() {
   const [data, setData] = useState<MotivationalMessagesOutput | null>(null);
   const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const [summary, setSummary] = useState<BookSummaryOutput | null>(null);
+  const [isSummaryLoading, setIsSummaryLoading] = useState(false);
+  const [isSummaryDialogOpen, setIsSummaryDialogOpen] = useState(false);
+
 
   // For swipe gesture
   const touchStartRef = useRef<number | null>(null);
@@ -58,6 +75,25 @@ export default function MotivationalMessage() {
 
     fetchMessage();
   }, []);
+
+  const handleSummarizeBook = async () => {
+    setIsSummaryLoading(true);
+    setIsSummaryDialogOpen(true);
+    try {
+      const result = await summarizeBook();
+      setSummary(result);
+    } catch (error) {
+      console.error("Failed to summarize book:", error);
+      setSummary({
+        title: "خطأ",
+        author: "النظام",
+        summary: "عذرًا، لم نتمكن من تلخيص كتاب في الوقت الحالي. يرجى المحاولة مرة أخرى لاحقًا.",
+      });
+    } finally {
+      setIsSummaryLoading(false);
+    }
+  };
+
 
   const messages = data?.messages || [];
   const canGoNext = currentIndex < messages.length - 1;
@@ -113,7 +149,7 @@ export default function MotivationalMessage() {
   }
 
   return (
-    <div className="w-full max-w-3xl flex flex-col items-center gap-6 animate-in fade-in-0 zoom-in-95 duration-500 pt-4">
+    <div className="w-full max-w-3xl flex flex-col items-center gap-6 animate-in fade-in-0 zoom-in-95 duration-500 pt-2">
       <div
         className="relative w-full h-[250px] cursor-grab"
         onTouchStart={onTouchStart}
@@ -199,11 +235,48 @@ export default function MotivationalMessage() {
           <span className="sr-only">Next</span>
         </Button>
       </div>
-
-      <div className="flex items-center justify-center mt-2 gap-2 text-muted-foreground text-xs">
-        <Bot size={14} />
-        <span>يتم توليد الرسائل بواسطة الذكاء الاصطناعي عند كل زيارة.</span>
+      
+      <div className="mt-4">
+        <Button onClick={handleSummarizeBook} disabled={isSummaryLoading}>
+          {isSummaryLoading ? (
+            <Loader2 className="h-4 w-4 animate-spin" />
+          ) : (
+            <BookOpen className="h-4 w-4" />
+          )}
+          <span>لخّص لي كتابًا</span>
+        </Button>
       </div>
+
+      <Dialog open={isSummaryDialogOpen} onOpenChange={setIsSummaryDialogOpen}>
+        <DialogContent className="sm:max-w-2xl">
+          <DialogHeader>
+            <DialogTitle className="font-headline text-2xl text-center">
+              {isSummaryLoading ? "جاري التلخيص..." : summary?.title}
+            </DialogTitle>
+            {!isSummaryLoading && summary && (
+                <DialogDescription className="text-center">
+                    بواسطة: {summary.author}
+                </DialogDescription>
+            )}
+          </DialogHeader>
+          <ScrollArea className="max-h-[60vh] p-4">
+            {isSummaryLoading ? (
+                <div className="space-y-4">
+                    <Skeleton className="h-4 w-3/4" />
+                    <Skeleton className="h-4 w-full" />
+                    <Skeleton className="h-4 w-full" />
+                    <Skeleton className="h-4 w-5/6" />
+                     <Skeleton className="h-4 w-full" />
+                    <Skeleton className="h-4 w-full" />
+                </div>
+            ) : (
+                <div className="prose prose-sm dark:prose-invert max-w-none text-right leading-relaxed whitespace-pre-wrap">
+                    {summary?.summary}
+                </div>
+            )}
+          </ScrollArea>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
