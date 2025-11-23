@@ -28,8 +28,12 @@ export default function FloatingMessages() {
   const [data, setData] = useState<MotivationalMessagesOutput | null>(null);
   const [positions, setPositions] = useState<MessagePosition[]>([]);
   const [loading, setLoading] = useState(true);
+  const [skeletonPositions, setSkeletonPositions] = useState<MessagePosition[]>([]);
 
   useEffect(() => {
+    // Generate skeleton positions only on the client-side to avoid hydration mismatch
+    setSkeletonPositions([...Array(5)].map(() => getRandomPosition()));
+
     const fetchMessage = async () => {
       setLoading(true);
       try {
@@ -60,8 +64,8 @@ export default function FloatingMessages() {
   if (loading) {
     return (
       <div className="relative h-[calc(100vh-200px)] w-full">
-         {[...Array(5)].map((_, i) => (
-             <Skeleton key={i} className="absolute h-24 w-48" style={getRandomPosition()} />
+         {skeletonPositions.map((pos, i) => (
+             <Skeleton key={i} className="absolute h-24 w-48" style={pos} />
          ))}
       </div>
     );
