@@ -58,7 +58,12 @@ const summarizeBookFlow = ai.defineFlow(
     outputSchema: BookSummaryOutputSchema,
   },
   async (input) => {
-    const {output} = await prompt(input);
+    const {output} = await ai.generate({
+      model: 'googleai/gemini-1.5-pro-latest',
+      prompt: prompt.prompt,
+      input: input,
+      output: { schema: BookSummaryOutputSchema },
+    });
     return output!;
   }
 );

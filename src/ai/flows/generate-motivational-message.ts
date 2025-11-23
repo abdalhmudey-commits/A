@@ -36,7 +36,11 @@ const generateMotivationalMessageFlow = ai.defineFlow(
     outputSchema: MotivationalMessagesOutputSchema,
   },
   async () => {
-    const {output} = await prompt({});
+    const {output} = await ai.generate({
+      model: 'googleai/gemini-1.5-pro-latest',
+      prompt: prompt.prompt,
+      output: { schema: MotivationalMessagesOutputSchema },
+    });
     return output!;
   }
 );
