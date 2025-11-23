@@ -210,7 +210,7 @@ export default function StoryCarousel() {
   return (
     <div className="w-full">
        <div dir="ltr" className="pb-4 overflow-x-auto">
-        <div className="flex justify-start gap-4 px-4 pl-4">
+        <div className="flex justify-end gap-2 px-4 pl-8">
           {storiesConfig.map((story, index) => (
             <button
               key={story.id}
