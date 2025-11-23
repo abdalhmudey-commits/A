@@ -16,14 +16,14 @@ import SettingsPanel from "./settings-panel";
 import HabitSetup from "./habit-setup";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { NoteTaker } from "./note-taker";
-import FloatingMessages from "./floating-messages";
+import MotivationalMessage from "./motivational-message";
 
 const tabsConfig = [
   {
     id: "home",
     title: "الرئيسية",
     icon: Sparkles,
-    component: FloatingMessages,
+    component: MotivationalMessage,
   },
   {
     id: "habit",
