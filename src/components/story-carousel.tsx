@@ -33,7 +33,7 @@ const ComingSoonContent = ({ title }: { title: string }) => {
 }
 
 const storiesConfig = [
-  {
+    {
     id: "habit",
     title: "العادة",
     icon: Flame,
@@ -194,8 +194,8 @@ export default function StoryCarousel() {
 
   return (
     <div className="w-full">
-      <div className="pb-4 overflow-x-auto">
-        <div className="flex justify-end gap-3 px-4">
+       <div className="pb-4 overflow-x-auto" dir="ltr">
+        <div className="flex gap-2 px-4 pl-[50vw]">
           {storiesConfig.map((story, index) => (
             <button
               key={story.id}
