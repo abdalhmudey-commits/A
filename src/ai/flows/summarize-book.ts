@@ -51,15 +51,20 @@ ${input.previousTitles.map(t => `- ${t}`).join('\n')}
 
 تأكد من أن الملخص ليس مجرد نقاط، بل شرح وافٍ لأفكار الكتاب الرئيسية، وكيف يمكن للقارئ الاستفادة منه.
 يجب أن تختار كتابًا مختلفًا في كل مرة، وتستكشف مجالات مختلفة لتقديم تجربة غنية للمستخدم.`;
+    
+    try {
+        const {output} = await ai.generate({
+            model: 'gemini-pro',
+            prompt: prompt,
+            output: {
+                schema: BookSummaryOutputSchema,
+            }
+        });
 
-    const {output} = await ai.generate({
-        model: 'gemini-pro',
-        prompt: prompt,
-        output: {
-            schema: BookSummaryOutputSchema,
-        }
-    });
-
-    return output!;
+        return output!;
+    } catch (error) {
+        console.error("Failed to summarize book:", error);
+        throw new Error("عذرًا، لم نتمكن من تلخيص كتاب في الوقت الحالي. يرجى التأكد من أن مفتاح Google AI API الخاص بك صحيح ومفعّل، ثم حاول مرة أخرى.");
+    }
   }
 );

@@ -30,13 +30,39 @@ const generateMotivationalMessageFlow = ai.defineFlow(
     outputSchema: MotivationalMessagesOutputSchema,
   },
   async () => {
-    const {output} = await ai.generate({
-      model: 'gemini-pro',
-      prompt: `أنت مساعد ذكاء اصطناعي متخصص في تقديم التحفيز والحكمة باللغة العربية. قم بإنشاء قائمة من 5 رسائل أو اقتباسات فريدة وملهمة وموجزة. يجب أن تشجع هذه الرسائل المستخدمين على تحقيق أهدافهم والحفاظ على نظرة إيجابية. لكل اقتباس له مؤلف معروف، قم بتضمين اسم المؤلف. وإلا، اضبط المؤلف على "غير معروف". تأكد من أن المحتوى متنوع وراقٍ.`,
-      output: {
-        schema: MotivationalMessagesOutputSchema,
-      }
-    });
-    return output!;
+    try {
+      const {output} = await ai.generate({
+        model: 'gemini-pro',
+        prompt: `أنت مساعد ذكاء اصطناعي متخصص في تقديم التحفيز والحكمة باللغة العربية. قم بإنشاء قائمة من 5 رسائل أو اقتباسات فريدة وملهمة وموجزة. يجب أن تشجع هذه الرسائل المستخدمين على تحقيق أهدافهم والحفاظ على نظرة إيجابية. لكل اقتباس له مؤلف معروف، قم بتضمين اسم المؤلف. وإلا، اضبط المؤلف على "غير معروف". تأكد من أن المحتوى متنوع وراقٍ.`,
+        output: {
+          schema: MotivationalMessagesOutputSchema,
+        }
+      });
+      return output!;
+    } catch (error) {
+        console.error("Failed to generate motivational message:", error);
+        // Fallback data in Arabic, as per original setup
+        return {
+          messages: [
+            {
+              message: "احتضن الرحلة، فكل خطوة هي تقدم.",
+              author: "غير معروف",
+            },
+            { message: "سر المضي قدمًا هو البدء.", author: "مارك توين" },
+            {
+              message: "الأمر دائمًا يبدو مستحيلًا حتى يتم إنجازه.",
+              author: "نيلسون مانديلا",
+            },
+            {
+              message: "آمن بأنك تستطيع، وستكون قد قطعت نصف الطريق.",
+              author: "ثيودور روزفلت",
+            },
+            {
+              message: "الطريقة الوحيدة لعمل أشياء عظيمة هي أن تحب ما تفعله.",
+              author: "ستيف جوبز",
+            },
+          ],
+        };
+    }
   }
 );

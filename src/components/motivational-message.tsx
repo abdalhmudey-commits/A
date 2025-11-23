@@ -24,6 +24,7 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/context/language-context";
+import { useToast } from "@/hooks/use-toast";
 
 type SummarizedBookRecord = {
   title: string;
@@ -35,6 +36,7 @@ const TWO_MONTHS_IN_MS = 60 * 24 * 60 * 60 * 1000;
 
 export default function MotivationalMessage() {
   const { dictionary, language } = useLanguage();
+  const { toast } = useToast();
   const [data, setData] = useState<MotivationalMessagesOutput | null>(null);
   const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -120,12 +122,17 @@ export default function MotivationalMessage() {
         setSummarizedBooks(updatedBooks);
         localStorage.setItem(SUMMARIZED_BOOKS_KEY, JSON.stringify(updatedBooks));
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error("Failed to summarize book:", error);
+      toast({
+        variant: "destructive",
+        title: dictionary.home.errorTitle,
+        description: error.message || dictionary.home.errorSummary,
+      });
       setSummary({
         title: dictionary.home.errorTitle,
         author: dictionary.home.errorAuthor,
-        summary: dictionary.home.errorSummary,
+        summary: error.message || dictionary.home.errorSummary,
       });
     } finally {
       setIsSummaryLoading(false);
@@ -145,7 +152,7 @@ export default function MotivationalMessage() {
 
   const handlePrev = useCallback(() => {
     if (canGoPrev) {
-      setCurrentIndex((prev) => prev - 1);
+      setCurrentIndex((prev) => prev + 1);
     }
   }, [canGoPrev]);
 
