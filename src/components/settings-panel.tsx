@@ -17,11 +17,15 @@ import {
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
+import { useLanguage } from "@/context/language-context";
 
 export default function SettingsPanel() {
   const [theme, setTheme] = useState("light");
+  const { language, setLanguage, dictionary } = useLanguage();
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     const storedTheme = localStorage.getItem("theme") || "light";
     setTheme(storedTheme === "dark" ? "dark" : "light");
   }, []);
@@ -37,6 +41,10 @@ export default function SettingsPanel() {
     }
   };
 
+  if (!isMounted) {
+    return null; // or a loading skeleton
+  }
+
   return (
     <Card className="w-full overflow-hidden border-transparent shadow-none bg-transparent">
       <CardHeader>
@@ -48,7 +56,7 @@ export default function SettingsPanel() {
             <Globe className="h-5 w-5" />
             <span>اللغة</span>
           </Label>
-          <Select defaultValue="ar">
+          <Select value={language} onValueChange={setLanguage}>
             <SelectTrigger id="language-select" className="w-[180px]">
               <SelectValue placeholder="اختر لغة" />
             </SelectTrigger>

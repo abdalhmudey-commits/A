@@ -5,41 +5,46 @@ import {
   LayoutGrid,
   Settings,
   Sparkles,
+  Sunrise,
+  Sunset,
 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import SettingsPanel from "./settings-panel";
 import HabitSetup from "./habit-setup";
 import MotivationalMessage from "./motivational-message";
 import RemembrancesTabs from "./remembrances-tabs";
-
-const tabsConfig = [
-  {
-    id: "home",
-    title: "الرئيسية",
-    icon: Sparkles,
-    component: MotivationalMessage,
-  },
-  {
-    id: "habits",
-    title: "العادات",
-    icon: LayoutGrid,
-    component: HabitSetup,
-  },
-  {
-    id: "remembrances",
-    title: "الأذكار",
-    icon: BookOpen,
-    component: RemembrancesTabs,
-  },
-  {
-    id: "settings",
-    title: "الإعدادات",
-    icon: Settings,
-    component: SettingsPanel,
-  },
-];
+import { useLanguage } from "@/context/language-context";
 
 export default function MainTabs() {
+  const { dictionary } = useLanguage();
+  
+  const tabsConfig = [
+    {
+      id: "home",
+      title: dictionary.mainTabs.home,
+      icon: Sparkles,
+      component: MotivationalMessage,
+    },
+    {
+      id: "habits",
+      title: dictionary.mainTabs.habits,
+      icon: LayoutGrid,
+      component: HabitSetup,
+    },
+    {
+      id: "remembrances",
+      title: dictionary.mainTabs.remembrances,
+      icon: BookOpen,
+      component: RemembrancesTabs,
+    },
+    {
+      id: "settings",
+      title: dictionary.mainTabs.settings,
+      icon: Settings,
+      component: SettingsPanel,
+    },
+  ];
+
   return (
     <Tabs defaultValue="home" className="w-full max-w-3xl">
       <TabsList className="grid w-full grid-cols-4 h-auto">
