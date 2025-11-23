@@ -5,6 +5,7 @@ const dictionaries = {
       habits: "Habits",
       remembrances: "Remembrances",
       settings: "Settings",
+      notes: "Notes",
     },
     settings: {
       title: "Settings",
@@ -19,6 +20,7 @@ const dictionaries = {
     remembrances: {
       morning: "Morning Remembrances",
       evening: "Evening Remembrances",
+      virtue: "Virtue",
     },
     habits: {
       newSetup: "New Setup",
@@ -32,10 +34,6 @@ const dictionaries = {
       every: "Every",
       intervalPlaceholder: "Interval value",
       unit: "Unit",
-      seconds: "second(s)",
-      minutes: "minute(s)",
-      hours: "hour(s)",
-      days: "day(s)",
       reminderMessageLabel: "Reminder message content",
       reminderMessagePlaceholder: "Write a message to yourself (e.g. Stop! You are stronger than this habit.)",
       audioReminderLabel: "Audio Reminder (optional)",
@@ -54,11 +52,11 @@ const dictionaries = {
       habitAddedToastTitle: "Habit added successfully!",
       habitAddedToastDescription: "You can see your new habit in the 'My Habits' tab.",
       intervalUnit: {
-        seconds: "seconds",
-        minutes: "minutes",
-        hours: "hours",
-        days: "days",
-      }
+        seconds: { singular: "second", plural: "seconds" },
+        minutes: { singular: "minute", plural: "minutes" },
+        hours: { singular: "hour", plural: "hours" },
+        days: { singular: "day", plural: "days" },
+      },
     },
     home: {
       previous: "Previous",
@@ -66,6 +64,12 @@ const dictionaries = {
       summarizeBook: "Summarize a book for me",
       loadingSummary: "Summarizing...",
       summaryBy: "By: "
+    },
+    notes: {
+        title: "Note Taking",
+        description: "Write down your thoughts, goals, or anything that inspires you here.",
+        placeholder: "Start writing...",
+        saved: "Saved."
     }
   },
   ar: {
@@ -74,6 +78,7 @@ const dictionaries = {
       habits: "العادات",
       remembrances: "الأذكار",
       settings: "الإعدادات",
+      notes: "الملاحظات",
     },
     settings: {
       title: "الإعدادات",
@@ -88,6 +93,7 @@ const dictionaries = {
     remembrances: {
       morning: "أذكار الصباح",
       evening: "أذكار المساء",
+      virtue: "الفضل",
     },
     habits: {
       newSetup: "إعداد جديد",
@@ -101,10 +107,6 @@ const dictionaries = {
       every: "كل",
       intervalPlaceholder: "قيمة الفاصل الزمني",
       unit: "وحدة",
-      seconds: "ثانية",
-      minutes: "دقيقة",
-      hours: "ساعة",
-      days: "يوم",
       reminderMessageLabel: "محتوى رسالة التذكير",
       reminderMessagePlaceholder: "اكتب رسالة لنفسك (مثال: توقف! أنت أقوى من هذه العادة.)",
       audioReminderLabel: "تذكير صوتي (اختياري)",
@@ -123,10 +125,10 @@ const dictionaries = {
       habitAddedToastTitle: "تمت إضافة العادة بنجاح!",
       habitAddedToastDescription: "يمكنك رؤية عادتك الجديدة في تبويب 'عاداتي'.",
       intervalUnit: {
-        seconds: "ثواني",
-        minutes: "دقائق",
-        hours: "ساعات",
-        days: "أيام",
+        seconds: { singular: "ثانية", dual: "ثانيتان", plural: "ثواني" },
+        minutes: { singular: "دقيقة", dual: "دقيقتان", plural: "دقائق" },
+        hours: { singular: "ساعة", dual: "ساعتان", plural: "ساعات" },
+        days: { singular: "يوم", dual: "يومان", plural: "أيام" },
       }
     },
     home: {
@@ -135,6 +137,12 @@ const dictionaries = {
       summarizeBook: "لخّص لي كتابًا",
       loadingSummary: "جاري التلخيص...",
       summaryBy: "بواسطة: "
+    },
+    notes: {
+        title: "تدوين الملاحظات",
+        description: "اكتب أفكارك، أهدافك، أو أي شيء يلهمك هنا.",
+        placeholder: "ابدأ الكتابة...",
+        saved: "تم الحفظ."
     }
   },
   tr: {
@@ -143,6 +151,7 @@ const dictionaries = {
       habits: "Alışkanlıklar",
       remembrances: "Zikirler",
       settings: "Ayarlar",
+      notes: "Notlar",
     },
     settings: {
       title: "Ayarlar",
@@ -157,6 +166,7 @@ const dictionaries = {
     remembrances: {
       morning: "Sabah Zikirleri",
       evening: "Akşam Zikirleri",
+      virtue: "Fazilet",
     },
     habits: {
       newSetup: "Yeni Kurulum",
@@ -170,10 +180,6 @@ const dictionaries = {
       every: "Her",
       intervalPlaceholder: "Aralık değeri",
       unit: "Birim",
-      seconds: "saniye",
-      minutes: "dakika",
-      hours: "saat",
-      days: "gün",
       reminderMessageLabel: "Hatırlatma mesajı içeriği",
       reminderMessagePlaceholder: "Kendinize bir mesaj yazın (Örn. Dur! Bu alışkanlıktan daha güçlüsün.)",
       audioReminderLabel: "Sesli Hatırlatma (isteğe bağlı)",
@@ -192,10 +198,10 @@ const dictionaries = {
       habitAddedToastTitle: "Alışkanlık başarıyla eklendi!",
       habitAddedToastDescription: "Yeni alışkanlığınızı 'Alışkanlıklarım' sekmesinde görebilirsiniz.",
       intervalUnit: {
-        seconds: "saniye",
-        minutes: "dakika",
-        hours: "saat",
-        days: "gün",
+        seconds: { singular: "saniye", plural: "saniye" },
+        minutes: { singular: "dakika", plural: "dakika" },
+        hours: { singular: "saat", plural: "saat" },
+        days: { singular: "gün", plural: "gün" },
       }
     },
     home: {
@@ -204,6 +210,12 @@ const dictionaries = {
       summarizeBook: "Bana bir kitap özetle",
       loadingSummary: "Özetleniyor...",
       summaryBy: "Yazan: "
+    },
+    notes: {
+        title: "Not Alma",
+        description: "Düşüncelerinizi, hedeflerinizi veya size ilham veren herhangi bir şeyi buraya yazın.",
+        placeholder: "Yazmaya başla...",
+        saved: "Kaydedildi."
     }
   },
   id: {
@@ -212,6 +224,7 @@ const dictionaries = {
       habits: "Kebiasaan",
       remembrances: "Dzikir",
       settings: "Pengaturan",
+      notes: "Catatan",
     },
     settings: {
       title: "Pengaturan",
@@ -226,6 +239,7 @@ const dictionaries = {
     remembrances: {
       morning: "Dzikir Pagi",
       evening: "Dzikir Petang",
+      virtue: "Keutamaan",
     },
     habits: {
       newSetup: "Pengaturan Baru",
@@ -239,10 +253,6 @@ const dictionaries = {
       every: "Setiap",
       intervalPlaceholder: "Nilai interval",
       unit: "Satuan",
-      seconds: "detik",
-      minutes: "menit",
-      hours: "jam",
-      days: "hari",
       reminderMessageLabel: "Isi pesan pengingat",
       reminderMessagePlaceholder: "Tulis pesan untuk diri sendiri (misalnya, Berhenti! Anda lebih kuat dari kebiasaan ini.)",
       audioReminderLabel: "Pengingat Audio (opsional)",
@@ -260,11 +270,11 @@ const dictionaries = {
       missingFieldsToastDescription: "Harap isi deskripsi kebiasaan dan konten pesan pengingat.",
       habitAddedToastTitle: "Kebiasaan berhasil ditambahkan!",
       habitAddedToastDescription: "Anda dapat melihat kebiasaan baru Anda di tab 'Kebiasaan Saya'.",
-      intervalUnit: {
-        seconds: "detik",
-        minutes: "menit",
-        hours: "jam",
-        days: "hari",
+       intervalUnit: {
+        seconds: { singular: "detik", plural: "detik" },
+        minutes: { singular: "menit", plural: "menit" },
+        hours: { singular: "jam", plural: "jam" },
+        days: { singular: "hari", plural: "hari" },
       }
     },
     home: {
@@ -273,6 +283,12 @@ const dictionaries = {
       summarizeBook: "Rangkumkan sebuah buku untukku",
       loadingSummary: "Meringkas...",
       summaryBy: "Oleh: "
+    },
+    notes: {
+        title: "Mencatat",
+        description: "Tuliskan pemikiran, tujuan, atau apa pun yang menginspirasi Anda di sini.",
+        placeholder: "Mulai menulis...",
+        saved: "Tersimpan."
     }
   },
   fr: {
@@ -281,6 +297,7 @@ const dictionaries = {
       habits: "Habitudes",
       remembrances: "Souvenirs",
       settings: "Paramètres",
+      notes: "Notes",
     },
     settings: {
       title: "Paramètres",
@@ -295,6 +312,7 @@ const dictionaries = {
     remembrances: {
       morning: "Souvenirs du Matin",
       evening: "Souvenirs du Soir",
+      virtue: "Vertu",
     },
     habits: {
       newSetup: "Nouvelle Configuration",
@@ -308,10 +326,6 @@ const dictionaries = {
       every: "Chaque",
       intervalPlaceholder: "Valeur de l'intervalle",
       unit: "Unité",
-      seconds: "seconde(s)",
-      minutes: "minute(s)",
-      hours: "heure(s)",
-      days: "jour(s)",
       reminderMessageLabel: "Contenu du message de rappel",
       reminderMessagePlaceholder: "Écrivez un message pour vous-même (ex: Arrête ! Tu es plus fort que cette habitude.)",
       audioReminderLabel: "Rappel Audio (optionnel)",
@@ -330,10 +344,10 @@ const dictionaries = {
       habitAddedToastTitle: "Habitude ajoutée avec succès !",
       habitAddedToastDescription: "Vous pouvez voir votre nouvelle habitude dans l'onglet 'Mes Habitudes'.",
       intervalUnit: {
-        seconds: "secondes",
-        minutes: "minutes",
-        hours: "heures",
-        days: "jours",
+        seconds: { singular: "seconde", plural: "secondes" },
+        minutes: { singular: "minute", plural: "minutes" },
+        hours: { singular: "heure", plural: "heures" },
+        days: { singular: "jour", plural: "jours" },
       }
     },
     home: {
@@ -342,6 +356,12 @@ const dictionaries = {
       summarizeBook: "Résume-moi un livre",
       loadingSummary: "Résumé en cours...",
       summaryBy: "Par : "
+    },
+    notes: {
+        title: "Prise de notes",
+        description: "Notez ici vos pensées, vos objectifs ou tout ce qui vous inspire.",
+        placeholder: "Commencez à écrire...",
+        saved: "Enregistré."
     }
   },
 };

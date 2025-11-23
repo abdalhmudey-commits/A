@@ -7,6 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { Badge } from "./ui/badge";
+import { useLanguage } from "@/context/language-context";
 
 type Remembrance = {
   id: number;
@@ -21,6 +22,7 @@ type RemembranceContentProps = {
 
 
 export default function RemembranceContent({ remembrances }: RemembranceContentProps) {
+  const { dictionary } = useLanguage();
   return (
     <Accordion type="single" collapsible className="w-full">
       {remembrances.map((remembrance) => (
@@ -36,7 +38,7 @@ export default function RemembranceContent({ remembrances }: RemembranceContentP
               <p className="text-lg leading-relaxed font-body whitespace-pre-wrap">{remembrance.text}</p>
               {remembrance.virtue && (
                 <div className="border-t border-border pt-3 mt-3">
-                  <p className="text-sm text-muted-foreground font-semibold">الفضل:</p>
+                  <p className="text-sm text-muted-foreground font-semibold">{dictionary.remembrances.virtue}:</p>
                   <p className="text-sm text-muted-foreground italic">"{remembrance.virtue}"</p>
                 </div>
               )}

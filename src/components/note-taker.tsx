@@ -3,8 +3,10 @@
 import { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Textarea } from "./ui/textarea";
+import { useLanguage } from "@/context/language-context";
 
 export function NoteTaker() {
+  const { dictionary } = useLanguage();
   const [note, setNote] = useState("");
   const [isSaved, setIsSaved] = useState(false);
 
@@ -42,21 +44,21 @@ export function NoteTaker() {
     <Card className="w-full overflow-hidden border-border bg-card">
       <CardHeader>
         <CardTitle className="font-headline text-2xl">
-          تدوين الملاحظات
+          {dictionary.notes.title}
         </CardTitle>
       </CardHeader>
       <CardContent className="flex flex-col gap-4">
-        <p>اكتب أفكارك، أهدافك، أو أي شيء يلهمك هنا.</p>
+        <p>{dictionary.notes.description}</p>
         <Textarea
           value={note}
           onChange={(e) => setNote(e.target.value)}
-          placeholder="ابدأ الكتابة..."
+          placeholder={dictionary.notes.placeholder}
           className="min-h-[200px] border-accent/50 bg-background/50 focus-visible:ring-accent"
           dir="auto"
         />
         {isSaved && (
           <p className="text-sm text-muted-foreground animate-in fade-in">
-            تم الحفظ.
+            {dictionary.notes.saved}
           </p>
         )}
       </CardContent>

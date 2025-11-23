@@ -14,9 +14,18 @@ type HabitListProps = {
 export default function HabitList({ habits, onDelete }: HabitListProps) {
   const { dictionary } = useLanguage();
 
-  const getUnitString = (unit: Habit["unit"]) => {
-    return dictionary.habits.intervalUnit[unit] || unit;
+  const getUnitString = (unit: Habit["unit"], count: number) => {
+    const units = dictionary.habits.intervalUnit;
+    if (language === 'ar') {
+      if (count === 1) return units[unit].singular;
+      if (count === 2) return units[unit].dual;
+      if (count >= 3 && count <= 10) return units[unit].plural;
+      return units[unit].singular; // or a general plural
+    }
+    return count === 1 ? units[unit].singular : units[unit].plural;
   }
+  
+  const { language } = useLanguage();
 
   if (habits.length === 0) {
     return (
@@ -37,7 +46,7 @@ export default function HabitList({ habits, onDelete }: HabitListProps) {
           <div className="flex flex-col">
             <CardTitle className="text-lg font-semibold">{habit.description}</CardTitle>
             <CardDescription className="text-sm">
-                {dictionary.habits.every} {habit.interval} {getUnitString(habit.unit)}
+                {dictionary.habits.every} {habit.interval} {getUnitString(habit.unit, habit.interval)}
             </CardDescription>
           </div>
           <Button

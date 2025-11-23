@@ -40,6 +40,10 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Belleza&display=swap"
           rel="stylesheet"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body className="font-body antialiased">
         <LanguageProvider>
