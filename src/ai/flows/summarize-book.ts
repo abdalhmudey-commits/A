@@ -27,11 +27,15 @@ export async function summarizeBook(input: BookSummaryInput): Promise<BookSummar
   return summarizeBookFlow(input);
 }
 
-const prompt = ai.definePrompt({
-  name: 'summarizeBookPrompt',
-  input: {schema: BookSummaryInputSchema},
-  output: {schema: BookSummaryOutputSchema},
-  prompt: `أنت خبير موسوعي في تلخيص الكتب. مهمتك هي اختيار كتاب مشهور ومؤثر بشكل عشوائي وتقديم ملخص مفصل وشامل له.
+const summarizeBookFlow = ai.defineFlow(
+  {
+    name: 'summarizeBookFlow',
+    inputSchema: BookSummaryInputSchema,
+    outputSchema: BookSummaryOutputSchema,
+  },
+  async (input) => {
+    
+    const prompt = `أنت خبير موسوعي في تلخيص الكتب. مهمتك هي اختيار كتاب مشهور ومؤثر بشكل عشوائي وتقديم ملخص مفصل وشامل له.
 
 **خطوات التنفيذ:**
 1.  **اختر مجالًا عشوائيًا** من القائمة الواسعة التالية: التاريخ، السير الذاتية، العلم (الفيزياء، الأحياء, الفلك)، الفلسفة، الأدب العالمي (روايات، شعر، مسرحيات)، تطوير الذات، علم النفس، الاقتصاد، الكتب الفكرية، الكتب الدينية (باستثناء القرآن الكريم).
@@ -40,25 +44,22 @@ const prompt = ai.definePrompt({
 
 **قاعدة مهمة جدًا: يُمنع منعاً باتاً اختيار أو تلخيص القرآن الكريم.**
 
-{{#if previousTitles}}
+${input.previousTitles && input.previousTitles.length > 0 ? `
 تجنب تلخيص الكتب التالية التي تم تلخيصها بالفعل في هذه الجلسة:
-{{#each previousTitles}}
-- {{{this}}}
-{{/each}}
-{{/if}}
+${input.previousTitles.map(t => `- ${t}`).join('\n')}
+` : ''}
 
 تأكد من أن الملخص ليس مجرد نقاط، بل شرح وافٍ لأفكار الكتاب الرئيسية، وكيف يمكن للقارئ الاستفادة منه.
-يجب أن تختار كتابًا مختلفًا في كل مرة، وتستكشف مجالات مختلفة لتقديم تجربة غنية للمستخدم.`,
-});
+يجب أن تختار كتابًا مختلفًا في كل مرة، وتستكشف مجالات مختلفة لتقديم تجربة غنية للمستخدم.`;
 
-const summarizeBookFlow = ai.defineFlow(
-  {
-    name: 'summarizeBookFlow',
-    inputSchema: BookSummaryInputSchema,
-    outputSchema: BookSummaryOutputSchema,
-  },
-  async (input) => {
-    const {output} = await prompt(input);
+    const {output} = await ai.generate({
+        model: 'gemini-1.5-flash-latest',
+        prompt: prompt,
+        output: {
+            schema: BookSummaryOutputSchema,
+        }
+    });
+
     return output!;
   }
 );
