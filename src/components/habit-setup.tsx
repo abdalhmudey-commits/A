@@ -66,11 +66,11 @@ export default function HabitSetup() {
                     <TabsList className="grid w-full grid-cols-2 rounded-none h-14">
                         <TabsTrigger value="list" className="gap-2 text-base rounded-none" disabled>
                             <ListTodo className="h-5 w-5" />
-                            عاداتي
+                            {dictionary.habits.myHabits}
                         </TabsTrigger>
                         <TabsTrigger value="new" className="gap-2 text-base rounded-none" disabled>
                             <PlusCircle className="h-5 w-5" />
-                            إعداد جديد
+                            {dictionary.habits.newSetup}
                         </TabsTrigger>
                     </TabsList>
                 </Tabs>

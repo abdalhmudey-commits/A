@@ -122,9 +122,9 @@ export default function MotivationalMessage() {
     } catch (error) {
       console.error("Failed to summarize book:", error);
       setSummary({
-        title: "خطأ",
-        author: "النظام",
-        summary: "عذرًا، لم نتمكن من تلخيص كتاب في الوقت الحالي. يرجى المحاولة مرة أخرى لاحقًا.",
+        title: dictionary.home.errorTitle,
+        author: dictionary.home.errorAuthor,
+        summary: dictionary.home.errorSummary,
       });
     } finally {
       setIsSummaryLoading(false);
