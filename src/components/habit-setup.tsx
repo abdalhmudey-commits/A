@@ -56,7 +56,25 @@ export default function HabitSetup() {
   };
   
   if (!isMounted) {
-    return null; 
+    // Render a placeholder or null on the server to avoid hydration mismatch
+    return (
+        <Card className="w-full h-full overflow-hidden border-transparent shadow-none bg-transparent">
+            <CardContent className="p-0 sm:p-0">
+                <Tabs value="new" className="w-full">
+                    <TabsList className="grid w-full grid-cols-2 rounded-none h-14">
+                        <TabsTrigger value="list" className="gap-2 text-base rounded-none" disabled>
+                            <ListTodo className="h-5 w-5" />
+                            عاداتي
+                        </TabsTrigger>
+                        <TabsTrigger value="new" className="gap-2 text-base rounded-none" disabled>
+                            <PlusCircle className="h-5 w-5" />
+                            إعداد جديد
+                        </TabsTrigger>
+                    </TabsList>
+                </Tabs>
+            </CardContent>
+        </Card>
+    );
   }
 
   return (
@@ -64,13 +82,13 @@ export default function HabitSetup() {
       <CardContent className="p-0 sm:p-0">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="grid w-full grid-cols-2 rounded-none h-14">
+             <TabsTrigger value="new" className="gap-2 text-base rounded-none">
+              <PlusCircle className="h-5 w-5" />
+              إعداد جديد
+            </TabsTrigger>
             <TabsTrigger value="list" className="gap-2 text-base rounded-none">
               <ListTodo className="h-5 w-5" />
               عاداتي
-            </TabsTrigger>
-            <TabsTrigger value="new" className="gap-2 text-base rounded-none">
-              <PlusCircle className="h-5 w-5" />
-              إعداد جديد
             </TabsTrigger>
           </TabsList>
           <TabsContent value="list" className="mt-4 p-4">

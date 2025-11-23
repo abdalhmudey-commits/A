@@ -9,7 +9,7 @@ export default function EveningRemembrances() {
   const image = PlaceHolderImages.find(img => img.id === 'evening-remembrance');
 
   return (
-     <Card className="w-full h-full overflow-hidden border-transparent shadow-none bg-transparent">
+     <Card className="w-full h-full overflow-hidden border-transparent shadow-none bg-transparent rounded-none">
         <CardHeader className="p-4">
            {image && (
             <div className="relative h-48 w-full overflow-hidden rounded-lg">
