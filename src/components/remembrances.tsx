@@ -1,6 +1,6 @@
 "use client";
 
-import { Sunrise, Sunset } from "lucide-react";
+import { Sunrise, Sunset, Bed, Church } from "lucide-react";
 import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "./ui/card";
@@ -19,6 +19,18 @@ const remembrancesTabs = [
     icon: Sunset,
     image: PlaceHolderImages.find((img) => img.id === "evening-remembrance"),
   },
+  {
+    id: 'after-prayer',
+    title: 'أذكار بعد الصلاة',
+    icon: Church,
+    image: PlaceHolderImages.find(img => img.id === 'prayer-remembrance')
+  },
+  {
+    id: 'sleep',
+    title: 'أذكار النوم',
+    icon: Bed,
+    image: PlaceHolderImages.find(img => img.id === 'sleep-remembrance')
+  },
 ];
 
 const ComingSoonContent = ({ title }: { title: string }) => {
@@ -34,7 +46,7 @@ export default function Remembrances() {
     <Card className="w-full h-full overflow-hidden border-transparent shadow-none bg-transparent">
         <CardContent className="p-4 sm:p-6">
             <Tabs defaultValue="morning" className="w-full">
-                <TabsList className="grid w-full grid-cols-2 h-auto">
+                <TabsList className="grid w-full grid-cols-4 h-auto">
                     {remembrancesTabs.map((tab) => (
                         <TabsTrigger key={tab.id} value={tab.id} className="flex flex-row items-center gap-2 h-12">
                             <tab.icon className="h-5 w-5" />
