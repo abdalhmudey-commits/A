@@ -172,6 +172,9 @@ export default function StoryCarousel() {
 
     api.on("select", handleSelect);
 
+    // Set initial state
+    handleSelect();
+
     return () => {
       api.off("select", handleSelect);
     };
@@ -180,9 +183,10 @@ export default function StoryCarousel() {
   const handleIndicatorClick = (index: number) => {
     if (current === index) {
       setCurrent(null);
+      api?.scrollTo(index, false); // Don't snap
     } else {
       setCurrent(index);
-      api?.scrollTo(index, true);
+      api?.scrollTo(index, true); // Snap to selected
     }
   };
   
@@ -224,8 +228,8 @@ export default function StoryCarousel() {
         </div>
       </div>
       {current === null && <FloatingMessages />}
-      {current !== null && (
-        <Carousel setApi={setApi} opts={{ startIndex: current, align: 'start' }} className="w-full" dir="rtl">
+      <div className={current === null ? 'hidden' : ''}>
+        <Carousel setApi={setApi} opts={{ align: 'start', direction: 'rtl' }} className="w-full">
           <CarouselContent>
             {storiesConfig.map((story) => (
               <CarouselItem key={story.id}>
@@ -263,7 +267,7 @@ export default function StoryCarousel() {
             ))}
           </CarouselContent>
         </Carousel>
-      )}
+      </div>
     </div>
   );
 }
