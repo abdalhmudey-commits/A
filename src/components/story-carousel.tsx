@@ -25,34 +25,39 @@ import { Textarea } from "./ui/textarea";
 import SettingsPanel from "./settings-panel";
 import MotivationalMessage from "./motivational-message";
 
+const ComingSoonContent = ({ title }: { title: string }) => {
+  return (
+    <div className="flex flex-col items-center justify-center h-full text-center p-8">
+        <h2 className="font-headline text-3xl text-primary-foreground/90">{title}</h2>
+        <p className="text-lg text-foreground/70 mt-4">المحتوى قادم قريباً...</p>
+    </div>
+  )
+}
+
 const storiesConfig = [
   {
     id: "habit",
     title: "العادة",
     icon: Flame,
     image: PlaceHolderImages.find((img) => img.id === "habit-story"),
-    content: `هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق. إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى زيادة عدد الفقرات كما تريد، النص لن يبدو مقسما ولا يحوي أخطاء لغوية، مولد النص العربى مفيد لمصممي المواقع على وجه الخصوص، حيث يحتاج العميل فى كثير من الأحيان أن يطلع على صورة حقيقية لتصميم الموقع.`,
   },
   {
     id: "summary",
     title: "ملخص كتاب",
     icon: BookMarked,
     image: PlaceHolderImages.find((img) => img.id === "book-summary"),
-    content: `ومن هنا وجب على المصمم أن يضع نصوصا مؤقتة على التصميم ليظهر للعميل الشكل كاملاً، دور مولد النص العربى أن يوفر على المصمم عناء البحث عن نص بديل لا علاقة له بالموضوع الذى يتحدث عنه التصميم فيظهر بشكل لا يليق. هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غير منظم، غير منسق، أو حتى غير مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً.`,
   },
   {
     id: "morning",
     title: "اذكار الصباح",
     icon: Sunrise,
     image: PlaceHolderImages.find((img) => img.id === "morning-remembrance"),
-    content: `"أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ." هذا النص هو مثال يمكن استبداله لاحقًا بمحتوى كامل لأذكار الصباح. يتيح لك التطبيق مساحة لتصفح الأذكار والتأمل في معانيها لبداية يوم مليء بالبركة والسكينة.`,
   },
   {
     id: "evening",
     title: "اذكار المساء",
     icon: Sunset,
     image: PlaceHolderImages.find((img) => img.id === "evening-remembrance"),
-    content: `"أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ." يوفر هذا القسم مساحة لعرض أذكار المساء كاملة. يمكنك قراءتها هنا لختام يومك بذكر الله وشكره، طالبًا منه العفو والمغفرة. المحتوى الحالي هو مجرد مثال وسيتم استبداله.`,
   },
   {
     id: "notes",
@@ -145,13 +150,13 @@ function NoteTaker() {
 
 function MotivationalStory() {
     return (
-        <Card className="w-full overflow-hidden border-transparent shadow-none bg-transparent flex flex-col items-center justify-center h-full pt-10">
+        <Card className="w-full overflow-hidden border-transparent shadow-none bg-transparent flex flex-col items-center justify-center h-full">
             <CardHeader className="items-center">
                 <CardTitle className="font-headline text-3xl text-primary-foreground/90">
                 رسالة اليوم
                 </CardTitle>
             </CardHeader>
-            <CardContent className="flex flex-col gap-6 items-center justify-center text-center">
+            <CardContent className="flex w-full flex-col gap-6 items-center justify-center text-center">
                  <MotivationalMessage />
             </CardContent>
         </Card>
@@ -199,9 +204,9 @@ export default function StoryCarousel() {
                 current === index ? "bg-accent" : "bg-primary/20"
               }`}
             >
-              <div className="bg-background rounded-full p-2">
+              <div className="bg-background rounded-full p-3">
                 <story.icon
-                  className={`h-10 w-10 transition-colors ${
+                  className={`h-12 w-12 transition-colors ${
                     current === index
                       ? "text-accent-foreground"
                       : "text-foreground/60"
@@ -210,7 +215,7 @@ export default function StoryCarousel() {
               </div>
             </div>
             <span
-              className={`text-sm sm:text-base transition-colors ${
+              className={`text-base sm:text-lg transition-colors ${
                 current === index ? "text-accent-foreground font-semibold" : "text-muted-foreground"
               }`}
             >
@@ -231,35 +236,31 @@ export default function StoryCarousel() {
                 <MotivationalStory />
               ) : (
                 <Card className="w-full overflow-hidden border-transparent shadow-none bg-transparent">
-                  <CardHeader>
-                    <CardTitle className="font-headline text-3xl text-primary-foreground/90">
-                      {story.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="flex flex-col gap-6">
+                  <CardContent className="flex flex-col gap-6 p-0">
                     {story.image && (
-                      <div className="relative h-64 w-full overflow-hidden rounded-lg shadow-lg">
+                       <div className="relative h-64 w-full overflow-hidden rounded-lg shadow-lg">
                         <Image
                           src={story.image.imageUrl}
                           alt={story.image.description}
                           fill
-                          className="object-cover transition-transform duration-300 hover:scale-105"
+                          className="object-cover"
                           data-ai-hint={story.image.imageHint}
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
-                      </div>
+                         <div className="absolute inset-0 bg-black/30 flex items-end p-6">
+                           <h2 className="font-headline text-3xl text-white shadow-md">{story.title}</h2>
+                         </div>
+                       </div>
                     )}
-                    <p className="text-lg leading-relaxed text-foreground/80">
-                      {story.content}
-                    </p>
+                     <div className="p-6">
+                       <ComingSoonContent title={story.title} />
+                     </div>
                   </CardContent>
                 </Card>
               )}
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="right-4 -top-10 left-auto md:right-auto md:left-4" />
-        <CarouselNext className="left-4 -top-10 right-auto md:left-auto md:right-4" />
       </Carousel>
     </div>
   );
