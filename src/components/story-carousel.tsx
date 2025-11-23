@@ -186,22 +186,22 @@ export default function StoryCarousel() {
   };
 
   return (
-    <div className="w-full max-w-3xl">
-      <div className="pb-4 flex justify-center gap-2 overflow-x-auto">
+    <div className="w-full max-w-4xl">
+      <div className="pb-4 flex justify-center gap-4 overflow-x-auto">
         {storiesConfig.map((story, index) => (
           <button
             key={story.id}
             onClick={() => handleIndicatorClick(index)}
-            className="group flex flex-col items-center gap-1.5 flex-shrink-0"
+            className="group flex flex-col items-center gap-2 flex-shrink-0"
           >
             <div
-              className={`p-1 rounded-full transition-colors ${
+              className={`p-2 rounded-full transition-colors ${
                 current === index ? "bg-accent" : "bg-primary/20"
               }`}
             >
-              <div className="bg-background rounded-full p-1">
+              <div className="bg-background rounded-full p-2">
                 <story.icon
-                  className={`h-5 w-5 transition-colors ${
+                  className={`h-10 w-10 transition-colors ${
                     current === index
                       ? "text-accent-foreground"
                       : "text-foreground/60"
@@ -210,7 +210,7 @@ export default function StoryCarousel() {
               </div>
             </div>
             <span
-              className={`text-xs sm:text-sm transition-colors ${
+              className={`text-sm sm:text-base transition-colors ${
                 current === index ? "text-accent-foreground font-semibold" : "text-muted-foreground"
               }`}
             >
