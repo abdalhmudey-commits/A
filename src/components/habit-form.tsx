@@ -134,10 +134,13 @@ export default function HabitForm({ onSave }: HabitFormProps) {
     
     onSave(newHabit);
     
-    toast({
-        title: dictionary.habits.habitAddedToastTitle,
-        description: dictionary.habits.habitAddedToastDescription,
-    });
+    // Only show toast if not in onboarding
+    if (document.querySelector('[data-radix-dialog-overlay]') === null) {
+      toast({
+          title: dictionary.habits.habitAddedToastTitle,
+          description: dictionary.habits.habitAddedToastDescription,
+      });
+    }
 
     // Reset form
     setHabitDescription("");

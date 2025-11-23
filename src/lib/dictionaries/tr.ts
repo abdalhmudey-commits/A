@@ -81,6 +81,26 @@ const dictionary = {
         placeholder: "Yazmaya başla...",
         saved: "Kaydedildi."
     },
+    onboarding: {
+        welcomeTitle: "Değişim Yolculuğuna Hoş Geldiniz!",
+        welcomeAdPlaceholder: "Hoş Geldiniz Reklamı İçin Yer Tutucu",
+        next: "İleri",
+        back: "Geri",
+        finish: "Bitir",
+        habitDescriptionTitle: "Hangi alışkanlığı bırakmak istiyorsunuz?",
+        habitDescriptionSubtitle: "Odaklanmanıza yardımcı olması için alışkanlığı açıkça tanımlayın.",
+        reminderFrequencyTitle: "Size ne zaman hatırlatalım?",
+        reminderFrequencySubtitle: "Güçlü kalmanıza yardımcı olacak bildirimleri almak için uygun bir zaman seçin.",
+        reminderMessageTitle: "Motivasyon Mesajınız",
+        reminderMessageSubtitle: "Kendinize güçlü ve teşvik edici bir mesaj yazın.",
+        audioReminderTitle: "Mesajınıza Ses Ekleyin",
+        audioReminderSubtitle: "Hatırlatıcınızı daha etkili hale getirmek için bir sesli mesaj kaydedebilir veya bir ses dosyası yükleyebilirsiniz.",
+        finalStepTitle: "Artık Hazırsınız!",
+        finalStepSubtitle: "İlk alışkanlığınızı başarıyla kurdunuz. Yolculuğunuzda size en iyi dileklerimizi sunarız.",
+    },
+    ads: {
+        bannerPlaceholder: "Banner Reklamı İçin Yer Tutucu"
+    },
     remembrancesData: {
       morningRemembrances: [
         {
@@ -218,7 +238,7 @@ const dictionary = {
         },
         {
             id: 20,
-            arabicText: 'اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْماً نَافِعاً، وَرِزْقاً طَيِّباً، وَعَمَلاً مُتَقَبَّلاً.',
+            arabicText: 'اللَّهُمَّ إِنِّي أَsْأَلُكَ عِلْماً نَافِعاً، وَرِزْقاً طَيِّباً، وَعَمَلاً مُتَقَبَّلاً.',
             translation: 'Allah\'ım, Senden faydalı ilim, helal rızık ve kabul edilmiş amel dilerim.',
             count: 1,
             virtue: ''
@@ -367,7 +387,7 @@ const dictionary = {
         },
         {
             id: 19,
-            arabicText: 'أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ.',
+            arabicText: 'أَسْتَغْfِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ.',
             translation: 'Allah\'tan bağışlanma diler ve O\'na tövbe ederim.',
             count: 100,
             virtue: ''
