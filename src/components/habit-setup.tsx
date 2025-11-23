@@ -153,7 +153,7 @@ export default function HabitSetup() {
     return (
         <Card className="w-full h-full overflow-hidden border-transparent shadow-none bg-transparent">
             <CardContent className="p-0 sm:p-0">
-                <Tabs value="new" className="w-full">
+                <Tabs value="new" className="w-full" dir="rtl">
                     <TabsList className="grid w-full grid-cols-2 rounded-none h-14">
                         <TabsTrigger value="list" className="gap-2 text-base rounded-none" disabled>
                             <ListTodo className="h-5 w-5" />
@@ -173,7 +173,7 @@ export default function HabitSetup() {
   return (
     <Card className="w-full h-full overflow-hidden border-transparent shadow-none bg-transparent">
       <CardContent className="p-0 sm:p-0">
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full" dir="rtl">
           <TabsList className="grid w-full grid-cols-2 rounded-none h-14">
              <TabsTrigger value="new" className="gap-2 text-base rounded-none">
               <PlusCircle className="h-5 w-5" />

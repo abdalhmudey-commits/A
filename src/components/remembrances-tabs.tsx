@@ -9,7 +9,7 @@ import { useLanguage } from "@/context/language-context";
 export default function RemembrancesTabs() {
   const { dictionary } = useLanguage();
   return (
-    <Tabs defaultValue="morning" className="w-full">
+    <Tabs defaultValue="morning" className="w-full" dir="rtl">
       <TabsList className="grid w-full grid-cols-2 rounded-none h-14">
         <TabsTrigger value="morning" className="gap-2 text-base rounded-none">
           <Sunrise className="h-5 w-5" />

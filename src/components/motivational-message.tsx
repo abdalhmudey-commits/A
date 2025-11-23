@@ -253,7 +253,7 @@ export default function MotivationalMessage() {
           disabled={!canGoPrev}
           className="rounded-full h-12 w-12"
         >
-          <ArrowRight className="h-6 w-6" />
+          <ArrowRight className="h-6 w-6 rtl:rotate-180" />
           <span className="sr-only">{dictionary.home.previous}</span>
         </Button>
         <span className="font-mono text-muted-foreground">
@@ -266,7 +266,7 @@ export default function MotivationalMessage() {
           disabled={!canGoNext}
           className="rounded-full h-12 w-12"
         >
-          <ArrowLeft className="h-6 w-6" />
+          <ArrowLeft className="h-6 w-6 rtl:rotate-180" />
           <span className="sr-only">{dictionary.home.next}</span>
         </Button>
       </div>

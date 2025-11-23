@@ -240,13 +240,13 @@ export default function HabitForm({ onSave }: HabitFormProps) {
                 className="flex-1"
                 onClick={handleStartRecording}
               >
-                <Mic className="ltr:mr-2 rtl:ml-2 h-4 w-4" />
+                <Mic className="me-2 h-4 w-4" />
                 {dictionary.habits.recordAudio}
               </Button>
               <Label htmlFor="audio-upload" className="flex-1">
                 <Button asChild variant="outline" className="w-full cursor-pointer">
                   <div>
-                    <FileAudio className="ltr:mr-2 rtl:ml-2 h-4 w-4" />
+                    <FileAudio className="me-2 h-4 w-4" />
                     {dictionary.habits.uploadAudio}
                   </div>
                 </Button>
