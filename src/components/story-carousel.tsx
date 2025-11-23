@@ -11,13 +11,15 @@ import {
   Sparkles,
 } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   type CarouselApi,
+  CarouselPrevious,
+  CarouselNext
 } from "./ui/carousel";
 import { Textarea } from "./ui/textarea";
 import SettingsPanel from "./settings-panel";
@@ -160,41 +162,42 @@ function MotivationalStory() {
 export default function StoryCarousel() {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState<number | null>(null);
+  const [dir, setDir] = useState<'ltr' | 'rtl'>('rtl');
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const docDir = document.documentElement.dir || 'rtl';
+      setDir(docDir as 'ltr' | 'rtl');
+    }
+  }, []);
+
+  const handleSelect = useCallback(() => {
+    if (!api) return;
+    setCurrent(api.selectedScrollSnap());
+  }, [api]);
 
   useEffect(() => {
     if (!api) {
       return;
     }
-
-    const handleSelect = () => {
-      setCurrent(api.selectedScrollSnap());
-    };
-
+    handleSelect(); // Set initial
     api.on("select", handleSelect);
-
-    // Set initial state
-    handleSelect();
 
     return () => {
       api.off("select", handleSelect);
     };
+  }, [api, handleSelect]);
+  
+  const handleIndicatorClick = useCallback((index: number) => {
+    if (!api) return;
+    api.scrollTo(index);
   }, [api]);
 
-  const handleIndicatorClick = (index: number) => {
-    if (current === index) {
-      setCurrent(null);
-      api?.scrollTo(index, false); // Don't snap
-    } else {
-      setCurrent(index);
-      api?.scrollTo(index, true); // Snap to selected
-    }
-  };
-  
 
   return (
-    <div className="w-full max-w-4xl">
+    <div className="w-full">
       <div className="pb-4 overflow-x-auto">
-        <div className="flex justify-center gap-2 px-4">
+        <div className="flex justify-start gap-2 px-4">
           {storiesConfig.map((story, index) => (
             <button
               key={story.id}
@@ -229,7 +232,11 @@ export default function StoryCarousel() {
       </div>
       {current === null && <FloatingMessages />}
       <div className={current === null ? 'hidden' : ''}>
-        <Carousel setApi={setApi} opts={{ align: 'start', direction: 'rtl' }} className="w-full">
+        <Carousel 
+          setApi={setApi} 
+          opts={{ align: 'start', direction: dir }} 
+          className="w-full"
+        >
           <CarouselContent>
             {storiesConfig.map((story) => (
               <CarouselItem key={story.id}>
@@ -266,6 +273,8 @@ export default function StoryCarousel() {
               </CarouselItem>
             ))}
           </CarouselContent>
+          <CarouselPrevious className="absolute top-1/2 -translate-y-1/2" />
+          <CarouselNext className="absolute top-1/2 -translate-y-1/2" />
         </Carousel>
       </div>
     </div>

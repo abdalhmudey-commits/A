@@ -11,6 +11,14 @@ import { Card, CardContent } from "@/components/ui/card";
 export default function MotivationalMessage() {
   const [data, setData] = useState<MotivationalMessagesOutput | null>(null);
   const [loading, setLoading] = useState(true);
+  const [dir, setDir] = useState<'ltr' | 'rtl'>('rtl');
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const docDir = document.documentElement.dir || 'rtl';
+      setDir(docDir as 'ltr' | 'rtl');
+    }
+  }, []);
 
   // Re-fetch when path or search params change to simulate page navigation
   const pathname = usePathname();
@@ -54,7 +62,7 @@ export default function MotivationalMessage() {
 
   return (
     <div className="relative w-full max-w-3xl pt-10 animate-in fade-in-0 zoom-in-95 duration-500">
-       <Carousel className="w-full" dir="rtl">
+       <Carousel className="w-full" opts={{ direction: dir }}>
         <CarouselContent>
           {data?.messages.map((item, index) => (
             <CarouselItem key={index}>
@@ -76,8 +84,8 @@ export default function MotivationalMessage() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="absolute -left-4 top-1/2 -translate-y-1/2 rtl:rotate-180" />
-        <CarouselNext className="absolute -right-4 top-1/2 -translate-y-1/2 rtl:rotate-180" />
+        <CarouselPrevious />
+        <CarouselNext />
       </Carousel>
       <div className="flex items-center justify-center mt-4 gap-2 text-muted-foreground text-xs">
         <Bot size={14} />
