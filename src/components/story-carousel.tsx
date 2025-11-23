@@ -28,7 +28,6 @@ import MotivationalMessage from "./motivational-message";
 const ComingSoonContent = ({ title }: { title: string }) => {
   return (
     <div className="flex flex-col items-center justify-center h-full text-center p-8">
-        <h2 className="font-headline text-3xl text-primary-foreground/90">{title}</h2>
         <p className="text-lg text-foreground/70 mt-4">المحتوى قادم قريباً...</p>
     </div>
   )
@@ -71,7 +70,7 @@ const storiesConfig = [
   },
   {
     id: "motivation",
-    title: "رسالة تحفيزية",
+    title: "رسالة اليوم",
     icon: Sparkles,
   },
 ];
@@ -151,11 +150,6 @@ function NoteTaker() {
 function MotivationalStory() {
     return (
         <Card className="w-full overflow-hidden border-transparent shadow-none bg-transparent flex flex-col items-center justify-center h-full">
-            <CardHeader className="items-center">
-                <CardTitle className="font-headline text-3xl text-foreground">
-                رسالة اليوم
-                </CardTitle>
-            </CardHeader>
             <CardContent className="flex w-full flex-col gap-6 items-center justify-center text-center">
                  <MotivationalMessage />
             </CardContent>
@@ -198,25 +192,25 @@ export default function StoryCarousel() {
             <button
               key={story.id}
               onClick={() => handleIndicatorClick(index)}
-              className="group flex flex-col items-center gap-2 flex-shrink-0 w-24"
+              className="group flex flex-col items-center gap-1 flex-shrink-0 w-20"
             >
               <div
-                className={`p-2 rounded-full transition-colors ${
+                className={`p-1 rounded-full transition-colors ${
                   current === index ? "bg-primary" : "bg-secondary"
                 }`}
               >
-                <div className="bg-background rounded-full p-3">
+                <div className="bg-background rounded-full p-2">
                   <story.icon
-                    className={`h-12 w-12 transition-colors ${
+                    className={`h-8 w-8 transition-colors ${
                       current === index
-                        ? "text-primary-foreground"
+                        ? "text-primary"
                         : "text-secondary-foreground"
                     }`}
                   />
                 </div>
               </div>
               <span
-                className={`text-base sm:text-lg transition-colors text-center ${
+                className={`text-xs sm:text-sm transition-colors text-center ${
                   current === index ? "text-primary font-semibold" : "text-muted-foreground"
                 }`}
               >
@@ -254,7 +248,7 @@ export default function StoryCarousel() {
                          </div>
                        </div>
                     )}
-                     <div className="p-6">
+                     <div className="p-6 pt-0">
                        <ComingSoonContent title={story.title} />
                      </div>
                   </CardContent>
