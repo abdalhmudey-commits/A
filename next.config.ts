@@ -4,8 +4,7 @@ const nextConfig: NextConfig = {
   output: 'export',
   experimental: {
     serverActions: {
-      bodySizeLimit: '1mb',
-      allowedOrigins: [],
+      enabled: false,
     },
   },
   typescript: {
