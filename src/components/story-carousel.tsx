@@ -160,14 +160,12 @@ function MotivationalStory() {
 
 export default function StoryCarousel() {
   const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState<number | null>(null);
 
   useEffect(() => {
     if (!api) {
       return;
     }
-
-    setCurrent(api.selectedScrollSnap());
 
     const handleSelect = () => {
       setCurrent(api.selectedScrollSnap());
@@ -181,13 +179,19 @@ export default function StoryCarousel() {
   }, [api]);
 
   const handleIndicatorClick = (index: number) => {
-    api?.scrollTo(index);
+    if (current === index) {
+      setCurrent(null);
+      api?.scrollTo(index); // remain on slide but allow re-opening
+    } else {
+      setCurrent(index);
+      api?.scrollTo(index);
+    }
   };
 
   return (
     <div className="w-full max-w-4xl">
       <div className="pb-4 overflow-x-auto">
-        <div className="flex justify-start gap-2 px-4">
+        <div className="flex justify-center gap-2 px-4">
           {storiesConfig.map((story, index) => (
             <button
               key={story.id}
@@ -220,44 +224,46 @@ export default function StoryCarousel() {
           ))}
         </div>
       </div>
-      <Carousel setApi={setApi} className="w-full" dir="rtl">
-        <CarouselContent>
-          {storiesConfig.map((story) => (
-            <CarouselItem key={story.id}>
-              {story.id === "notes" ? (
-                <NoteTaker />
-              ) : story.id === "settings" ? (
-                <SettingsPanel />
-              ) : story.id === 'motivation' ? (
-                <MotivationalStory />
-              ) : (
-                <Card className="w-full overflow-hidden border-transparent shadow-none bg-transparent">
-                  <CardContent className="flex flex-col gap-6 p-0">
-                    {story.image && (
-                       <div className="relative h-64 w-full overflow-hidden rounded-lg shadow-lg">
-                        <Image
-                          src={story.image.imageUrl}
-                          alt={story.image.description}
-                          fill
-                          className="object-cover"
-                          data-ai-hint={story.image.imageHint}
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        />
-                         <div className="absolute inset-0 bg-black/30 flex items-end p-6">
-                           <h2 className="font-headline text-3xl text-white shadow-md">{story.title}</h2>
+      {current !== null && (
+        <Carousel setApi={setApi} opts={{ startIndex: current }} className="w-full" dir="rtl">
+          <CarouselContent>
+            {storiesConfig.map((story) => (
+              <CarouselItem key={story.id}>
+                {story.id === "notes" ? (
+                  <NoteTaker />
+                ) : story.id === "settings" ? (
+                  <SettingsPanel />
+                ) : story.id === 'motivation' ? (
+                  <MotivationalStory />
+                ) : (
+                  <Card className="w-full overflow-hidden border-transparent shadow-none bg-transparent">
+                    <CardContent className="flex flex-col gap-6 p-0">
+                      {story.image && (
+                         <div className="relative h-64 w-full overflow-hidden rounded-lg shadow-lg">
+                          <Image
+                            src={story.image.imageUrl}
+                            alt={story.image.description}
+                            fill
+                            className="object-cover"
+                            data-ai-hint={story.image.imageHint}
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          />
+                           <div className="absolute inset-0 bg-black/30 flex items-end p-6">
+                             <h2 className="font-headline text-3xl text-white shadow-md">{story.title}</h2>
+                           </div>
                          </div>
+                      )}
+                       <div className="p-6 pt-0">
+                         <ComingSoonContent title={story.title} />
                        </div>
-                    )}
-                     <div className="p-6 pt-0">
-                       <ComingSoonContent title={story.title} />
-                     </div>
-                  </CardContent>
-                </Card>
-              )}
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-      </Carousel>
+                    </CardContent>
+                  </Card>
+                )}
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+      )}
     </div>
   );
 }
