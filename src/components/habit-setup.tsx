@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { PlusCircle, ListTodo } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -19,38 +19,45 @@ export type Habit = {
 const HABITS_STORAGE_KEY = "habitsList";
 
 export default function HabitSetup() {
-  const [habits, setHabits] = useState<Habit[]>(() => {
+  const [habits, setHabits] = useState<Habit[]>([]);
+  const [activeTab, setActiveTab] = useState("new");
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
     try {
       const savedHabits = localStorage.getItem(HABITS_STORAGE_KEY);
-      return savedHabits ? JSON.parse(savedHabits) : [];
+      if (savedHabits) {
+        setHabits(JSON.parse(savedHabits));
+      }
     } catch (error) {
       console.error("Failed to load habits from localStorage", error);
-      return [];
     }
-  });
-  const [activeTab, setActiveTab] = useState("list");
+  }, []);
+
+  useEffect(() => {
+    if (isMounted) {
+      try {
+        localStorage.setItem(HABITS_STORAGE_KEY, JSON.stringify(habits));
+      } catch (error) {
+        console.error("Failed to save habits to localStorage", error);
+      }
+    }
+  }, [habits, isMounted]);
 
   const addHabit = (newHabit: Omit<Habit, 'id'>) => {
     const habitWithId = { ...newHabit, id: crypto.randomUUID() };
-    const updatedHabits = [...habits, habitWithId];
-    setHabits(updatedHabits);
-    try {
-      localStorage.setItem(HABITS_STORAGE_KEY, JSON.stringify(updatedHabits));
-    } catch (error) {
-      console.error("Failed to save habits to localStorage", error);
-    }
+    setHabits(prevHabits => [...prevHabits, habitWithId]);
     setActiveTab("list");
   };
 
   const deleteHabit = (habitId: string) => {
-    const updatedHabits = habits.filter(habit => habit.id !== habitId);
-    setHabits(updatedHabits);
-     try {
-      localStorage.setItem(HABITS_STORAGE_KEY, JSON.stringify(updatedHabits));
-    } catch (error) {
-      console.error("Failed to save habits to localStorage", error);
-    }
+    setHabits(prevHabits => prevHabits.filter(habit => habit.id !== habitId));
   };
+  
+  if (!isMounted) {
+    return null; 
+  }
 
   return (
     <Card className="w-full h-full overflow-hidden border-transparent shadow-none bg-transparent">

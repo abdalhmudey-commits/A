@@ -50,7 +50,7 @@ const tabsConfig = [
 
 export default function MainTabs() {
   return (
-    <Tabs defaultValue="habits" className="w-full max-w-3xl">
+    <Tabs defaultValue="home" className="w-full max-w-3xl">
       <TabsList className="grid w-full grid-cols-5 h-auto">
         {tabsConfig.map((tab) => (
           <TabsTrigger key={tab.id} value={tab.id} className="flex flex-col gap-1.5 h-16">
