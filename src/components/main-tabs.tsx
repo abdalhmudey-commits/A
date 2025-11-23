@@ -44,8 +44,12 @@ export default function MainTabs() {
     },
   ];
 
+  let contentConfig = [...tabsConfig];
+
   if (language === 'ar') {
     tabsConfig.reverse();
+    // Keep content order same as visual order of tabs
+    contentConfig.reverse();
   }
 
 
@@ -62,7 +66,7 @@ export default function MainTabs() {
           ))}
         </TabsList>
 
-        {tabsConfig.map((tab) => (
+        {contentConfig.map((tab) => (
           <TabsContent key={tab.id} value={tab.id} className="mt-0">
             <div className="bg-card/80 backdrop-blur-sm rounded-lg border-t-0 rounded-t-none border border-border/20 shadow-lg min-h-[calc(100vh-200px)]">
               {tab.component ? (
