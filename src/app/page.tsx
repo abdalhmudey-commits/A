@@ -1,4 +1,3 @@
-import MotivationalMessage from "@/components/motivational-message";
 import StoryCarousel from "@/components/story-carousel";
 
 export default function Home() {
@@ -8,7 +7,7 @@ export default function Home() {
         <h1 className="text-4xl font-headline text-primary md:text-5xl lg:text-6xl">
           ترك العادات السيئة
         </h1>
-        <MotivationalMessage />
+        {/* <MotivationalMessage /> */}
         <StoryCarousel />
       </div>
     </main>

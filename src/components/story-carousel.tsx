@@ -8,6 +8,7 @@ import {
   Sunrise,
   Sunset,
   Settings,
+  Sparkles,
 } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -22,6 +23,7 @@ import {
 } from "./ui/carousel";
 import { Textarea } from "./ui/textarea";
 import SettingsPanel from "./settings-panel";
+import MotivationalMessage from "./motivational-message";
 
 const storiesConfig = [
   {
@@ -61,6 +63,11 @@ const storiesConfig = [
     id: "settings",
     title: "الإعدادات",
     icon: Settings,
+  },
+  {
+    id: "motivation",
+    title: "رسالة تحفيزية",
+    icon: Sparkles,
   },
 ];
 
@@ -136,6 +143,22 @@ function NoteTaker() {
   );
 }
 
+function MotivationalStory() {
+    return (
+        <Card className="w-full overflow-hidden border-transparent shadow-none bg-transparent flex flex-col items-center justify-center h-full pt-10">
+            <CardHeader className="items-center">
+                <CardTitle className="font-headline text-3xl text-primary-foreground/90">
+                رسالة اليوم
+                </CardTitle>
+            </CardHeader>
+            <CardContent className="flex flex-col gap-6 items-center justify-center text-center">
+                 <MotivationalMessage />
+            </CardContent>
+        </Card>
+    )
+}
+
+
 export default function StoryCarousel() {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
@@ -204,6 +227,8 @@ export default function StoryCarousel() {
                 <NoteTaker />
               ) : story.id === "settings" ? (
                 <SettingsPanel />
+              ) : story.id === 'motivation' ? (
+                <MotivationalStory />
               ) : (
                 <Card className="w-full overflow-hidden border-transparent shadow-none bg-transparent">
                   <CardHeader>
