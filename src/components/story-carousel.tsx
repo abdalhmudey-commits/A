@@ -172,9 +172,6 @@ export default function StoryCarousel() {
 
     api.on("select", handleSelect);
 
-    // Set initial selection
-    // handleSelect();
-
     return () => {
       api.off("select", handleSelect);
     };
