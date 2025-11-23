@@ -1,10 +1,11 @@
 {
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
   "name": "ترك العادات السيئة",
   "short_name": "ترك العادات",
   "description": "تطبيق يساعدك على بناء عادات أفضل والبقاء متحفزًا.",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#000000",
   "icons": []
 }
