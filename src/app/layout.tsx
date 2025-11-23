@@ -4,6 +4,7 @@ import { getDictionary } from '@/lib/dictionaries-server';
 import { i18n } from '@/lib/i18n-config';
 import { headers } from 'next/headers';
 import "./globals.css";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: "ترك العادات السيئة",
@@ -66,6 +67,7 @@ export default async function RootLayout({
       <body className="font-body antialiased">
         <LanguageProvider initialLanguage={lang} initialDictionary={dictionary}>
           {children}
+          <Toaster />
         </LanguageProvider>
       </body>
     </html>

@@ -4,8 +4,6 @@ import React, { createContext, useContext, useState, useEffect, ReactNode, start
 import { getDictionary } from '@/lib/dictionaries-client';
 import type { Dictionary } from '@/lib/dictionaries-client';
 import { Locale, i18n } from '@/lib/i18n-config';
-import { usePathname, useRouter } from 'next/navigation';
-
 
 interface LanguageContextType {
   language: Locale;
@@ -31,28 +29,22 @@ export const LanguageProvider = ({
   useEffect(() => {
     setIsMounted(true);
     const storedLanguage = localStorage.getItem('language') as Locale;
-    if (storedLanguage && i18n.locales.includes(storedLanguage)) {
-        if(storedLanguage !== language) {
-            handleSetLanguage(storedLanguage, true);
-        }
+    if (storedLanguage && i18n.locales.includes(storedLanguage) && storedLanguage !== language) {
+        handleSetLanguage(storedLanguage);
     }
-  }, [language]);
+  }, []);
 
 
   useEffect(() => {
     if (isMounted) {
         document.documentElement.lang = language;
         document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
+        localStorage.setItem('language', language);
     }
   }, [language, isMounted]);
 
-  const handleSetLanguage = (lang: Locale, initialLoad = false) => {
-    if(!initialLoad) { // Don't save to LS on initial load if it's already there
-        localStorage.setItem('language', lang);
-    }
-    
+  const handleSetLanguage = (lang: Locale) => {
     setLanguage(lang);
-    
     getDictionary(lang).then(newDict => {
       startTransition(() => {
         setDictionary(newDict);
@@ -60,12 +52,14 @@ export const LanguageProvider = ({
     });
   };
   
-  if (!isMounted) {
-    return (
-      <div style={{ visibility: 'hidden' }}>
-        {children}
-      </div>
-    );
+  if (!isMounted && language !== initialLanguage) {
+     // This can happen on first load if localStorage has a different language
+     // We'll quickly re-render with the correct server-side dictionary before hydrating
+     getDictionary(language).then(newDict => {
+        if (JSON.stringify(newDict) !== JSON.stringify(dictionary)) {
+          setDictionary(newDict);
+        }
+     });
   }
 
   return (

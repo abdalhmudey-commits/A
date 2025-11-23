@@ -1,4 +1,5 @@
 import 'client-only';
+import type { Locale } from './i18n-config';
 
 const dictionaries = {
   en: () => import('./dictionaries/en').then((module) => module.default),
@@ -9,6 +10,9 @@ const dictionaries = {
 };
 
 export type Dictionary = Awaited<ReturnType<typeof dictionaries['en']>>;
-export type Locale = keyof typeof dictionaries;
 
-export const getDictionary = async (locale: Locale) => dictionaries[locale]();
+
+export const getDictionary = async (locale: Locale) => {
+    const loader = dictionaries[locale] || dictionaries.en;
+    return loader();
+};
