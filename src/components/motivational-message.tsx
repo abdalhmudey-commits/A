@@ -32,6 +32,7 @@ export default function MotivationalMessage() {
         setData(result);
       } catch (error) {
         console.error("Failed to generate motivational message:", error);
+        // Provide a more robust fallback
         setData({
           messages: [
             { message: "احتضن الرحلة، فكل خطوة هي تقدم.", author: "غير معروف" },
