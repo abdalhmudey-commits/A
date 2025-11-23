@@ -64,14 +64,14 @@ const storiesConfig = [
     icon: NotebookPen,
   },
   {
-    id: "settings",
-    title: "الإعدادات",
-    icon: Settings,
-  },
-  {
     id: "motivation",
     title: "رسالة اليوم",
     icon: Sparkles,
+  },
+  {
+    id: "settings",
+    title: "الإعدادات",
+    icon: Settings,
   },
 ];
 
@@ -173,6 +173,9 @@ export default function StoryCarousel() {
 
     api.on("select", handleSelect);
 
+    // Set initial selection
+    handleSelect();
+
     return () => {
       api.off("select", handleSelect);
     };
@@ -181,12 +184,12 @@ export default function StoryCarousel() {
   const handleIndicatorClick = (index: number) => {
     if (current === index) {
       setCurrent(null);
-      api?.scrollTo(index); // remain on slide but allow re-opening
     } else {
       setCurrent(index);
       api?.scrollTo(index);
     }
   };
+  
 
   return (
     <div className="w-full max-w-4xl">
@@ -203,7 +206,7 @@ export default function StoryCarousel() {
                   current === index ? "bg-primary" : "bg-secondary"
                 }`}
               >
-                <div className="bg-background rounded-full p-1.5">
+                <div className="bg-background rounded-full p-0.5">
                   <story.icon
                     className={`h-9 w-9 transition-colors ${
                       current === index
@@ -214,7 +217,7 @@ export default function StoryCarousel() {
                 </div>
               </div>
               <span
-                className={`text-xs sm:text-sm transition-colors text-center w-full truncate ${
+                className={`text-[10px] sm:text-xs transition-colors text-center w-full truncate ${
                   current === index ? "text-primary font-semibold" : "text-muted-foreground"
                 }`}
               >
@@ -225,7 +228,7 @@ export default function StoryCarousel() {
         </div>
       </div>
       {current !== null && (
-        <Carousel setApi={setApi} opts={{ startIndex: current }} className="w-full" dir="rtl">
+        <Carousel setApi={setApi} opts={{ startIndex: current, align: 'start' }} className="w-full" dir="rtl">
           <CarouselContent>
             {storiesConfig.map((story) => (
               <CarouselItem key={story.id}>
