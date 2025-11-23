@@ -10,17 +10,21 @@ import {
   Sparkles,
 } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import { Textarea } from "./ui/textarea";
+import { Card, CardContent } from "./ui/card";
 import SettingsPanel from "./settings-panel";
-import MotivationalMessage from "./motivational-message";
 import HabitSetup from "./habit-setup";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { NoteTaker } from "./note-taker";
+import FloatingMessages from "./floating-messages";
 
 const tabsConfig = [
+  {
+    id: "home",
+    title: "الرئيسية",
+    icon: Sparkles,
+    component: FloatingMessages,
+  },
   {
     id: "habit",
     title: "العادة",
@@ -52,12 +56,6 @@ const tabsConfig = [
     component: NoteTaker,
   },
   {
-    id: "motivation",
-    title: "رسالة اليوم",
-    icon: Sparkles,
-    component: MotivationalStory,
-  },
-  {
     id: "settings",
     title: "الإعدادات",
     icon: Settings,
@@ -73,19 +71,9 @@ const ComingSoonContent = ({ title }: { title: string }) => {
   );
 };
 
-function MotivationalStory() {
-  return (
-    <Card className="w-full max-w-3xl overflow-hidden border-transparent shadow-none bg-transparent flex flex-col items-center justify-center h-full">
-      <CardContent className="flex w-full flex-col gap-6 items-center justify-center text-center">
-        <MotivationalMessage />
-      </CardContent>
-    </Card>
-  );
-}
-
 export default function MainTabs() {
   return (
-    <Tabs defaultValue="habit" className="w-full max-w-3xl">
+    <Tabs defaultValue="home" className="w-full max-w-3xl">
       <TabsList className="grid w-full grid-cols-4 md:grid-cols-7 h-auto">
         {tabsConfig.map((tab) => (
           <TabsTrigger key={tab.id} value={tab.id} className="flex flex-col gap-1.5 h-16">
@@ -96,7 +84,7 @@ export default function MainTabs() {
       </TabsList>
 
       {tabsConfig.map((tab) => (
-        <TabsContent key={tab.id} value={tab.id} className="bg-card/80 backdrop-blur-sm rounded-lg mt-4 border border-border/20 shadow-lg">
+        <TabsContent key={tab.id} value={tab.id} className="bg-card/80 backdrop-blur-sm rounded-lg mt-4 border border-border/20 shadow-lg min-h-[calc(100vh-200px)]">
           {tab.component ? (
             <tab.component />
           ) : (

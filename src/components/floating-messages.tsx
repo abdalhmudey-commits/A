@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
@@ -15,8 +14,8 @@ type MessagePosition = {
 
 const getRandomPosition = (): MessagePosition => {
     // Distribute more evenly to avoid excessive overlap
-    const top = `${Math.random() * 70}%`; // Range from 0% to 70% of height
-    const left = `${Math.random() * 70}%`; // Range from 0% to 70% of width
+    const top = `${Math.random() * 80}%`; // Range from 0% to 80% of height
+    const left = `${Math.random() * 80}%`; // Range from 0% to 80% of width
     const rotate = Math.random() * 20 - 10; // -10 to 10 degrees
     return { top, left, transform: `rotate(${rotate}deg)` };
 };
@@ -79,7 +78,7 @@ export default function FloatingMessages() {
 
   if (loading || positions.length === 0) {
     return (
-      <div className="relative h-[calc(100vh-200px)] w-full">
+      <div className="relative h-full w-full">
          {skeletonPositions.map((pos, i) => (
              <Skeleton key={i} className="absolute h-24 w-48" style={pos} />
          ))}
@@ -88,7 +87,7 @@ export default function FloatingMessages() {
   }
 
   return (
-    <div className="relative h-[calc(100vh-200px)] w-full animate-in fade-in-50 duration-1000" onClick={handleContainerClick}>
+    <div className="relative h-full w-full animate-in fade-in-50 duration-1000" onClick={handleContainerClick}>
        {data?.messages.map((item, index) => (
          <Card 
             key={index} 
