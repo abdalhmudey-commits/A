@@ -26,7 +26,7 @@ export default function HabitSetup() {
   const [activeTab, setActiveTab] = useState("new");
   const [isMounted, setIsMounted] = useState(false);
   const [notificationPermission, setNotificationPermission] = useState<NotificationPermission | "unsupported">("default");
-  const { dictionary } = useLanguage();
+  const { dictionary, language } = useLanguage();
   const { toast } = useToast();
 
   useEffect(() => {
@@ -153,7 +153,7 @@ export default function HabitSetup() {
     return (
         <Card className="w-full h-full overflow-hidden border-transparent shadow-none bg-transparent">
             <CardContent className="p-0 sm:p-0">
-                <Tabs value="new" className="w-full" dir="rtl">
+                <Tabs value="new" className="w-full">
                     <TabsList className="grid w-full grid-cols-2 rounded-none h-14">
                         <TabsTrigger value="list" className="gap-2 text-base rounded-none" disabled>
                             <ListTodo className="h-5 w-5" />
@@ -170,19 +170,23 @@ export default function HabitSetup() {
     );
   }
 
+  const tabs = [
+    <TabsTrigger key="new" value="new" className="gap-2 text-base rounded-none">
+      <PlusCircle className="h-5 w-5" />
+      {dictionary.habits.newSetup}
+    </TabsTrigger>,
+    <TabsTrigger key="list" value="list" className="gap-2 text-base rounded-none">
+      <ListTodo className="h-5 w-5" />
+      {dictionary.habits.myHabits}
+    </TabsTrigger>
+  ]
+
   return (
     <Card className="w-full h-full overflow-hidden border-transparent shadow-none bg-transparent">
       <CardContent className="p-0 sm:p-0">
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full" dir="rtl">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="grid w-full grid-cols-2 rounded-none h-14">
-             <TabsTrigger value="new" className="gap-2 text-base rounded-none">
-              <PlusCircle className="h-5 w-5" />
-              {dictionary.habits.newSetup}
-            </TabsTrigger>
-            <TabsTrigger value="list" className="gap-2 text-base rounded-none">
-              <ListTodo className="h-5 w-5" />
-              {dictionary.habits.myHabits}
-            </TabsTrigger>
+             {language === 'ar' ? tabs.reverse() : tabs}
           </TabsList>
           <TabsContent value="list" className="mt-4 p-4">
             <HabitList habits={habits} onDelete={deleteHabit} />

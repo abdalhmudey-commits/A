@@ -5,8 +5,6 @@ import {
   LayoutGrid,
   Settings,
   Sparkles,
-  Sunrise,
-  Sunset,
 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import SettingsPanel from "./settings-panel";
@@ -16,9 +14,9 @@ import RemembrancesTabs from "./remembrances-tabs";
 import { useLanguage } from "@/context/language-context";
 
 export default function MainTabs() {
-  const { dictionary } = useLanguage();
+  const { dictionary, language } = useLanguage();
   
-  const tabsConfig = [
+  let tabsConfig = [
     {
       id: "home",
       title: dictionary.mainTabs.home,
@@ -44,6 +42,11 @@ export default function MainTabs() {
       component: SettingsPanel,
     },
   ];
+
+  if (language === 'ar') {
+    tabsConfig = tabsConfig.reverse();
+  }
+
 
   return (
     <Tabs defaultValue="home" className="w-full max-w-3xl">

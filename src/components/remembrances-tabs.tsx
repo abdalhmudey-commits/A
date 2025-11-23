@@ -7,18 +7,23 @@ import EveningRemembrances from "./evening-remembrances";
 import { useLanguage } from "@/context/language-context";
 
 export default function RemembrancesTabs() {
-  const { dictionary } = useLanguage();
+  const { dictionary, language } = useLanguage();
+
+  const tabs = [
+    <TabsTrigger key="morning" value="morning" className="gap-2 text-base rounded-none">
+      <Sunrise className="h-5 w-5" />
+      {dictionary.remembrances.morning}
+    </TabsTrigger>,
+    <TabsTrigger key="evening" value="evening" className="gap-2 text-base rounded-none">
+      <Sunset className="h-5 w-5" />
+      {dictionary.remembrances.evening}
+    </TabsTrigger>
+  ];
+
   return (
-    <Tabs defaultValue="morning" className="w-full" dir="rtl">
+    <Tabs defaultValue="morning" className="w-full">
       <TabsList className="grid w-full grid-cols-2 rounded-none h-14">
-        <TabsTrigger value="morning" className="gap-2 text-base rounded-none">
-          <Sunrise className="h-5 w-5" />
-          {dictionary.remembrances.morning}
-        </TabsTrigger>
-        <TabsTrigger value="evening" className="gap-2 text-base rounded-none">
-          <Sunset className="h-5 w-5" />
-          {dictionary.remembrances.evening}
-        </TabsTrigger>
+        {language === 'ar' ? tabs.reverse() : tabs}
       </TabsList>
       <TabsContent value="morning">
         <MorningRemembrances />
