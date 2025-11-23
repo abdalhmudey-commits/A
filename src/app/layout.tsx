@@ -3,8 +3,8 @@ import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Empower",
-  description: "An app to help you build better habits and stay motivated.",
+  title: "ترك العادات السيئة",
+  description: "تطبيق يساعدك على بناء عادات أفضل والبقاء متحفزًا.",
 };
 
 export default function RootLayout({

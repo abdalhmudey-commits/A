@@ -2,13 +2,17 @@
 
 import { useEffect, useState } from "react";
 import { Sparkles } from "lucide-react";
-
 import { generateMotivationalMessage } from "@/ai/flows/generate-motivational-message";
 import { Skeleton } from "@/components/ui/skeleton";
+import { usePathname, useSearchParams } from "next/navigation";
 
 export default function MotivationalMessage() {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(true);
+
+  // Re-fetch when path or search params change to simulate page navigation
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
 
   useEffect(() => {
     const fetchMessage = async () => {
@@ -25,7 +29,7 @@ export default function MotivationalMessage() {
     };
 
     fetchMessage();
-  }, []);
+  }, [pathname, searchParams]);
 
   if (loading) {
     return (
